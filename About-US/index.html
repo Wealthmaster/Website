@@ -1,0 +1,78 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+<div style="background: #000; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden;">
+
+    <section style="height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, #1a0000 0%, #000 70%);">
+        <div id="about-hero">
+            <h1 style="font-size: 60px; font-weight: 900; text-transform: uppercase; letter-spacing: 5px; margin: 0;">
+                WE ARE <span style="color: #ff3131;">WEALTH MASTER</span>
+            </h1>
+            <p style="font-size: 18px; color: #888; margin-top: 20px; letter-spacing: 2px;">India's Premium Stock Market Institute.</p>
+        </div>
+    </section>
+
+    <section id="vision" style="padding: 100px 20px; max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 50px;">
+        <div style="flex: 1;">
+            <h2 style="font-size: 40px; font-weight: 800; border-left: 5px solid #ff3131; padding-left: 20px;">OUR MISSION</h2>
+            <p style="font-size: 18px; color: #ccc; line-height: 1.8; margin-top: 25px;">
+                At WealthMaster Academy, we don't just teach trading; we build institutional mindsets. Our goal is to empower retail traders with the same **Smart Money Concepts (SMC)** and institutional logic used by the big players to dominate the markets.
+            </p>
+        </div>
+        <div style="flex: 1; text-align: center;">
+            <div style="font-size: 150px; color: rgba(255,49,49,0.1); font-weight: 900;">TRUTH</div>
+        </div>
+    </section>
+
+    <section style="background: #080808; padding: 100px 20px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 35px; margin-bottom: 60px;">WHY CHOOSE <span style="color: #ff3131;">US?</span></h2>
+            
+            <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
+                <div class="about-card" style="background: #111; padding: 40px; width: 300px; border-radius: 4px; border-bottom: 3px solid #ff3131;">
+                    <h3 style="color: #ff3131;">01. No Indicators</h3>
+                    <p style="color: #888; font-size: 14px;">We teach pure Price Action and Market Structure. Forget lagging indicators.</p>
+                </div>
+                <div class="about-card" style="background: #111; padding: 40px; width: 300px; border-radius: 4px; border-bottom: 3px solid #ff3131;">
+                    <h3 style="color: #ff3131;">02. Live Support</h3>
+                    <p style="color: #888; font-size: 14px;">Direct access to mentors for doubt clearing and live market analysis.</p>
+                </div>
+                <div class="about-card" style="background: #111; padding: 40px; width: 300px; border-radius: 4px; border-bottom: 3px solid #ff3131;">
+                    <h3 style="color: #ff3131;">03. Real Results</h3>
+                    <p style="color: #888; font-size: 14px;">Focused on consistent profitability and professional risk management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 100px 20px; text-align: center;">
+        <h2 style="font-size: 30px; margin-bottom: 40px;">Stop being the liquidity. Start trading it.</h2>
+        <a href="/contact" style="background: #ff3131; color: #fff; padding: 20px 50px; text-decoration: none; font-weight: 900; text-transform: uppercase; border-radius: 4px; display: inline-block;">Join the Academy</a>
+    </section>
+
+</div>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Animation
+    gsap.from("#about-hero", { opacity: 0, y: 50, duration: 1.5, ease: "power4.out" });
+
+    // Vision Animation
+    gsap.from("#vision", {
+        scrollTrigger: { trigger: "#vision", start: "top 80%" },
+        opacity: 0,
+        x: -100,
+        duration: 1
+    });
+
+    // Cards Stagger
+    gsap.from(".about-card", {
+        scrollTrigger: { trigger: ".about-card", start: "top 90%" },
+        opacity: 0,
+        y: 50,
+        stagger: 0.3,
+        duration: 0.8
+    });
+</script>
