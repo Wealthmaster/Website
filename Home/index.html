@@ -1,494 +1,493 @@
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Hero Section */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: #ffffff;
+            background-color: #000; /* Fallback color */
+        }
+
+        /* Background Video */
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            object-fit: cover;
+        }
+
+        /* Stylish Overlay - Trading Theme */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Red glow effect from right, Dark from left */
+            background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(255, 49, 49, 0.2) 100%);
+            z-index: 1;
+        }
+
+        /* Content Area */
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1000px;
+            padding: 20px;
+            animation: fadeInScale 1.5s ease-out;
+        }
+
+        .content h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+        }
+
+        .content h1 span {
+            color: #ff3131; /* Wealth Master Red */
+            display: block;
+        }
+
+        .content p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            color: #f0f0f0;
+            font-weight: 400;
+            letter-spacing: 1px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Buttons Styling */
+        .btn-box {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            border-radius: 4px; /* Slightly sharp for professional look */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: #ff3131;
+            color: white;
+            border: 2px solid #ff3131;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 49, 49, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #000;
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .content h1 { font-size: 2.8rem; letter-spacing: 0; }
+            .content p { font-size: 1.1rem; }
+            .btn-box { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 280px; text-align: center; }
+        }
+    </style>
+
+
+
+    <section class="hero-banner">
+        <video autoplay="" muted="" loop="" playsinline="" id="bg-video">
+            <source src="https://pixabay.com/videos/download/x-308080_medium.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="overlay"></div>
+
+        <div class="content">
+            <h1>Wealth Master <span>Academy</span></h1>
+            <p>India's Premium Stock Market Institute. Learn strategies that big players use.</p>
+            
+            <div class="btn-box">
+                <a href="https://wealthmasteracademy.in/courses" class="btn btn-primary">Start Trading</a>
+                <a href="https://wealthmasteracademy.in/contact-us/" class="btn btn-outline">Free Demo Class</a>
+            </div>
+        </div>
+    </section>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wealth Master Academy - Feedback</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wealth Master Academy</title>
     <style>
-        /* --- THEME COLORS (Professional Finance Theme) --- */
-        :root {
-            --primary: #004aad; /* Trust Blue */
-            --primary-dark: #002a61;
-            --accent: #ffc107; /* Gold for Wealth */
-            --bg-color: #f0f8ff;
-            --card-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            --text-main: #333;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Sabse important fix: Horizontal scroll rokne ke liye */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #e3f2fd 0%, #f0f4f8 100%);
-            margin: 0; 
-            padding: 20px; /* Thoda padding side mein */
-            min-height: 100vh;
-            /* Flexbox hata diya gaya hai taaki scroll issue na aaye */
-            display: block; 
+            padding-top: 130px; /* Navbar + Ticker height */
         }
 
-        /* --- CARD DESIGN --- */
-        #main-card {
-            background: white; border-radius: 20px; padding: 25px 20px;
-            box-shadow: var(--card-shadow); width: 100%; max-width: 450px;
-            text-align: center; position: relative; 
-            /* overflow: hidden hata diya taaki content cut na ho */
-            border-top: 5px solid var(--primary);
-            padding-bottom: 30px; 
-            margin: 40px auto; /* Ye card ko center karega aur scroll fix karega */
+        .navbar {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            width: 100%;
+            max-width: 1300px; 
+            margin: 0 auto; 
+            padding: 10px 20px;
         }
 
-        h2 { color: var(--primary); margin: 5px 0; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-        .subtitle { color: #666; font-size: 13px; margin-bottom: 20px; font-weight: 500; }
-
-        /* --- RATING --- */
-        .stars { font-size: 35px; color: #e0e0e0; margin: 15px 0; cursor: pointer; transition: 0.2s; }
-        .stars .fa-star.active { color: var(--accent); transform: scale(1.1); }
-
-        .hidden { display: none !important; }
-        .fade-in { animation: fadeIn 0.5s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* --- INPUTS --- */
-        select, textarea {
-            width: 100%; padding: 12px; border-radius: 8px;
-            border: 1px solid #dae1e7; margin-bottom: 12px;
-            font-family: 'Poppins', sans-serif; font-size: 13px; background: #f8fbff;
-            outline: none; color: #444;
-            box-sizing: border-box; /* Fix for padding width issue */
-        }
-        select:focus, textarea:focus { border-color: var(--primary); background: #fff; }
-
-        label { display: block; text-align: left; font-size: 12px; font-weight: 600; color: #555; margin-bottom: 5px; margin-top: 10px; }
-
-        /* --- KEYWORDS --- */
-        .category-label {
-            font-size: 11px; font-weight: 700; color: #999; 
-            text-transform: uppercase; letter-spacing: 1px;
-            text-align: left; margin: 15px 0 5px 0; border-bottom: 1px dashed #eee;
+        .logo img {
+            height: 60px;
+            display: block;
+            transition: 0.3s;
         }
 
-        .keywords-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 5px; }
-        
-        .keyword-chip {
-            font-size: 11px; padding: 8px 12px; border-radius: 50px;
-            border: 1px solid #e1e8ed; background: #f1f5f9; color: #555;
-            cursor: pointer; transition: 0.2s; font-weight: 500;
-        }
-        .keyword-chip.active { 
-            background: #e3f2fd; border-color: var(--primary); color: var(--primary-dark); 
-            box-shadow: 0 2px 5px rgba(0, 74, 173, 0.15);
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
         }
 
-        /* --- VOICE SECTION --- */
-        .voice-box {
-            background: #e8f0fe; border: 1px dashed #004aad;
-            padding: 12px; border-radius: 12px; margin-bottom: 15px;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .voice-text { font-size: 12px; color: #004aad; font-weight: 600; text-align: left; }
-        .mic-icon {
-            width: 40px; height: 40px; background: #004aad; color: white;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; transition: 0.2s; font-size: 18px;
-        }
-        .mic-active { animation: pulseRed 1.5s infinite; background: #dc3545; }
-        @keyframes pulseRed { 0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); } 100% { box-shadow: 0 0 0 10px rgba(0,0,0,0); } }
-
-        /* --- BUTTONS --- */
-        .btn-action {
-            display: block; width: 100%; padding: 14px; border-radius: 50px;
-            text-decoration: none; font-weight: 600; margin-top: 15px;
-            cursor: pointer; border: none; font-size: 15px; transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .btn-next { background: linear-gradient(to right, #28a745, #218838); color: white; }
-        .btn-submit { background: #555; color: white; }
-        .btn-gen { background: linear-gradient(135deg, #004aad 0%, #007bff 100%); color: white; }
-        .btn-copy { background: #ea4335; color: white; margin-top: 10px; display: none; }
-
-        /* --- FOOTER --- */
-        .footer-branding {
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-            text-align: center;
-            font-size: 11px;
-            color: #777;
-        }
-        .footer-branding img {
-            height: 25px;
-            vertical-align: middle;
-            margin-left: 5px;
-        }
-        .footer-branding a {
+        .nav-links li a {
             text-decoration: none;
-            color: var(--primary);
-            font-weight: 600;
+            color: #000;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: 0.3s;
         }
-        .dev-contact {
-            font-size: 10px;
-            color: #999;
-            margin-top: 5px;
-        }
-        
-        /* --- CONTACT GRID --- */
-        .button-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px; }
-        .contact-link { text-decoration: none; color: #444; font-size: 11px; font-weight: 600; display: flex; flex-direction: column; align-items: center; }
-        .icon-box { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 5px; color: white; font-size: 18px; }
-        .bg-call { background: #004aad; }
-        .bg-wa { background: #25D366; }
-        .bg-ig { background: #E1306C; }
-        .bg-fb { background: #1877F2; }
-        .bg-web { background: #00bcd4; }
-        .bg-save { background: #607d8b; }
 
+        .nav-links li a:hover {
+            color: #ff3131;
+        }
+
+        .join-btn {
+            background: linear-gradient(to bottom, #444, #000);
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            white-space: nowrap;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* Ticker Container Fix */
+        .ticker-container {
+            width: 100%;
+            border-top: 1px solid #eee;
+            background: #fff;
+            overflow: hidden; /* TradingView overflow fix */
+        }
+
+        /* --- Responsive Styles --- */
+        @media screen and (max-width: 1024px) {
+            body { padding-top: 120px; }
+
+            .nav-links {
+                display: none; /* Mobile pe hide */
+                flex-direction: column;
+                position: absolute;
+                top: 80px; 
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                text-align: center;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 12px 0;
+                width: 100%;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+        }
     </style>
 </head>
 <body>
 
-<div id="main-card">
-    <h2>Wealth Master Academy</h2>
-    <p class="subtitle">New Sangavi • Pune</p>
-
-    <div id="rating-step">
-        <p style="margin:0; font-weight:600; font-size:15px; color:#555;">Rate your learning experience:</p>
-        <div class="stars" id="star-rating">
-            <i class="fas fa-star" data-value="1"></i>
-            <i class="fas fa-star" data-value="2"></i>
-            <i class="fas fa-star" data-value="3"></i>
-            <i class="fas fa-star" data-value="4"></i>
-            <i class="fas fa-star" data-value="5"></i>
-        </div>
-        
-        <div id="low-rating-form" class="hidden fade-in">
-            <p style="color: #dc3545; font-size: 13px; margin: 10px 0;">We strive for excellence. What went wrong?</p>
-            <textarea id="complaint" rows="2" placeholder="Tell us your issue..."></textarea>
-            <button onclick="submitNegative()" class="btn-action btn-submit">Submit Feedback</button>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="https://wealthmasteracademy.in/">
+                <img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Logo">
+            </a>
         </div>
 
-        <div id="high-rating-btn" class="hidden fade-in">
-            <p style="color: green; font-size: 14px; margin: 5px 0;">Thanks for the love! 📈</p>
-            <button onclick="openAITool()" class="btn-action btn-next">Write Review (Next Step) <i class="fas fa-arrow-right"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="https://wealthmasteracademy.in/">Home</a></li>
+            <li><a href="https://wealthmasteracademy.in/courses">Courses</a></li>
+            <li><a href="https://wealthmasteracademy.in/About-US/">About Us</a></li>
+            <li><a href="https://wealthmasteracademy.in/gallery/">Gallery</a></li>
+            <li><a href="https://wealthmasteracademy.in/contact-us/">Contact Us</a></li>
+            <li><a href="https://wealthmasteracademy.in/contact-us/" class="join-btn">Join Us!</a></li>
+        </ul>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </div>
+    </nav>
 
-    <div id="ai-tool-step" class="hidden fade-in" style="text-align: left;">
-        
-        <label>Select Course</label>
-        <select id="serviceSelect">
-            <option value="" disabled selected>Tap to select course...</option>
-            <option value="Master Diploma in Technical Analysis">Master Diploma in Technical Analysis</option>
-            <option value="Certified Stock Market Professional">Certified Stock Market Professional</option>
-            <option value="Executive Program in Equity Research">Executive Program in Equity Research</option>
-            <option value="Market Mastery Intensive">Market Mastery Intensive</option>
-            <option value="Freedom Trader Roadmap">Freedom Trader Roadmap</option>
-            <option value="Price Action Decoding Course">Price Action Decoding Course</option>
-            <option value="Bank Nifty Option Buying Strategy">Bank Nifty Option Buying Strategy</option>
-            <option value="The Option Chain Decoder">The Option Chain Decoder</option>
-            <option value="Algo Trading for Beginners">Algo Trading for Beginners</option>
-        </select>
-
-        <div class="voice-box">
-            <div class="voice-text">
-                <strong>🎙️ Voice Input (Marathi/Hindi)</strong><br>
-                <span id="voiceStatus" style="color:#666;">Tap mic & speak (e.g. "Teaching khup bhari aahe")</span>
-            </div>
-            <div class="mic-icon" onclick="startListening()"><i class="fas fa-microphone"></i></div>
-        </div>
-
-        <label>Key Highlights (Select 3-4)</label>
-
-        <div class="category-label">📈 Trading Basics</div>
-        <div class="keywords-container">
-            <span class="keyword-chip" onclick="toggleKeyword(this)">Share market basics for beginners</span>
-            <span class="keyword-chip" onclick="toggleKeyword(this)">Nifty 50 vs Sensex difference</span>
-            <span class="keyword-chip" onclick="toggleKeyword(this)">Risk management in trading</span>
-            <span class="keyword-chip" onclick="toggleKeyword(this)">Option chain analysis explained</span>
-        </div>
-
-        <div class="category-label">💹 Advanced Strategies</div>
-        <div class="keywords-container">
-            <span class="keyword-chip" onclick="toggleKeyword(this)">Future and options trading for beginners</span>
-            <span class="keyword-chip" onclick="toggleKeyword(this)">Best strategy for option trading</span>
-            <span class="keyword-chip" onclick="toggleKeyword(this)">Swing trading vs Day trading</span>
-            <span class="keyword-chip" onclick="toggleKeyword(this)">Algo trading course for beginners</span>
-        </div>
-
-        <div class="category-label">🏆 Academy Quality</div>
-        <div class="keywords-container">
-            <span class="keyword-chip" onclick="toggleKeyword(this)">best Share market classes</span>
-            <span class="keyword-chip" onclick="toggleKeyword(this)">best Stock market training</span>
-            <span class="keyword-chip" onclick="toggleKeyword(this)">Online trading classes</span>
-            <span class="keyword-chip" onclick="toggleKeyword(this)">best Trading academy</span>
-            <span class="keyword-chip" onclick="toggleKeyword(this)">intraday trading</span>
-            <span class="keyword-chip" onclick="toggleKeyword(this)">Commodity trading classes</span>
-            <span class="keyword-chip" onclick="toggleKeyword(this)">Forex trading course</span>
-        </div>
-
-        <button onclick="generateRandomReview()" class="btn-action btn-gen">✨ Generate Review</button>
-        
-        <textarea id="finalReview" rows="6" style="margin-top:15px; display:none;" readonly></textarea>
-        <button id="copyBtn" onclick="copyAndOpen()" class="btn-action btn-copy">Copy & Open Google <i class="fab fa-google"></i></button>
-    </div>
-
-    <div class="button-grid">
-        <a href="tel:+917020370561" class="contact-link"><div class="icon-box bg-call"><i class="fas fa-phone"></i></div> Call</a>
-        <a href="https://wa.me/917020370561" class="contact-link"><div class="icon-box bg-wa"><i class="fab fa-whatsapp"></i></div> WhatsApp</a>
-        <a href="#" class="contact-link"><div class="icon-box bg-ig"><i class="fab fa-instagram"></i></div> Insta</a>
-        <a href="#" class="contact-link"><div class="icon-box bg-fb"><i class="fab fa-facebook-f"></i></div> FB</a>
-        <a href="#" class="contact-link"><div class="icon-box bg-web"><i class="fas fa-globe"></i></div> Web</a>
-        <a href="#" class="contact-link"><div class="icon-box bg-save"><i class="fas fa-user-plus"></i></div> Save</a>
-    </div>
-
-    <div class="footer-branding">
-        Powered by <a href="https://growft.odoo.com" target="_blank">Growft</a>
-        <img src="https://growft.odoo.com/web/image/1477-e0a28764/growft%20logo.webp" alt="Growft Logo">
-        <div class="dev-contact">
-            Contact us to build your AI review tool: <a href="tel:+917020370561">7020370561</a>
+    <div class="ticker-container">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                    { "proName": "BSE:RELIANCE", "description": "RELIANCE" },
+                    { "proName": "BSE:HDFCBANK", "description": "HDFC BANK" },
+                    { "proName": "BSE:TATASTEEL", "description": "TATA STEEL" },
+                    { "proName": "BSE:SBIN", "description": "SBI" },
+                    { "proName": "BSE:TCS", "description": "TCS" },
+                    { "proName": "BSE:INFY", "description": "INFOSYS" },
+                    { "proName": "BSE:KOTAKBANK", "description": "KOTAK BANK" }
+                ],
+                "showSymbolLogo": true,
+                "colorTheme": "light",
+                "isTransparent": false,
+                "displayMode": "compact",
+                "locale": "in"
+            }
+            </script>
         </div>
     </div>
-
-</div>
+</header>
 
 <script>
-    // ** IMPORTANT: REPLACE WITH YOUR GOOGLE MAPS REVIEW LINK **
-    const GOOGLE_LINK = "https://g.page/r/CWfX7FI7GW0AEBM/review"; 
-    let selectedKeywords = [];
-    let recordedText = "";
-
-    // --- MASSIVE DATASETS FOR VARIETY (40+ Combinations) ---
-    
-    // 1. OPENING LINES (40 Variations)
-    const intros = [
-        "I recently joined Wealth Master Academy in Pune and it has been a game changer.",
-        "My search for the best stock market classes in Pune ended at Wealth Master Academy.",
-        "I am so glad I enrolled at Wealth Master Academy in New Sangavi.",
-        "Hands down the best place to learn trading in Pune.",
-        "Wealth Master Academy provided me with the right path to financial freedom.",
-        "If you are looking for stock market training in Pune, this is the place.",
-        "I started my trading journey with Wealth Master Academy and I am very satisfied.",
-        "A truly professional trading academy in New Sangavi.",
-        "Learning technical analysis was made easy by the mentors here.",
-        "I highly recommend Wealth Master Academy for anyone wanting to learn share market.",
-        "The best investment I made for my career was joining this academy.",
-        "Wealth Master Academy teaches with practical market approach.",
-        "Excellent training institute for both beginners and experienced traders.",
-        "I had zero knowledge of trading, but now I feel confident thanks to WMA.",
-        "Visited Wealth Master Academy in Pune and was impressed by their curriculum.",
-        "The best stock market institute in the PCMC area.",
-        "They simplify complex trading concepts very well.",
-        "I took the online classes and the quality was top-notch.",
-        "Wealth Master Academy is the best trading academy I have come across.",
-        "My experience with Wealth Master Academy has been outstanding.",
-        "Great atmosphere for learning and growing as a trader.",
-        "The mentors at Wealth Master Academy are true experts.",
-        "I learned more in one month here than I did in a year of self-study.",
-        "The practical sessions at Wealth Master Academy are incredibly helpful.",
-        "This is the perfect place for share market basics and advanced strategies.",
-        "Wealth Master Academy in New Sangavi is a hidden gem for traders.",
-        "I am now trading confidently thanks to their guidance.",
-        "The course structure at Wealth Master Academy is very well designed.",
-        "Professional, ethical, and result-oriented academy.",
-        "I am very happy with the support provided by the team.",
-        "Wealth Master Academy helped me understand market psychology.",
-        "Simply the best share market classes in Pune.",
-        "I appreciate the personal attention given to students here.",
-        "Their strategies for Nifty and Bank Nifty are very effective.",
-        "Joined for the crash course but stayed for the advanced learning.",
-        "Wealth Master Academy transformed my trading style completely.",
-        "Top class training facility in New Sangavi.",
-        "I would recommend Wealth Master Academy to all my friends.",
-        "Thank you for decoding the stock market for me.",
-        "A 5-star experience learning with Wealth Master Academy."
-    ];
-
-    // 2. CLOSING LINES (40 Variations)
-    const outros = [
-        "Highly recommended for every aspiring trader!",
-        "Thank you Wealth Master Academy for the guidance.",
-        "Don't think twice, just join them.",
-        "5 Stars from my side for the excellent coaching.",
-        "Best trading classes in Pune, hands down.",
-        "I am now a confident trader, thanks to you.",
-        "Looking forward to the advanced sessions.",
-        "Great value for money education.",
-        "Truly the best stock market training in town.",
-        "Keep up the great work team WMA.",
-        "A must-join for financial independence.",
-        "Totally satisfied with the course content.",
-        "The best mentors you can find.",
-        "I will definitely recommend this to others.",
-        "Thanks for clearing all my doubts.",
-        "My trading accuracy has improved significantly.",
-        "Excellent support even after the course completion.",
-        "A big thumbs up to the Wealth Master Academy team!",
-        "Start your trading journey here, you won't regret it.",
-        "The strategies taught here actually work in the live market.",
-        "Thank you for making me market-ready.",
-        "Best wishes to the academy.",
-        "This course changed my perspective on trading.",
-        "I am happy to be a part of the WMA family.",
-        "If you want to earn from markets, come here.",
-        "Practical learning at its best.",
-        "Grateful for the knowledge shared.",
-        "Simply outstanding experience.",
-        "Do visit them if you are in New Sangavi.",
-        "The best decision for my financial growth.",
-        "They deliver what they promise.",
-        "Expert guidance for serious traders.",
-        "I loved the live trading sessions.",
-        "Thanks for the roadmap to profitable trading.",
-        "Highly recommended stock market course.",
-        "You made trading simple for me.",
-        "Best coaching in Pune.",
-        "I strongly suggest joining Wealth Master Academy.",
-        "Worth every penny invested.",
-        "10/10 for the teaching methodology."
-    ];
-
-    // 3. KEYWORD SENTENCES (Specific to Finance List)
-    const keywordSentences = {
-        "best Share market classes": ["These are the best share market classes in Pune.", "Hard to find better share market classes than this.", "Definitely the best share market classes for beginners."],
-        "best Stock market training": ["The best stock market training I have received.", "They provide the best stock market training with live examples.", "Top-notch and best stock market training in the city."],
-        "Online trading classes": ["Their online trading classes are very interactive.", "Loved the flexibility of the online trading classes.", "The quality of online trading classes is excellent."],
-        "Share market basics for beginners": ["Perfect for learning share market basics for beginners.", "They explain share market basics for beginners very clearly.", "Great course to clear share market basics for beginners."],
-        "Nifty 50 vs Sensex difference": ["Finally understood the Nifty 50 vs Sensex difference clearly.", "The lecture on Nifty 50 vs Sensex difference was very insightful.", "They cleared my confusion on Nifty 50 vs Sensex difference."],
-        "Future and options trading for beginners": ["They made Future and options trading for beginners look easy.", "Great module on Future and options trading for beginners.", "Safest way to learn Future and options trading for beginners."],
-        "Forex trading course": ["The Forex trading course was very detailed.", "Learned global market dynamics in the Forex trading course.", "Excellent Forex trading course content."],
-        "intraday trading": ["My intraday trading skills have improved massively.", "Learned excellent strategies for intraday trading.", "Best place to master intraday trading."],
-        "Risk management in trading": ["They emphasize heavily on risk management in trading.", "Learned that risk management in trading is the key to success.", "The session on risk management in trading was an eye-opener."],
-        "best Trading academy": ["Truly the best trading academy in Pune.", "Proud to be a student of the best trading academy.", "Wealth Master Academy is the best trading academy."],
-        "Best strategy for option trading": ["They taught the best strategy for option trading.", "Implemented the best strategy for option trading and saw results.", "Looking for the best strategy for option trading? Come here."],
-        "Swing trading vs Day trading": ["Clear distinction taught between Swing trading vs Day trading.", "Helped me choose between Swing trading vs Day trading.", "Great explanation of Swing trading vs Day trading styles."],
-        "Commodity trading classes": ["The Commodity trading classes were very informative.", "Covered Gold and Silver well in Commodity trading classes.", "Detailed Commodity trading classes."],
-        "Algo trading course for beginners": ["The Algo trading course for beginners is a must-try.", "Automated trading explained well in Algo trading course for beginners.", "Great intro to tech in Algo trading course for beginners."],
-        "Option chain analysis explained": ["Option chain analysis explained in the simplest way.", "Never understood data until Option chain analysis explained here.", "The way Option chain analysis explained was brilliant."]
-    };
-
-    function getRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
-
-    // --- LOGIC ---
-    const stars = document.querySelectorAll('#star-rating .fa-star');
-    stars.forEach(star => {
-        star.addEventListener('click', function() {
-            const rating = parseInt(this.getAttribute('data-value'));
-            stars.forEach(s => s.classList.remove('active'));
-            for(let i=0; i<rating; i++) stars[i].classList.add('active');
-
-            if(rating >= 4) {
-                document.getElementById('high-rating-btn').classList.remove('hidden');
-                document.getElementById('low-rating-form').classList.add('hidden');
-            } else {
-                document.getElementById('low-rating-form').classList.remove('hidden');
-                document.getElementById('high-rating-btn').classList.add('hidden');
-            }
-        });
-    });
-
-    function openAITool() {
-        document.getElementById('rating-step').classList.add('hidden');
-        document.getElementById('ai-tool-step').classList.remove('hidden');
-    }
-
-    function toggleKeyword(el) {
-        el.classList.toggle('active');
-        const text = el.innerText;
-        if(selectedKeywords.includes(text)) selectedKeywords = selectedKeywords.filter(k => k !== text);
-        else selectedKeywords.push(text);
-    }
-
-    // --- VOICE LOGIC ---
-    function startListening() {
-        if (!('webkitSpeechRecognition' in window)) {
-            alert("Please use Chrome Browser for Voice Features.");
-            return;
-        }
-        const recognition = new webkitSpeechRecognition();
-        recognition.lang = 'mr-IN'; // Default to Marathi/Hindi region
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('active');
         
-        const icon = document.querySelector('.mic-icon');
-        const status = document.getElementById('voiceStatus');
-
-        recognition.onstart = () => {
-            icon.classList.add('mic-active');
-            status.innerText = "Listening...";
-        };
-        recognition.onend = () => {
-            icon.classList.remove('mic-active');
-            status.innerText = "Translating...";
-        };
-        recognition.onresult = (event) => {
-            const text = event.results[0][0].transcript;
-            translateVoice(text);
-        };
-        recognition.start();
-    }
-
-    async function translateVoice(text) {
-        try {
-            // Using a free translation API for demo purposes
-            const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=mr|en`);
-            const data = await res.json();
-            if(data.responseData) {
-                recordedText = data.responseData.translatedText;
-                document.getElementById('voiceStatus').innerText = "Translation Done: " + recordedText;
-            }
-        } catch(e) {
-            recordedText = text;
-            document.getElementById('voiceStatus').innerText = "Voice Added (Raw).";
+        // Optional: Menu toggle animation
+        const spans = document.querySelectorAll('.menu-toggle span');
+        if(nav.classList.contains('active')) {
+            spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+            spans[1].style.opacity = "0";
+            spans[2].style.transform = "rotate(-45deg) translate(6px, -7px)";
+        } else {
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
         }
     }
 
-    // --- GENERATE ---
-    function generateRandomReview() {
-        const course = document.getElementById('serviceSelect').value;
-        let review = getRandom(intros) + " ";
-
-        if(course) {
-            const courseSentences = [
-                `I enrolled in the ${course} and it was excellent.`,
-                `The content covered in the ${course} is very comprehensive.`,
-                `I highly recommend the ${course} offered here.`
-            ];
-            review += getRandom(courseSentences) + " ";
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const nav = document.getElementById('navLinks');
+        const toggle = document.querySelector('.menu-toggle');
+        if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+            nav.classList.remove('active');
+            const spans = document.querySelectorAll('.menu-toggle span');
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
         }
-
-        if(recordedText) review += `${recordedText} `;
-
-        // Add 2-3 random keywords if many are selected, to keep it natural
-        selectedKeywords.forEach(k => {
-            // Fuzzy match logic
-            let key = Object.keys(keywordSentences).find(key => k.toLowerCase().includes(key.toLowerCase()) || key.toLowerCase().includes(k.toLowerCase()));
-            if(key && keywordSentences[key]) {
-                review += getRandom(keywordSentences[key]) + " ";
-            } else {
-                review += `The session on ${k} was great. `;
-            }
-        });
-
-        review += getRandom(outros);
-
-        const txt = document.getElementById('finalReview');
-        txt.value = review;
-        txt.style.display = 'block';
-        document.getElementById('copyBtn').style.display = 'block';
-        txt.scrollIntoView({behavior: "smooth"});
-    }
-
-    function copyAndOpen() {
-        const txt = document.getElementById('finalReview');
-        txt.select();
-        document.execCommand('copy');
-        if(confirm("Review Copied! Open Google Maps to paste it?")) {
-            window.location.href = GOOGLE_LINK;
-        }
-    }
-    
-    function submitNegative() {
-        alert("Thank you for your feedback. We will contact you shortly.");
-    }
+    });
 </script>
 
 </body>
 </html>
+<figure class="wp-block-image size-full is-resized has-custom-border about-image1"><img src="https://wealthmasteracademy.in/wp-content/themes/startup-consultant/assets/images/about-img1.png" alt="" class="wp-image-57" style="border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;object-fit:cover;width:549px;height:auto"/></figure>
+<footer style="background: #000; color: #fff; padding: 60px 20px; font-family: 'Montserrat', sans-serif; border-top: 2px solid #ff3131;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+        
+        <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: #ff3131; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">WealthMaster Academy</h3>
+            <p style="color: #888; font-size: 14px; line-height: 1.6; margin-top: 20px;">
+                India's Premium Stock Market Institute. We specialize in Smart Money Concepts (SMC) and Institutional trading logic to help retail traders become professionals.
+            </p>
+        </div>
+
+        <div style="flex: 1; min-width: 150px;">
+            <h4 style="font-size: 18px; margin-bottom: 20px; border-bottom: 2px solid #ff3131; display: inline-block;">Quick Links</h4>
+            <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2.5;">
+                <li><a href="/" style="color: #ccc; text-decoration: none;">Home</a></li>
+                <li><a href="/courses" style="color: #ccc; text-decoration: none;">Our Courses</a></li>
+                <li><a href="/about" style="color: #ccc; text-decoration: none;">About Us</a></li>
+                <li><a href="/contact" style="color: #ccc; text-decoration: none;">Contact Support</a></li>
+            </ul>
+        </div>
+
+        <div style="flex: 1; min-width: 250px;">
+            <h4 style="font-size: 18px; margin-bottom: 20px; border-bottom: 2px solid #ff3131; display: inline-block;">Get In Touch</h4>
+            <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">📍 Pune, Maharashtra</p>
+            <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">📧 growftdigitalhelp@gmail.com</p>
+            <p style="color: #ff3131; font-weight: bold; font-size: 14px;">WhatsApp for Queries: +91 7020360561</p>
+        </div>
+
+    </div>
+
+    <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #222; font-size: 12px; color: #555;">
+        <p>&copy; 2026 WealthMaster Academy. All Rights Reserved. Designed by Growft Digital Marketing.</p>
+        <p style="margin-top: 10px;">Trading involves risk. Please trade responsibly.</p>
+    </div>
+</footer>
+
+<div id="follower-dot"></div>
+
+<style>
+    /* Ensure body shows the default cursor */
+    body {
+        cursor: default !important;
+    }
+
+    /* Links par bhi arrow dikhe */
+    a, button {
+        cursor: pointer !important;
+    }
+
+    #follower-dot {
+        position: fixed;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        
+        /* Initial Red (When it catches the arrow) */
+        background-color: #ff3131;
+        box-shadow: 0 0 10px #ff3131, 0 0 20px #ff3131;
+        transition: background-color 0.2s, box-shadow 0.2s;
+    }
+
+    /* Green state when chasing */
+    #follower-dot.chasing {
+        background-color: #00ff00;
+        box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    }
+</style>
+
+<script>
+    const dot = document.getElementById('follower-dot');
+    let mouseX = 0, mouseY = 0; // Arrow position
+    let dotX = 0, dotY = 0;     // Dot position
+
+    // Track mouse move
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animate() {
+        // Trailing Math
+        dotX += (mouseX - dotX) * 0.1; // 0.1 is the speed (lower = more lag/trailing)
+        dotY += (mouseY - dotY) * 0.1;
+
+        dot.style.left = `${dotX}px`;
+        dot.style.top = `${dotY}px`;
+
+        // Check distance between dot and arrow
+        const distance = Math.sqrt(Math.pow(mouseX - dotX, 2) + Math.pow(mouseY - dotY, 2));
+
+        // Agar distance 2px se zyada hai, matlab dot abhi bhag raha hai (Green)
+        if (distance > 2) {
+            dot.classList.add('chasing');
+        } else {
+            // Agar pahunch gaya toh Red
+            dot.classList.remove('chasing');
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
