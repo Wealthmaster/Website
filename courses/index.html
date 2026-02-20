@@ -1,0 +1,176 @@
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+    /* Reset and Global Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Isse content screen se bahar nahi jayega */
+    }
+
+    body {
+        background: #000;
+        overflow-x: hidden; /* Horizontal scroll rokne ke liye */
+        cursor: default; /* Arrow cursor visible rahega */
+    }
+
+    section {
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    /* Cursor Dot Styling */
+    #follower-dot {
+        position: fixed;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        background-color: #ff3131;
+        box-shadow: 0 0 10px #ff3131, 0 0 20px #ff3131;
+        transition: background-color 0.2s, box-shadow 0.2s;
+    }
+
+    #follower-dot.chasing {
+        background-color: #00ff00;
+        box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .journey-title { font-size: 35px !important; }
+        .retail-content, .inst-content { width: 100% !important; margin-left: 0 !important; }
+    }
+</style>
+
+<div id="follower-dot"></div>
+
+<section style="background: #000; color: #fff; padding: 80px 20px; font-family: 'Montserrat', sans-serif;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+        <h2 class="journey-title" data-aos="fade-down" style="font-size: 50px; font-weight: 800; margin-bottom: 60px;">Know your <span style="color: #ff3131;">Journey</span></h2>
+
+        <div style="border-left: 2px solid #333; padding-left: 40px; position: relative; margin-left: 20px;">
+            <div data-aos="fade-right" data-aos-delay="100" style="margin-bottom: 60px; position: relative;">
+                <div style="position: absolute; left: -51px; top: 0; width: 20px; height: 20px; background: #ff3131; border-radius: 50%; border: 4px solid #000;"></div>
+                <span style="color: #ff3131; font-weight: 700; font-size: 14px; letter-spacing: 2px;">DAY 1</span>
+                <h3 style="font-size: 28px; margin: 10px 0;">Intro to Trading & SMC</h3>
+                <p style="color: #888; line-height: 1.6;">What is trading? Myths vs Reality. Why SMC outperforms traditional retail price action.</p>
+            </div>
+
+            <div data-aos="fade-right" data-aos-delay="200" style="margin-bottom: 60px; position: relative;">
+                <div style="position: absolute; left: -51px; top: 0; width: 20px; height: 20px; background: #fff; border-radius: 50%; border: 4px solid #000;"></div>
+                <span style="color: #ff3131; font-weight: 700; font-size: 14px; letter-spacing: 2px;">DAY 2</span>
+                <h3 style="font-size: 28px; margin: 10px 0;">Retail Trading & Traps</h3>
+                <p style="color: #888; line-height: 1.6;">Understanding the retail mindset and why traditional patterns fail against institutional logic.</p>
+            </div>
+
+            <div data-aos="fade-right" data-aos-delay="300" style="margin-bottom: 60px; position: relative;">
+                <div style="position: absolute; left: -51px; top: 0; width: 20px; height: 20px; background: #fff; border-radius: 50%; border: 4px solid #000;"></div>
+                <span style="color: #ff3131; font-weight: 700; font-size: 14px; letter-spacing: 2px;">DAY 4-6</span>
+                <h3 style="font-size: 28px; margin: 10px 0;">Advanced SMC Concepts</h3>
+                <p style="color: #888; line-height: 1.6;">Deep dive into Market Structure (BOS/CHoCH), Liquidity, and Smart Entries.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="comparison-section" style="background: #080808; color: #fff; padding: 100px 20px; font-family: 'Montserrat', sans-serif;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+        
+        <div class="retail-content" style="width: 55%; opacity: 0; transform: translateY(30px);">
+            <h2 style="font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 30px;">
+                You are trading it all <br> wrong — <span style="color: #ff3131;">Chart pattern <br> breakouts are all the TRAPS!</span>
+            </h2>
+            <ul style="list-style: none; padding: 0; color: #ccc; font-size: 16px;">
+                <li style="margin-bottom: 12px;">❌ Support and resistance reversal</li>
+                <li style="margin-bottom: 12px;">❌ EMAs, RSI, MACD ETC</li>
+                <li style="margin-bottom: 12px;">❌ Basic chart patterns</li>
+                <li style="margin-bottom: 12px;">❌ Trying to capture all the breakouts</li>
+            </ul>
+        </div>
+
+        <div style="position: relative; height: 100px; margin: 40px 0; overflow: visible;">
+            <svg width="100%" height="100" style="overflow: visible;">
+                <line id="red-line" x1="0" y1="20" x2="100%" y2="80" stroke="#ff3131" stroke-width="2" stroke-dasharray="2000" stroke-dashoffset="2000" />
+            </svg>
+            <div id="retail-winrate" style="position: absolute; right: 0; bottom: -20px; color: #ff3131; font-weight: 900; opacity: 0;">20%-30% WINRATE</div>
+        </div>
+
+        <div class="inst-content" style="width: 65%; margin-left: auto; margin-top: 80px; opacity: 0; transform: translateY(30px);">
+            <h2 style="font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 30px;">
+                After WealthMaster — Now <br> you are entering where <br> the <span style="color: #4CAF50;">institutions are.</span>
+            </h2>
+            <ul style="list-style: none; padding: 0; color: #ccc; font-size: 16px;">
+                <li style="margin-bottom: 12px;">✅ Clean structure, liquidity & SMC logic</li>
+                <li style="margin-bottom: 12px;">✅ No external signal service needed</li>
+                <li style="margin-bottom: 12px;">✅ 2-3 quality setups/week</li>
+                <li style="margin-bottom: 12px;">✅ Control fear & revenge trading</li>
+            </ul>
+        </div>
+
+        <div style="position: relative; height: 100px; margin: 40px 0; overflow: visible;">
+            <svg width="100%" height="100" style="overflow: visible;">
+                <line id="green-line" x1="0" y1="80" x2="100%" y2="20" stroke="#4CAF50" stroke-width="2" stroke-dasharray="2000" stroke-dashoffset="2000" />
+            </svg>
+            <div id="inst-winrate" style="position: absolute; right: 0; top: -20px; color: #4CAF50; font-weight: 900; opacity: 0;">60%-70% WINRATE</div>
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+    // Initialize AOS
+    AOS.init({ duration: 1000, once: false });
+
+    // GSAP Comparison Animation
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#comparison-section",
+            start: "top 70%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    tl.to(".retail-content", { opacity: 1, y: 0, duration: 0.8 })
+      .to("#red-line", { strokeDashoffset: 0, duration: 1.2, ease: "power2.out" }, "-=0.4")
+      .to("#retail-winrate", { opacity: 1, duration: 0.5 }, "-=0.5")
+      .to(".inst-content", { opacity: 1, y: 0, duration: 0.8 }, "+=0.2")
+      .to("#green-line", { strokeDashoffset: 0, duration: 1.2, ease: "power2.out" }, "-=0.4")
+      .to("#inst-winrate", { opacity: 1, duration: 0.5 }, "-=0.5");
+
+    // Cursor Follower Logic
+    const dot = document.getElementById('follower-dot');
+    let mouseX = 0, mouseY = 0;
+    let dotX = 0, dotY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateDot() {
+        dotX += (mouseX - dotX) * 0.12; // Trailing speed
+        dotY += (mouseY - dotY) * 0.12;
+
+        dot.style.left = `${dotX}px`;
+        dot.style.top = `${dotY}px`;
+
+        const dist = Math.sqrt(Math.pow(mouseX - dotX, 2) + Math.pow(mouseY - dotY, 2));
+        
+        // Agar distance 3px se zyada hai toh Green (Chasing), varna Red
+        if (dist > 3) {
+            dot.classList.add('chasing');
+        } else {
+            dot.classList.remove('chasing');
+        }
+        requestAnimationFrame(animateDot);
+    }
+    animateDot();
+</script>
