@@ -1,3 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wealth Master Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Sabse important fix: Horizontal scroll rokne ke liye */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        body {
+            padding-top: 130px; /* Navbar + Ticker height */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            width: 100%;
+            max-width: 1300px; 
+            margin: 0 auto; 
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            height: 60px;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #ff3131;
+        }
+
+        .join-btn {
+            background: linear-gradient(to bottom, #444, #000);
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            white-space: nowrap;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* Ticker Container Fix */
+        .ticker-container {
+            width: 100%;
+            border-top: 1px solid #eee;
+            background: #fff;
+            overflow: hidden; /* TradingView overflow fix */
+        }
+
+        /* --- Responsive Styles --- */
+        @media screen and (max-width: 1024px) {
+            body { padding-top: 120px; }
+
+            .nav-links {
+                display: none; /* Mobile pe hide */
+                flex-direction: column;
+                position: absolute;
+                top: 80px; 
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                text-align: center;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 12px 0;
+                width: 100%;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="https://wealthmasteracademy.in/">
+                <img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Logo">
+            </a>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="https://wealthmasteracademy.in/">Home</a></li>
+            <li><a href="https://wealthmasteracademy.in/courses">Courses</a></li>
+            <li><a href="https://wealthmasteracademy.in/About-US/">About Us</a></li>
+            <li><a href="https://wealthmasteracademy.in/gallery/">Gallery</a></li>
+            <li><a href="https://wealthmasteracademy.in/contact-us/">Contact Us</a></li>
+            <li><a href="https://wealthmasteracademy.in/contact-us/" class="join-btn">Join Us!</a></li>
+        </ul>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="ticker-container">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                    { "proName": "BSE:RELIANCE", "description": "RELIANCE" },
+                    { "proName": "BSE:HDFCBANK", "description": "HDFC BANK" },
+                    { "proName": "BSE:TATASTEEL", "description": "TATA STEEL" },
+                    { "proName": "BSE:SBIN", "description": "SBI" },
+                    { "proName": "BSE:TCS", "description": "TCS" },
+                    { "proName": "BSE:INFY", "description": "INFOSYS" },
+                    { "proName": "BSE:KOTAKBANK", "description": "KOTAK BANK" }
+                ],
+                "showSymbolLogo": true,
+                "colorTheme": "light",
+                "isTransparent": false,
+                "displayMode": "compact",
+                "locale": "in"
+            }
+            </script>
+        </div>
+    </div>
+</header>
+
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('active');
+        
+        // Optional: Menu toggle animation
+        const spans = document.querySelectorAll('.menu-toggle span');
+        if(nav.classList.contains('active')) {
+            spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+            spans[1].style.opacity = "0";
+            spans[2].style.transform = "rotate(-45deg) translate(6px, -7px)";
+        } else {
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
+        }
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const nav = document.getElementById('navLinks');
+        const toggle = document.querySelector('.menu-toggle');
+        if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+            nav.classList.remove('active');
+            const spans = document.querySelectorAll('.menu-toggle span');
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
+        }
+    });
+</script>
+
+</body>
+</html>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
 
