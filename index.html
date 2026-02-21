@@ -383,10 +383,14 @@
     });
 </script>
 
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WealthMaster | The Art of Trading</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --glow-red: #ff3131; /* Intense Glowing Red */
@@ -429,6 +433,8 @@
             padding: 20px;
             border-bottom: 2px solid var(--glow-red);
             box-shadow: 0 0 20px var(--glow-shadow);
+            position: relative;
+            z-index: 1;
         }
 
         .category { 
@@ -443,15 +449,17 @@
 
         h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 30px; }
 
-        /* --- Blog Content Card --- */
+        /* --- Blog Content Card FIX: Removed negative margin-top to prevent overlapping header --- */
         .blog-body { 
             max-width: 800px; 
-            margin: -100px auto 100px; 
+            margin: 40px auto 100px; /* Changed from -100px to 40px to separate from header */
             background: var(--card-brown); 
             padding: 60px; 
             border-radius: 8px; 
             box-shadow: 0 40px 100px rgba(0,0,0,0.8);
             border: 1px solid rgba(255, 49, 49, 0.2);
+            position: relative;
+            z-index: 2;
         }
         
         .intro-quote { 
@@ -542,12 +550,72 @@
         }
 
         @media (max-width: 768px) {
-            .blog-body { padding: 35px; margin-top: 0; }
+            .blog-body { padding: 35px; margin-top: 20px; }
             .flex-container { grid-template-columns: 1fr; }
         }
     </style>
+</head>
+<body onload="document.body.classList.add('loaded')">
+
+    <header class="blog-header">
+        <div class="header-content animate" style="animation-delay: 0.2s; opacity: 1;">
+            <div class="category">WealthMaster Academy • Pune</div>
+            <h1>Beyond the Charts:<br>The Discipline of Professional Trading</h1>
+        </div>
+    </header>
+
+    <article class="blog-body animate" style="animation-delay: 0.5s; opacity: 1;">
+        <p class="intro-quote">
+            "The stock market isn't just about 'buying low and selling high'—it's about risk management, psychology, and data-driven strategies."
+        </p>
+
+        <p>
+            The difference between an amateur and a professional isn't luck—it's preparation. At <strong>WealthMaster Academy</strong>, we are dedicated to transforming aspiring investors in Pune into confident, professional traders.
+        </p>
+
+        <h2>Hybrid Learning: Flexibility First</h2>
+        <p>
+            We believe that high-quality education should adapt to your life. Whether you are looking for the energy of a physical classroom in Pune or the comfort of your home, we provide both:
+        </p>
+        
+        <div class="flex-container">
+            <div class="feature-card">
+                <h4>Offline Presence</h4>
+                <p>Engage in face-to-face mentorship at our Pune physical classroom.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Live Online</h4>
+                <p>Experience the same quality and interaction through live flexible sessions.</p>
+            </div>
+        </div>
+
+        <h2>A 360-Degree Market Curriculum</h2>
+        <p>
+            Our academy provides a full-fledged view of the financial landscape. We master the global ecosystem together:
+        </p>
+        <ul class="market-list">
+            <li><strong>Indian Share Market:</strong> Complete mastery of NSE and BSE, from Equity to F&O.</li>
+            <li><strong>Forex Trading:</strong> Navigating global currency markets with confidence.</li>
+            <li><strong>Comprehensive Analysis:</strong> Harnessing Technical and Fundamental analysis to make informed decisions.</li>
+        </ul>
+
+        <h2>Live Market Execution</h2>
+        <p>
+            Theory can only take you so far. At WealthMaster, we emphasize practical training through live market analysis, real-world case studies, and strategy execution during volatility.
+        </p>
+
+        <div class="cta-section">
+            <h3>Ready to Claim Your Freedom?</h3>
+            <p>Don't leave your hard-earned money to chance. Experience our teaching style first with our <strong>Demo Lectures</strong> before you commit.</p>
+            <a href="#" class="btn">Book Free Demo Session</a>
+        </div>
+    </article>
+
+</body>
+</html>
 
 
+    
 
     <header class="blog-header">
         <div class="header-content animate" style="animation-delay: 0.2s; opacity: 1;">
