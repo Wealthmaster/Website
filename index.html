@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Wealth Master Academy – complete with dividers & animation</title>
+    <title>Wealth Master Academy – Fixed Mobile Menu</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* ----- RESET & BASE (mobile-first, but everything restored) ----- */
+        /* ----- RESET & BASE ----- */
         * {
             margin: 0;
             padding: 0;
@@ -22,10 +22,10 @@
             scroll-behavior: smooth;
         }
         img { max-width: 100%; height: auto; display: block; }
-        body { padding-top: 125px; } /* fixed header space */
+        body { padding-top: 125px; }
         @media (max-width: 600px) { body { padding-top: 110px; } }
 
-        /* ---------- DIVIDER STYLE (used between sections) ---------- */
+        /* ---------- DIVIDER STYLE ---------- */
         .section-divider {
             width: 100%;
             height: 2px;
@@ -44,11 +44,10 @@
             padding: 0 20px;
             font-size: 26px;
             color: #ff8c00;
-            transform: rotate(0deg);
             filter: drop-shadow(0 0 8px #ff3131);
         }
 
-        /* ---------- ANIMATION UTILITIES ---------- */
+        /* ---------- ANIMATIONS ---------- */
         @keyframes fadeUp {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -59,7 +58,7 @@
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
 
-        /* ---------- FIXED HEADER (unchanged, fully restored) ---------- */
+        /* ---------- FIXED HEADER (with fixed mobile menu) ---------- */
         header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 10000;
             background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -67,10 +66,12 @@
         .navbar {
             display: flex; justify-content: space-between; align-items: center;
             width: 100%; padding: 8px 20px; max-width: 1300px; margin: 0 auto;
+            position: relative;
         }
         .logo img { height: 55px; }
         @media (max-width: 700px) { .logo img { height: 45px; } }
         
+        /* Desktop menu */
         .nav-links {
             display: flex; list-style: none; gap: 20px; align-items: center;
         }
@@ -84,13 +85,71 @@
             color: white !important; padding: 10px 25px; border-radius: 50px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2); white-space: nowrap;
         }
+        
+        /* Mobile menu toggle - ALWAYS VISIBLE on mobile */
         .menu-toggle {
-            display: none; flex-direction: column; cursor: pointer; gap: 5px; padding: 10px;
+            display: none;  /* hidden on desktop */
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            padding: 8px;
+            z-index: 10001;
         }
-        .menu-toggle span { width: 25px; height: 3px; background: #000; border-radius: 2px; transition: 0.3s; }
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: #000;
+            border-radius: 3px;
+            transition: 0.3s;
+            display: block;
+        }
+        
         .ticker-container { width: 100%; background: #fff; overflow: hidden; }
 
-        /* ----- HERO (fully restored with original wording) ----- */
+        /* ----- MOBILE STYLES (FIXED) ----- */
+        @media screen and (max-width: 1024px) {
+            .menu-toggle {
+                display: flex !important;  /* Force show on mobile */
+            }
+            
+            .nav-links {
+                display: none !important;  /* Hidden by default on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 25px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                text-align: center;
+                z-index: 9999;
+                border-top: 1px solid #eee;
+            }
+            
+            .nav-links.active {
+                display: flex !important;  /* Show when active */
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+                width: 100%;
+            }
+            
+            .nav-links li a {
+                display: block;
+                padding: 8px 20px;
+                font-size: 16px;
+            }
+            
+            .join-btn {
+                display: inline-block;
+                max-width: 200px;
+                margin: 10px auto;
+            }
+        }
+
+        /* ----- HERO SECTION ----- */
         .hero-section {
             width: 100%; padding: 70px 20px 80px; text-align: center;
             background: radial-gradient(circle, rgba(45,15,15,1) 0%, #000 70%);
@@ -113,7 +172,7 @@
         }
         .btn:hover { transform: scale(1.05); }
 
-        /* ----- LEAD SECTION (Pune's No.1 + enquiry form) 100% content back ----- */
+        /* ----- LEAD SECTION ----- */
         .lead-gen-section { padding: 80px 20px; background: radial-gradient(circle at top left, #0a0a0a, #000); }
         .container { max-width: 1200px; margin: 0 auto; }
         .lead-flex { display: flex; gap: 50px; flex-wrap: wrap; align-items: center; }
@@ -132,24 +191,17 @@
             background: rgba(255,255,255,0.05); padding: 10px 25px; border-radius: 50px; width: fit-content;
         }
         .student-avatars { display: flex; align-items: center; }
-        /* New styles for avatar images */
         .student-avatars .avatar-img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 2px solid #000;
-            margin-left: -10px;
-            object-fit: cover;
-            background: #444; /* fallback */
+            width: 32px; height: 32px; border-radius: 50%; border: 2px solid #000;
+            margin-left: -10px; object-fit: cover; background: #444;
         }
-        .student-avatars .avatar-img:first-child {
-            margin-left: 0;
-        }
+        .student-avatars .avatar-img:first-child { margin-left: 0; }
         .course-name { font-size: 24px; color: #ff3131; margin-bottom: 10px; }
         .price-tag { font-size: 22px; font-weight: 900; }
         .old-price { text-decoration: line-through; color: #888; font-size: 18px; margin-right: 10px; }
         .new-price { color: #0f0; }
-        /* form */
+        
+        /* Form */
         .form-wrapper {
             background: #000; padding: 35px 30px; border-radius: 15px;
             border: 2px solid #ff3131; box-shadow: 0 15px 40px rgba(255,49,49,0.2);
@@ -166,7 +218,7 @@
         }
         .form-submit-btn:hover { background: #ff4d4d; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,49,49,0.4); }
 
-        /* ----- MASTERY VIDEO SECTION (full restored) ----- */
+        /* ----- MASTERY VIDEO SECTION ----- */
         .wm-mastery-video { padding: 100px 20px; background: #000; }
         .video-flex { display: flex; gap: 60px; flex-wrap: wrap; align-items: center; }
         .video-container { flex: 1 1 400px; position: relative; }
@@ -194,7 +246,7 @@
         }
         .cta-btn:hover { transform: translateY(-5px); box-shadow: 0 0 40px #ff3131; }
 
-        /* ----- DESIGNED FOR CARDS (exact 8 items, with animations) ----- */
+        /* ----- DESIGNED FOR CARDS ----- */
         .designed-for { padding: 80px 20px; background: #000; text-align: center; }
         .section-heading { font-size: clamp(28px,7vw,42px); font-weight: 700; margin-bottom: 5px; }
         .section-heading .highlight { color: #ff3131; }
@@ -227,7 +279,7 @@
         .icon-box { font-size: 32px; color: #222; min-width: 50px; text-align: center; }
         .text-box { font-size: 15px; font-weight: 700; color: #111; text-align: left; line-height: 1.2; }
 
-        /* ----- FOOTER (full content restored) ----- */
+        /* ----- FOOTER ----- */
         .footer {
             background: #000; padding: 60px 20px 30px; border-top: 2px solid #ff3131;
         }
@@ -246,7 +298,8 @@
             text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #222;
             font-size: 12px; color: #555;
         }
-        /* follower dot (optional) */
+
+        /* Follower dot */
         #follower-dot {
             position: fixed; width: 12px; height: 12px; border-radius: 50%; pointer-events: none;
             z-index: 9999; transform: translate(-50%,-50%); background: #ff3131;
@@ -257,20 +310,28 @@
 </head>
 <body>
 
-<!-- HEADER (original restored) -->
+<!-- HEADER with fixed mobile menu -->
 <header>
     <nav class="navbar">
         <div class="logo"><a href="#"><img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Wealth Master"></a></div>
+        
+        <!-- Mobile menu button (three lines) - NOW VISIBLE -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
         <ul class="nav-links" id="navLinks">
-             <li><a href="https://wealthmasteracademy.in">Home</a></li>
+            <li><a href="https://wealthmasteracademy.in">Home</a></li>
             <li><a href="https://wealthmasteracademy.in/courses/">Courses</a></li>
             <li><a href="https://wealthmasteracademy.in/about-us/">About Us</a></li>
             <li><a href="https://wealthmasteracademy.in/gallery/">Gallery</a></li>
             <li><a href="https://wealthmasteracademy.in/contact-us/">Contact Us</a></li>
-            <li><a href="https://wealthmasteracademy.in/contact-us/" class="join-btn">Join Us!</a>
+            <li><a href="https://wealthmasteracademy.in/contact-us/" class="join-btn">Join Us!</a></li>
         </ul>
-        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </nav>
+    
     <div class="ticker-container">
         <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
@@ -285,7 +346,7 @@
     </div>
 </header>
 
-<!-- HERO (fully restored) -->
+<!-- HERO SECTION -->
 <section class="hero-section">
     <h1>Wealth Master</h1>
     <span class="highlight">ACADEMY</span>
@@ -296,11 +357,11 @@
     </div>
 </section>
 
-<!-- DIVIDER 1 (with icon) -->
+<!-- DIVIDER 1 -->
 <div class="section-divider"></div>
 <div class="divider-icon"><i class="fa-solid fa-chart-line"></i></div>
 
-<!-- LEAD GENERATION (Pune's No.1 + enquiry form) with requested profile images -->
+<!-- LEAD GENERATION SECTION -->
 <section class="lead-gen-section">
     <div class="container lead-flex">
         <div class="lead-content animate-on-view">
@@ -317,7 +378,6 @@
                 <div class="rating-info">
                     <strong>Rating 4.9 / 5 By</strong>
                     <div class="student-avatars">
-                        <!-- Added the three profile images as requested -->
                         <img src="https://growft.odoo.com/web/image/932-6eb956b8/rohan%20profile%20foto.svg" alt="Rohan" class="avatar-img">
                         <img src="https://growft.odoo.com/web/image/933-eb7e6191/rohit.svg" alt="Rohit" class="avatar-img">
                         <img src="https://growft.odoo.com/web/image/1647-5594f84a/student.webp" alt="Student" class="avatar-img">
@@ -355,7 +415,7 @@
 <div class="section-divider"></div>
 <div class="divider-icon"><i class="fa-solid fa-video"></i></div>
 
-<!-- MASTERY VIDEO (full content) -->
+<!-- MASTERY VIDEO SECTION -->
 <section class="wm-mastery-video">
     <div class="container video-flex">
         <div class="video-container animate-on-view">
@@ -386,7 +446,7 @@
 <div class="section-divider"></div>
 <div class="divider-icon"><i class="fa-solid fa-users"></i></div>
 
-<!-- DESIGNED FOR CARDS (8 items) -->
+<!-- DESIGNED FOR CARDS -->
 <section class="designed-for">
     <div class="container">
         <h2 class="section-heading">This Program is <span class="highlight">Designed For</span></h2>
@@ -408,7 +468,7 @@
 <div class="section-divider"></div>
 <div class="divider-icon"><i class="fa-regular fa-copyright"></i></div>
 
-<!-- FOOTER (restored with full content) -->
+<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-col">
@@ -434,59 +494,77 @@
 <div id="follower-dot"></div>
 
 <script>
-    // mobile menu toggle
+    // Mobile menu toggle function
     function toggleMenu() {
         const nav = document.getElementById('navLinks');
-        nav.classList.toggle('active');
         const spans = document.querySelectorAll('.menu-toggle span');
+        
+        nav.classList.toggle('active');
+        
+        // Animate hamburger to X
         if (nav.classList.contains('active')) {
-            spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+            spans[0].style.transform = "rotate(45deg) translate(6px, 6px)";
             spans[1].style.opacity = "0";
-            spans[2].style.transform = "rotate(-45deg) translate(6px, -7px)";
+            spans[2].style.transform = "rotate(-45deg) translate(6px, -6px)";
         } else {
             spans[0].style.transform = "none";
             spans[1].style.opacity = "1";
             spans[2].style.transform = "none";
         }
     }
-    // close menu outside click
+
+    // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         const nav = document.getElementById('navLinks');
         const toggle = document.querySelector('.menu-toggle');
+        
         if (nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)) {
             nav.classList.remove('active');
-            document.querySelectorAll('.menu-toggle span').forEach(s => { s.style.transform = "none"; s.style.opacity = "1"; });
+            
+            // Reset hamburger icon
+            const spans = document.querySelectorAll('.menu-toggle span');
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
         }
     });
 
-    // follower dot
+    // Follower dot animation
     const dot = document.getElementById('follower-dot');
     let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
-    window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+    
+    window.addEventListener('mousemove', (e) => { 
+        mouseX = e.clientX; 
+        mouseY = e.clientY; 
+    });
+    
     function animateDot() {
         dotX += (mouseX - dotX) * 0.1;
         dotY += (mouseY - dotY) * 0.1;
-        if (dot) { dot.style.left = dotX + 'px'; dot.style.top = dotY + 'px'; }
+        
+        if (dot) { 
+            dot.style.left = dotX + 'px'; 
+            dot.style.top = dotY + 'px'; 
+        }
+        
         const distance = Math.hypot(mouseX - dotX, mouseY - dotY);
         if (distance > 2) dot.classList.add('chasing');
         else dot.classList.remove('chasing');
+        
         requestAnimationFrame(animateDot);
     }
     animateDot();
 
-    // simple scroll animation (if any element with animate-on-view enters viewport)
+    // Scroll animation observer
     const animatedElements = document.querySelectorAll('.animate-on-view');
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.opacity = 1; });
+        entries.forEach(entry => { 
+            if(entry.isIntersecting) entry.target.style.opacity = 1; 
+        });
     }, { threshold:0.2 });
+    
     animatedElements.forEach(el => observer.observe(el));
 </script>
-<!-- ensure nav-links style for mobile (since we had display:flex in media, but default hidden) -->
-<style>
-    @media (max-width: 1024px) {
-        .nav-links { display: none; }
-        .nav-links.active { display: flex; }
-    }
-</style>
+
 </body>
 </html>
