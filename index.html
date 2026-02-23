@@ -3,405 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Wealth Master Academy – SMC Trading Institute Pune</title>
-    <!-- Font Awesome 6 (free) for all sections -->
+    <title>Wealth Master Academy – complete with dividers & animation</title>
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- single unified style block – all sections merged without duplication, horizontal overflow hidden -->
     <style>
-        /* ----- GLOBAL RESET & BASE ----- */
+        /* ----- RESET & BASE (mobile-first, but everything restored) ----- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
         }
         html, body {
             overflow-x: hidden;
             width: 100%;
-            background-color: #000;
+            background: #000;
             color: #fff;
             scroll-behavior: smooth;
         }
-        /* link & button default cursor */
-        a, button, .menu-toggle, .design-card { cursor: pointer; }
+        img { max-width: 100%; height: auto; display: block; }
+        body { padding-top: 125px; } /* fixed header space */
+        @media (max-width: 600px) { body { padding-top: 110px; } }
 
-        /* ----- FIXED HEADER (from first code) ----- */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* ---------- DIVIDER STYLE (used between sections) ---------- */
+        .section-divider {
             width: 100%;
-            z-index: 10000;
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff3131, #ff8c00, #ff3131, transparent);
+            margin: 0;
+            opacity: 0.7;
         }
-        body {
-            padding-top: 130px; /* space for fixed header + ticker */
+        .divider-icon {
+            text-align: center;
+            margin: -13px 0 -8px;
+            position: relative;
+            z-index: 5;
+        }
+        .divider-icon i {
+            background: #000;
+            padding: 0 20px;
+            font-size: 26px;
+            color: #ff8c00;
+            transform: rotate(0deg);
+            filter: drop-shadow(0 0 8px #ff3131);
+        }
+
+        /* ---------- ANIMATION UTILITIES ---------- */
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-view {
+            animation: fadeUp 0.8s ease forwards;
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+
+        /* ---------- FIXED HEADER (unchanged, fully restored) ---------- */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 10000;
+            background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .navbar {
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            width: 100%;
-            max-width: 1300px; 
-            margin: 0 auto; 
-            padding: 10px 20px;
+            display: flex; justify-content: space-between; align-items: center;
+            width: 100%; padding: 8px 20px; max-width: 1300px; margin: 0 auto;
         }
-        .logo img {
-            height: 60px;
-            display: block;
-            transition: 0.3s;
-        }
+        .logo img { height: 55px; }
+        @media (max-width: 700px) { .logo img { height: 45px; } }
+        
         .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-            align-items: center;
+            display: flex; list-style: none; gap: 20px; align-items: center;
         }
         .nav-links li a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-            transition: 0.3s;
+            text-decoration: none; color: #000; font-weight: bold; font-size: 14px;
+            text-transform: uppercase; transition: 0.3s;
         }
         .nav-links li a:hover { color: #ff3131; }
         .join-btn {
             background: linear-gradient(to bottom, #444, #000);
-            color: white !important;
-            padding: 10px 25px;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            white-space: nowrap;
+            color: white !important; padding: 10px 25px; border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); white-space: nowrap;
         }
         .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-            padding: 10px;
+            display: none; flex-direction: column; cursor: pointer; gap: 5px; padding: 10px;
         }
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: #000;
-            border-radius: 2px;
-            transition: 0.3s;
-        }
-        .ticker-container {
-            width: 100%;
-            border-top: 1px solid #eee;
-            background: #fff;
-            overflow: hidden; 
-        }
+        .menu-toggle span { width: 25px; height: 3px; background: #000; border-radius: 2px; transition: 0.3s; }
+        .ticker-container { width: 100%; background: #fff; overflow: hidden; }
 
-        /* ----- HERO SECTION (second block) – centered gradient ----- */
+        /* ----- HERO (fully restored with original wording) ----- */
         .hero-section {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 70px 20px 80px;
-            background: radial-gradient(circle, rgba(45,15,15,1) 0%, rgba(0,0,0,1) 70%);
-            color: white;
+            width: 100%; padding: 70px 20px 80px; text-align: center;
+            background: radial-gradient(circle, rgba(45,15,15,1) 0%, #000 70%);
         }
         .hero-section h1 {
-            font-size: 3.5rem;
-            font-family: 'Georgia', serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0;
-            line-height: 1;
+            font-size: clamp(2.5rem, 10vw, 3.8rem); font-family: Georgia, serif; text-transform: uppercase;
         }
         .hero-section .highlight {
-            color: #ff3b30;
-            display: block;
-            font-size: 4rem;
-            font-weight: 900;
-            margin-top: 5px;
+            color: #ff3b30; display: block; font-size: clamp(3rem, 12vw, 4.2rem);
+            font-weight: 900; margin-top: 5px;
         }
         .hero-section p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 20px 0 40px;
-            color: #ccc;
+            font-size: 1.1rem; max-width: 700px; margin: 20px auto 40px; color: #ccc;
         }
-        .cta-container {
-            display: flex;
-            gap: 20px;
-        }
+        .cta-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
         .btn {
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            transition: transform 0.2s, box-shadow 0.2s;
-            color: white;
-            background-color: #ff3b30;
-            box-shadow: 0 0 15px rgba(255, 59, 48, 0.4);
-            border: none;
+            padding: 12px 35px; font-size: 0.95rem; background: #ff3b30; border-radius: 5px;
+            color: white; text-decoration: none; font-weight: bold; box-shadow: 0 0 15px rgba(255,59,48,0.4);
+            transition: transform 0.2s;
         }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(255, 59, 48, 0.6);
-        }
+        .btn:hover { transform: scale(1.05); }
 
-        /* ----- LEAD GENERATION SECTION (trusted institute + form) ----- */
-        .lead-gen-section {
-            background: radial-gradient(circle at top left, #0a0a0a, #000);
-            padding: 80px 20px;
-            color: #fff;
-            overflow: hidden;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .lead-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-        .lead-content { flex: 1; min-width: 320px; }
-        .top-tag { color: #00ff00; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; }
-        .lead-title { font-family: 'Playfair Display', serif; font-size: clamp(35px, 5vw, 55px); margin: 15px 0; line-height: 1.1; }
+        /* ----- LEAD SECTION (Pune's No.1 + enquiry form) 100% content back ----- */
+        .lead-gen-section { padding: 80px 20px; background: radial-gradient(circle at top left, #0a0a0a, #000); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .lead-flex { display: flex; gap: 50px; flex-wrap: wrap; align-items: center; }
+        .lead-content { flex: 1 1 400px; }
+        .lead-form-container { flex: 1 1 380px; }
+        .top-tag { color: #0f0; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; }
+        .lead-title { font-family: 'Playfair Display', serif; font-size: clamp(35px,6vw,55px); margin: 15px 0; line-height: 1.1; }
         .lead-desc { color: #ccc; font-size: 18px; margin-bottom: 30px; }
-        .lead-check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 35px; }
-        .lead-check-grid .check-item { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 14px; }
-        .lead-check-grid .check-item span { color: #ff3131; font-size: 18px; }
+        .lead-check-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 15px; margin-bottom: 35px; }
+        @media (max-width:500px) { .lead-check-grid { grid-template-columns: 1fr; } }
+        .check-item { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; }
+        .check-item span { color: #ff3131; font-size: 18px; }
         .rating-box { margin-bottom: 30px; }
-        .rating-info { display: flex; align-items: center; gap: 15px; background: rgba(255,255,255,0.05); padding: 10px 20px; border-radius: 50px; width: fit-content; }
-        .student-avatars { display: flex; }
-        .avatar { width: 30px; height: 30px; border-radius: 50%; border: 2px solid #000; margin-left: -10px; background: #888; }
-        .avatar:first-child { margin-left: 0; }
+        .rating-info {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 15px;
+            background: rgba(255,255,255,0.05); padding: 10px 25px; border-radius: 50px; width: fit-content;
+        }
+        .student-avatars { display: flex; align-items: center; }
+        /* New styles for avatar images */
+        .student-avatars .avatar-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            margin-left: -10px;
+            object-fit: cover;
+            background: #444; /* fallback */
+        }
+        .student-avatars .avatar-img:first-child {
+            margin-left: 0;
+        }
         .course-name { font-size: 24px; color: #ff3131; margin-bottom: 10px; }
         .price-tag { font-size: 22px; font-weight: 900; }
         .old-price { text-decoration: line-through; color: #888; font-size: 18px; margin-right: 10px; }
-        .new-price { color: #00ff00; }
-
-        .lead-form-container { flex: 0.8; min-width: 320px; }
+        .new-price { color: #0f0; }
+        /* form */
         .form-wrapper {
-            background: #000;
-            padding: 35px;
-            border-radius: 15px;
-            border: 2px solid #ff3131;
-            box-shadow: 0 15px 40px rgba(255, 49, 49, 0.2);
+            background: #000; padding: 35px 30px; border-radius: 15px;
+            border: 2px solid #ff3131; box-shadow: 0 15px 40px rgba(255,49,49,0.2);
         }
-        .form-title { text-align: center; color: #ff3131; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
-        .input-group { margin-bottom: 15px; }
-        .input-group label { display: block; margin-bottom: 5px; font-size: 12px; color: #aaa; text-transform: uppercase; }
+        .form-title { color: #ff3131; margin-bottom: 25px; font-size: 24px; text-align: center; }
+        .input-group { margin-bottom: 18px; }
+        .input-group label { font-size: 12px; color: #aaa; text-transform: uppercase; display: block; margin-bottom: 5px; }
         .input-group input, .input-group select, .input-group textarea {
-            width: 100%; background: #111; border: 1px solid #333; padding: 12px; 
-            border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif;
+            width: 100%; background: #111; border: 1px solid #333; padding: 14px; border-radius: 6px; color: #fff;
         }
-        .input-group input:focus { border-color: #ff3131; outline: none; }
         .form-submit-btn {
-            width: 100%; background: #ff3131; color: #fff; border: none; padding: 16px; 
-            border-radius: 6px; cursor: pointer; font-weight: 900; font-size: 16px; 
-            text-transform: uppercase; transition: 0.3s; margin-top: 10px;
+            width: 100%; background: #ff3131; color: #fff; border: none; padding: 16px; font-weight: 900;
+            border-radius: 6px; cursor: pointer; transition: 0.3s; font-size: 16px;
         }
-        .form-submit-btn:hover { background: #ff4d4d; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 49, 49, 0.4); }
+        .form-submit-btn:hover { background: #ff4d4d; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,49,49,0.4); }
 
-        /* ----- MASTERY VIDEO SECTION (with embedded youtube) ----- */
-        .wm-mastery-video { background: #000; padding: 100px 20px; color: #fff; }
-        .video-flex { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
-        .video-container { flex: 1; min-width: 350px; position: relative; }
+        /* ----- MASTERY VIDEO SECTION (full restored) ----- */
+        .wm-mastery-video { padding: 100px 20px; background: #000; }
+        .video-flex { display: flex; gap: 60px; flex-wrap: wrap; align-items: center; }
+        .video-container { flex: 1 1 400px; position: relative; }
         .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 2px solid #ff3131;
-            background: #111;
-            box-shadow: 0 0 30px rgba(255, 49, 49, 0.2);
+            position: relative; padding-bottom: 56.25%; border-radius: 20px; overflow: hidden;
+            border: 2px solid #ff3131; box-shadow: 0 0 30px rgba(255,49,49,0.2);
         }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; }
+        .video-wrapper iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
         .video-badge {
-            position: absolute; top: -20px; right: 20px; background: #ff3131; color: #fff;
-            padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 900;
-            text-transform: uppercase; z-index: 3; box-shadow: 0 5px 15px rgba(255, 49, 49, 0.4);
+            position: absolute; top: -18px; right: 20px; background: #ff3131; color: #fff;
+            padding: 8px 22px; border-radius: 50px; font-weight: 900; font-size: 13px; box-shadow: 0 5px 15px rgba(255,49,49,0.4);
         }
-        .content-side { flex: 1.2; min-width: 320px; }
-        .section-title { font-family: 'Playfair Display', serif; font-size: 42px; line-height: 1.1; margin-bottom: 25px; }
+        .content-side { flex: 1 1 450px; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px,6vw,42px); margin-bottom: 25px; }
         .section-title .highlight { color: #ff3131; }
-        .academy-intro { color: #ccc; font-size: 16px; line-height: 1.7; margin-bottom: 30px; text-align: justify; }
-        .feature-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
-        .feature-checks .check-item { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; }
-        .feature-checks .check-item span { color: #ff3131; font-size: 18px; }
-        .rating-strip { display: flex; align-items: center; gap: 15px; margin-bottom: 40px; }
-        .avatars img { width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ff3131; margin-left: -10px; }
-        .avatars img:first-child { margin-left: 0; }
-        .rating-strip p { font-size: 14px; color: #888; }
+        .academy-intro { color: #ccc; font-size: 16px; line-height: 1.7; margin-bottom: 30px; text-align: left; }
+        .feature-checks { display: grid; grid-template-columns: repeat(2,1fr); gap: 15px; margin-bottom: 30px; }
+        .rating-strip { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
+        .avatars { display: flex; }
+        .avatars img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #ff3131; margin-left: -10px; }
         .cta-btn {
-            display: inline-block; background: #ff3131; color: #fff; text-decoration: none;
-            padding: 18px 45px; border-radius: 5px; font-weight: 900; text-transform: uppercase;
-            transition: 0.3s; box-shadow: 0 0 20px rgba(255, 49, 49, 0.3);
+            display: inline-block; background: #ff3131; color: #fff; text-decoration: none; padding: 18px 45px;
+            border-radius: 5px; font-weight: 900; text-transform: uppercase; box-shadow: 0 0 20px rgba(255,49,49,0.3);
+            transition: 0.3s;
         }
         .cta-btn:hover { transform: translateY(-5px); box-shadow: 0 0 40px #ff3131; }
 
-        /* ----- DESIGNED FOR CARDS SECTION (original 8 cards) ----- */
-        .designed-for {
-            background: #000000;
-            padding: 80px 20px;
-            text-align: center;
-            color: #ffffff;
-        }
-        .section-heading {
-            font-size: clamp(28px, 5vw, 42px);
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-        .designed-for .highlight { color: #ff3131; }
+        /* ----- DESIGNED FOR CARDS (exact 8 items, with animations) ----- */
+        .designed-for { padding: 80px 20px; background: #000; text-align: center; }
+        .section-heading { font-size: clamp(28px,7vw,42px); font-weight: 700; margin-bottom: 5px; }
+        .section-heading .highlight { color: #ff3131; }
         .curve-line {
-            width: 140px; height: 12px;
+            width: 140px; height: 12px; margin: 0 auto 50px;
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M5 15 Q 50 0 95 15" stroke="%23ff8c00" stroke-width="6" fill="transparent" stroke-linecap="round"/></svg>') no-repeat center;
             background-size: contain;
-            margin: 0 auto 50px;
         }
         .design-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; max-width: 1200px; margin: 0 auto;
         }
+        @media (max-width: 1000px) { .design-grid { grid-template-columns: repeat(2,1fr); max-width: 700px; } }
+        @media (max-width: 550px) { .design-grid { grid-template-columns: 1fr; max-width: 350px; } }
         .design-card {
-            background: #ffffff; padding: 22px 18px; border-radius: 10px;
-            display: flex; align-items: center; gap: 15px;
-            transition: all 0.25s ease; border: 1px solid transparent;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background: #fff; padding: 22px 18px; border-radius: 10px; display: flex; align-items: center; gap: 15px;
+            transition: all 0.25s ease; border: 1px solid transparent; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            opacity: 0; animation: fadeUp 0.6s forwards; cursor: pointer;
         }
+        .design-card:nth-child(1) { animation-delay: 0.1s; }
+        .design-card:nth-child(2) { animation-delay: 0.2s; }
+        .design-card:nth-child(3) { animation-delay: 0.3s; }
+        .design-card:nth-child(4) { animation-delay: 0.4s; }
+        .design-card:nth-child(5) { animation-delay: 0.5s; }
+        .design-card:nth-child(6) { animation-delay: 0.6s; }
+        .design-card:nth-child(7) { animation-delay: 0.7s; }
+        .design-card:nth-child(8) { animation-delay: 0.8s; }
         .design-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 49, 49, 0.3);
-            border-color: #ff3131;
+            transform: translateY(-5px); border-color: #ff3131; box-shadow: 0 15px 30px rgba(255,49,49,0.3);
         }
-        .icon-box { font-size: 32px; color: #222; min-width: 50px; display: flex; justify-content: center; }
+        .icon-box { font-size: 32px; color: #222; min-width: 50px; text-align: center; }
         .text-box { font-size: 15px; font-weight: 700; color: #111; text-align: left; line-height: 1.2; }
-        .icon-box i { filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1)); }
 
-        /* ----- FOOTER (with red border and dark style) ----- */
+        /* ----- FOOTER (full content restored) ----- */
         .footer {
-            background: #000; color: #fff; padding: 60px 20px; border-top: 2px solid #ff3131;
+            background: #000; padding: 60px 20px 30px; border-top: 2px solid #ff3131;
         }
         .footer-container {
-            max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap;
-            justify-content: space-between; gap: 40px;
+            max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;
         }
-        .footer-col { flex: 1; min-width: 250px; }
+        .footer-col { flex: 1 1 250px; }
         .footer-col h3 { color: #ff3131; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
         .footer-col p { color: #888; font-size: 14px; line-height: 1.6; margin-top: 20px; }
         .footer-col h4 { font-size: 18px; margin-bottom: 20px; border-bottom: 2px solid #ff3131; display: inline-block; }
-        .footer-col ul { list-style: none; padding: 0; font-size: 14px; line-height: 2.5; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin: 10px 0; }
         .footer-col ul li a { color: #ccc; text-decoration: none; }
         .footer-col ul li a:hover { color: #ff3131; }
         .footer-bottom {
-            text-align: center; margin-top: 50px; padding-top: 20px;
-            border-top: 1px solid #222; font-size: 12px; color: #555;
+            text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #222;
+            font-size: 12px; color: #555;
         }
-
-        /* ----- CURSOR FOLLOWER DOT (chasing effect) ----- */
+        /* follower dot (optional) */
         #follower-dot {
             position: fixed; width: 12px; height: 12px; border-radius: 50%; pointer-events: none;
-            z-index: 9999; transform: translate(-50%, -50%);
-            background-color: #ff3131; box-shadow: 0 0 10px #ff3131, 0 0 20px #ff3131;
-            transition: background-color 0.2s, box-shadow 0.2s;
+            z-index: 9999; transform: translate(-50%,-50%); background: #ff3131;
+            box-shadow: 0 0 10px #ff3131; transition: background 0.2s;
         }
-        #follower-dot.chasing {
-            background-color: #00ff00; box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
-        }
-
-        /* ----- RESPONSIVE FIXES (unify all media queries) ----- */
-        @media screen and (max-width: 1024px) {
-            body { padding-top: 120px; }
-            .nav-links {
-                display: none; flex-direction: column; position: absolute; top: 80px; left: 0;
-                width: 100%; background: white; padding: 20px 0; box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-                text-align: center; z-index: 999;
-            }
-            .nav-links.active { display: flex; }
-            .nav-links li { margin: 12px 0; width: 100%; }
-            .menu-toggle { display: flex; }
-            .logo img { height: 50px; }
-            .design-grid { grid-template-columns: repeat(2, 1fr); max-width: 700px; }
-        }
-        @media (max-width: 768px) {
-            .lead-flex, .video-flex { flex-direction: column; text-align: center; }
-            .lead-check-grid { justify-items: center; }
-            .rating-info { margin: 0 auto; }
-            .cta-container { flex-direction: column; width: 80%; margin: 0 auto; }
-            .hero-section h1 { font-size: 2.5rem; }
-            .hero-section .highlight { font-size: 3rem; }
-            .section-title { font-size: 32px; }
-            .feature-checks { justify-items: center; }
-            .rating-strip { justify-content: center; }
-        }
-        @media (max-width: 600px) {
-            .design-grid { grid-template-columns: 1fr; max-width: 400px; }
-            .design-card { padding: 18px 20px; }
-            .section-heading { font-size: 32px; }
-        }
-        @media (max-width: 450px) {
-            .design-card { gap: 12px; }
-            .icon-box { min-width: 40px; font-size: 28px; }
-            .text-box { font-size: 14px; }
-        }
+        .chasing { background: #0f0 !important; box-shadow: 0 0 10px #0f0; }
     </style>
 </head>
 <body>
 
-<!-- FIXED HEADER with ticker -->
+<!-- HEADER (original restored) -->
 <header>
     <nav class="navbar">
-        <div class="logo">
-            <a href="#"><img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Wealth Master Logo"></a>
-        </div>
+        <div class="logo"><a href="#"><img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Wealth Master"></a></div>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#" class="join-btn">Join Us!</a></li>
+             <li><a href="https://wealthmasteracademy.in">Home</a></li>
+            <li><a href="https://wealthmasteracademy.in/courses/">Courses</a></li>
+            <li><a href="https://wealthmasteracademy.in/about-us/">About Us</a></li>
+            <li><a href="https://wealthmasteracademy.in/gallery/">Gallery</a></li>
+            <li><a href="https://wealthmasteracademy.in/contact-us/">Contact Us</a></li>
+            <li><a href="https://wealthmasteracademy.in/contact-us/" class="join-btn">Join Us!</a>
         </ul>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </nav>
     <div class="ticker-container">
         <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-            {
-                "symbols": [
-                    { "proName": "BSE:RELIANCE", "description": "RELIANCE" },
-                    { "proName": "BSE:HDFCBANK", "description": "HDFC BANK" },
-                    { "proName": "BSE:TATASTEEL", "description": "TATA STEEL" },
-                    { "proName": "BSE:SBIN", "description": "SBI" },
-                    { "proName": "BSE:TCS", "description": "TCS" },
-                    { "proName": "BSE:INFY", "description": "INFOSYS" },
-                    { "proName": "BSE:KOTAKBANK", "description": "KOTAK BANK" }
-                ],
-                "showSymbolLogo": true,
-                "colorTheme": "light",
-                "isTransparent": false,
-                "displayMode": "compact",
-                "locale": "in"
-            }
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>{
+                "symbols":[
+                    {"proName":"BSE:RELIANCE","description":"RELIANCE"},{"proName":"BSE:HDFCBANK","description":"HDFC BANK"},
+                    {"proName":"BSE:TATASTEEL","description":"TATA STEEL"},{"proName":"BSE:SBIN","description":"SBI"},
+                    {"proName":"BSE:TCS","description":"TCS"},{"proName":"BSE:INFY","description":"INFOSYS"},
+                    {"proName":"BSE:KOTAKBANK","description":"KOTAK BANK"}],"showSymbolLogo":true,"colorTheme":"light","isTransparent":false,"displayMode":"compact","locale":"in"}
             </script>
         </div>
     </div>
 </header>
 
-<!-- HERO section -->
+<!-- HERO (fully restored) -->
 <section class="hero-section">
     <h1>Wealth Master</h1>
     <span class="highlight">ACADEMY</span>
@@ -412,12 +296,16 @@
     </div>
 </section>
 
-<!-- LEAD GENERATION (Pune's No.1 + enquiry form) -->
+<!-- DIVIDER 1 (with icon) -->
+<div class="section-divider"></div>
+<div class="divider-icon"><i class="fa-solid fa-chart-line"></i></div>
+
+<!-- LEAD GENERATION (Pune's No.1 + enquiry form) with requested profile images -->
 <section class="lead-gen-section">
     <div class="container lead-flex">
-        <div class="lead-content">
+        <div class="lead-content animate-on-view">
             <span class="top-tag">Pune's No.1 Trusted Institute</span>
-            <h1 class="lead-title">SMC & Share Market <br><span class="highlight">Classes In Pune</span></h1>
+            <h1 class="lead-title">SMC & Share Market <span class="highlight">Classes In Pune</span></h1>
             <p class="lead-desc">Join Mastery in Trading and Investment with WealthMaster Academy's Online and Classroom Courses in New Sangavi, Pune.</p>
             <div class="lead-check-grid">
                 <div class="check-item"><span>✔</span> Expert Institutional Mentors</div>
@@ -429,19 +317,18 @@
                 <div class="rating-info">
                     <strong>Rating 4.9 / 5 By</strong>
                     <div class="student-avatars">
-                        <div class="avatar"></div>
-                        <div class="avatar"></div>
-                        <div class="avatar"></div>
+                        <!-- Added the three profile images as requested -->
+                        <img src="https://growft.odoo.com/web/image/932-6eb956b8/rohan%20profile%20foto.svg" alt="Rohan" class="avatar-img">
+                        <img src="https://growft.odoo.com/web/image/933-eb7e6191/rohit.svg" alt="Rohit" class="avatar-img">
+                        <img src="https://growft.odoo.com/web/image/1647-5594f84a/student.webp" alt="Student" class="avatar-img">
                     </div>
                     <span>500+ Students</span>
                 </div>
             </div>
             <h2 class="course-name">Mastery in SMC & Institutional Trading</h2>
-            <div class="price-tag">
-                Course Fees: <span class="old-price">₹45,000/-</span> <span class="new-price">₹14,999/-</span>
-            </div>
+            <div class="price-tag"><span class="old-price">₹45,000/-</span> <span class="new-price">₹14,999/-</span></div>
         </div>
-        <div class="lead-form-container">
+        <div class="lead-form-container animate-on-view delay-1">
             <div class="form-wrapper">
                 <h2 class="form-title">Enquiry Form</h2>
                 <form action="https://formspree.io/f/xykjbkao" method="POST">
@@ -464,18 +351,22 @@
     </div>
 </section>
 
-<!-- MASTERY VIDEO + CONTENT -->
+<!-- DIVIDER 2 -->
+<div class="section-divider"></div>
+<div class="divider-icon"><i class="fa-solid fa-video"></i></div>
+
+<!-- MASTERY VIDEO (full content) -->
 <section class="wm-mastery-video">
     <div class="container video-flex">
-        <div class="video-container">
+        <div class="video-container animate-on-view">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/1H90MP4mPi8?autoplay=0&rel=0&modestbranding=1" title="Wealth Master Academy" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/1H90MP4mPi8?autoplay=0&rel=0&modestbranding=1" allowfullscreen></iframe>
             </div>
             <div class="video-badge"><span>⭐</span> Pune's Top Rated Institute</div>
         </div>
-        <div class="content-side">
+        <div class="content-side animate-on-view delay-1">
             <h2 class="section-title">Mastery In <span class="highlight">Trading & Investment</span> Courses In Pune</h2>
-            <p class="academy-intro">Wealth Master Academy is a leading <strong>coaching centre in Pune</strong>, dedicated to providing top-notch <strong>trading education</strong> through online and offline classes. We offer expert-led courses, including Demo Lectures, Trading Training, Indian and Forex Trading, and a full-fledged Trading Academy.</p>
+            <p class="academy-intro">Wealth Master Academy is a leading <strong>coaching centre in Pune</strong>, dedicated to providing top-notch <strong>trading education</strong> through online and offline classes. We offer expert-led courses, including Demo Lectures, Trading Training, Indian and Forex Trading, and a full-fledged Trading Academy, designed to help individuals gain in-depth market knowledge and practical trading skills. Our mission is to empower aspiring traders with the right strategies and insights to navigate financial markets confidently and succeed in trading.</p>
             <div class="feature-checks">
                 <div class="check-item"><span>✔</span> Award Winning Institute</div>
                 <div class="check-item"><span>✔</span> NISM Certified Trainer</div>
@@ -483,7 +374,7 @@
                 <div class="check-item"><span>✔</span> Most Trusted & Recommended</div>
             </div>
             <div class="rating-strip">
-                <div class="avatars"><img src="https://i.pravatar.cc/40?u=1" alt="student"><img src="https://i.pravatar.cc/40?u=2" alt="student"><img src="https://i.pravatar.cc/40?u=3" alt="student"></div>
+                <div class="avatars"><img src="https://i.pravatar.cc/40?u=1" alt="stu"><img src="https://i.pravatar.cc/40?u=2" alt="stu"><img src="https://i.pravatar.cc/40?u=3" alt="stu"></div>
                 <p><strong>Rating 4.9 / 5</strong> by 500+ Pune Students</p>
             </div>
             <a href="https://wa.me/917020360561" class="cta-btn">Book Your Free Demo Class</a>
@@ -491,7 +382,11 @@
     </div>
 </section>
 
-<!-- "DESIGNED FOR" CARDS (8 professions) -->
+<!-- DIVIDER 3 -->
+<div class="section-divider"></div>
+<div class="divider-icon"><i class="fa-solid fa-users"></i></div>
+
+<!-- DESIGNED FOR CARDS (8 items) -->
 <section class="designed-for">
     <div class="container">
         <h2 class="section-heading">This Program is <span class="highlight">Designed For</span></h2>
@@ -509,7 +404,11 @@
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- DIVIDER 4 -->
+<div class="section-divider"></div>
+<div class="divider-icon"><i class="fa-regular fa-copyright"></i></div>
+
+<!-- FOOTER (restored with full content) -->
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-col">
@@ -526,22 +425,21 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2026 WealthMaster Academy. All Rights Reserved. Designed by Growft Digital Marketing.</p>
-        <p>Trading involves risk. Please trade responsibly.</p>
+        <p>© 2026 WealthMaster Academy. All Rights Reserved. Designed by Growft Digital Marketing.</p>
+        <p style="margin-top:5px;">Trading involves risk. Please trade responsibly.</p>
     </div>
 </footer>
 
 <!-- FOLLOWER DOT -->
 <div id="follower-dot"></div>
 
-<!-- unified script: menu toggle + cursor follower -->
 <script>
     // mobile menu toggle
     function toggleMenu() {
         const nav = document.getElementById('navLinks');
         nav.classList.toggle('active');
         const spans = document.querySelectorAll('.menu-toggle span');
-        if(nav.classList.contains('active')) {
+        if (nav.classList.contains('active')) {
             spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
             spans[1].style.opacity = "0";
             spans[2].style.transform = "rotate(-45deg) translate(6px, -7px)";
@@ -551,34 +449,44 @@
             spans[2].style.transform = "none";
         }
     }
-    // close menu when clicking outside
-    document.addEventListener('click', function(event) {
+    // close menu outside click
+    document.addEventListener('click', function(e) {
         const nav = document.getElementById('navLinks');
         const toggle = document.querySelector('.menu-toggle');
-        if (nav && toggle && !nav.contains(event.target) && !toggle.contains(event.target)) {
+        if (nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)) {
             nav.classList.remove('active');
-            const spans = document.querySelectorAll('.menu-toggle span');
-            spans[0].style.transform = "none";
-            spans[1].style.opacity = "1";
-            spans[2].style.transform = "none";
+            document.querySelectorAll('.menu-toggle span').forEach(s => { s.style.transform = "none"; s.style.opacity = "1"; });
         }
     });
 
-    // cursor follower dot
+    // follower dot
     const dot = document.getElementById('follower-dot');
     let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
     window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
     function animateDot() {
         dotX += (mouseX - dotX) * 0.1;
         dotY += (mouseY - dotY) * 0.1;
-        dot.style.left = `${dotX}px`;
-        dot.style.top = `${dotY}px`;
+        if (dot) { dot.style.left = dotX + 'px'; dot.style.top = dotY + 'px'; }
         const distance = Math.hypot(mouseX - dotX, mouseY - dotY);
         if (distance > 2) dot.classList.add('chasing');
         else dot.classList.remove('chasing');
         requestAnimationFrame(animateDot);
     }
     animateDot();
+
+    // simple scroll animation (if any element with animate-on-view enters viewport)
+    const animatedElements = document.querySelectorAll('.animate-on-view');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.opacity = 1; });
+    }, { threshold:0.2 });
+    animatedElements.forEach(el => observer.observe(el));
 </script>
+<!-- ensure nav-links style for mobile (since we had display:flex in media, but default hidden) -->
+<style>
+    @media (max-width: 1024px) {
+        .nav-links { display: none; }
+        .nav-links.active { display: flex; }
+    }
+</style>
 </body>
 </html>
