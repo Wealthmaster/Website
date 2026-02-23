@@ -2,255 +2,254 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Wealth Master Academy | Pune</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WealthMaster Academy | Pune's Premium SMC Trading Institute</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --glow-red: #ff3131; 
-            --bg-brown: #1a0f0a; 
-            --card-brown: #241611; 
-            --pure-white: #ffffff;
-            --text-gray: #d1cbc8;
-            --glow-shadow: rgba(255, 49, 49, 0.4);
+        /* --- GLOBAL & THEME SETUP --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .highlight { color: #ff3131; }
+        section { padding: 100px 0; }
+        
+        /* --- HEADER --- */
+        header { position: fixed; top: 0; width: 100%; z-index: 1000; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; max-width: 1300px; margin: 0 auto; }
+        .logo img { height: 50px; }
+        .nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
+        .nav-links li a { text-decoration: none; color: #000; font-weight: 700; text-transform: uppercase; font-size: 13px; transition: 0.3s; }
+        .nav-links li a:hover { color: #ff3131; }
+        .join-btn { background: #000; color: #fff !important; padding: 10px 20px; border-radius: 5px; }
+
+        /* --- TICKER --- */
+        .ticker-wrap { background: #f4f4f4; border-top: 1px solid #ddd; }
+
+        /* --- HERO BANNER --- */
+        .hero-banner { 
+            position: relative; height: 90vh; display: flex; align-items: center; justify-content: center; 
+            text-align: center; background: #000; overflow: hidden; margin-top: 110px;
         }
+        .candle-bg { position: absolute; width: 100%; height: 200%; top: 0; opacity: 0.15; z-index: 1; pointer-events: none; }
+        .candle { position: absolute; width: 12px; background: currentColor; animation: float 6s infinite ease-in-out; }
+        .candle.green { color: #00ff00; } .candle.red { color: #ff3131; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-40px); } }
 
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+        .banner-content { z-index: 10; padding: 0 20px; }
+        .main-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 8vw, 80px); line-height: 1; margin-bottom: 20px; }
+        .sub-text { color: #aaa; max-width: 700px; margin: 0 auto 40px; font-size: 18px; }
+        .banner-btns { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+        .btn-glow { 
+            background: #ff3131; color: #fff; text-decoration: none; padding: 18px 40px; 
+            font-weight: 900; border-radius: 5px; box-shadow: 0 0 20px rgba(255, 49, 49, 0.4); transition: 0.3s; 
         }
+        .btn-glow:hover { transform: translateY(-5px); box-shadow: 0 0 40px #ff3131; }
 
-        html, body {
-            overflow-x: hidden; width: 100%;
-            background-color: var(--bg-brown);
-            color: var(--pure-white); scroll-behavior: smooth;
+        /* --- WHY WEALTHMASTER & COUNTER --- */
+        .wm-about { background: #050505; }
+        .flex-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; gap: 40px; }
+        .glass-stat { 
+            background: rgba(255, 49, 49, 0.1); border: 1px solid #ff3131; padding: 30px; 
+            border-radius: 20px; text-align: center; min-width: 250px; 
         }
+        .counter { font-size: 50px; color: #ff3131; font-weight: 900; }
+        .counter::after { content: '+'; }
 
-        /* --- Header & Navbar --- */
-        header {
-            position: fixed; top: 0; left: 0; width: 100%;
-            z-index: 10000; background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        /* --- TARGET AUDIENCE GRID --- */
+        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 45px; margin-bottom: 60px; }
+        .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .target-card { 
+            background: #0a0a0a; border: 1px solid #222; padding: 40px 30px; border-radius: 20px; 
+            transition: 0.4s; position: relative; overflow: hidden; 
         }
+        .target-card:hover { border-color: #ff3131; transform: translateY(-10px); background: #111; }
+        .card-icon { font-size: 40px; margin-bottom: 20px; display: block; }
+        .target-card h4 { font-size: 22px; margin-bottom: 15px; }
+        .target-card p { color: #888; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+        .tag { background: rgba(255, 49, 49, 0.1); color: #ff3131; padding: 5px 12px; font-size: 10px; font-weight: 900; border-radius: 50px; text-transform: uppercase; }
 
-        .navbar {
-            display: flex; justify-content: space-between; align-items: center;
-            width: 100%; max-width: 1300px; 
-            margin: 0 auto; padding: 10px 20px;
+        /* --- REASONS SECTION --- */
+        .reason-box { background: #0a0a0a; border: 1px solid #222; padding: 60px; border-radius: 30px; text-align: center; }
+        .reason-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; list-style: none; text-align: left; margin: 40px 0; }
+        .reason-list li { display: flex; gap: 10px; color: #ccc; }
+        .reason-list li span { color: #ff3131; font-weight: bold; }
+
+        /* --- FOOTER --- */
+        footer { padding: 80px 20px; border-top: 1px solid #222; background: #000; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: #ff3131; margin-bottom: 20px; }
+        .footer-col p, .footer-col li { color: #888; font-size: 14px; line-height: 2; list-style: none; }
+
+        /* --- ANIMATIONS --- */
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1s ease-out; }
+        .active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .flex-header, .reason-list { flex-direction: column; text-align: center; }
+            .nav-links { display: none; }
+            .main-title { font-size: 45px; }
         }
-
-        .logo img { height: 60px; display: block; }
-
-        .nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
-        .nav-links li a {
-            text-decoration: none; color: #000; font-weight: bold;
-            font-size: 14px; text-transform: uppercase; transition: 0.3s;
-        }
-        .nav-links li a:hover { color: var(--glow-red); }
-
-        .join-btn {
-            background: linear-gradient(to bottom, #444, #000);
-            color: white !important; padding: 10px 25px;
-            border-radius: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            white-space: nowrap;
-        }
-
-        /* Ticker Container Fix for Logos */
-        .ticker-container { 
-            width: 100%; border-top: 1px solid #eee; 
-            background: #fff; overflow: hidden; 
-            height: 48px; /* Increased height for logos */
-        }
-
-        /* --- Hero Section --- */
-        .hero-section {
-            position: relative; width: 100%; height: 100vh;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #1a0a0a 0%, #050505 100%);
-            padding-top: 120px; /* Offset for Header + Ticker */
-        }
-
-        #chartCanvas {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%; opacity: 0.3; z-index: 1;
-        }
-
-        .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 20px; }
-
-        h1.hero-title {
-            font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4rem);
-            margin: 0; color: #ffffff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        h1.hero-title span {
-            display: block; color: var(--glow-red); font-family: 'Inter', sans-serif;
-            font-weight: 900; font-size: clamp(3rem, 10vw, 5rem);
-            text-shadow: 0 0 20px var(--glow-shadow);
-        }
-
-        /* --- Blog/Content Body --- */
-        .blog-body { 
-            max-width: 900px; margin: 80px auto;
-            background: var(--card-brown); padding: 60px; 
-            border-radius: 8px; border: 1px solid rgba(255, 49, 49, 0.2);
-        }
-
-        .intro-quote { 
-            font-size: 1.4rem; color: var(--pure-white); margin-bottom: 40px; 
-            font-style: italic; border-left: 4px solid var(--glow-red); 
-            padding: 20px 30px; background: rgba(255, 49, 49, 0.05);
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* --- Follower Dot --- */
-        #follower-dot {
-            position: fixed; width: 12px; height: 12px;
-            background-color: var(--glow-red); border-radius: 50%;
-            pointer-events: none; z-index: 99999;
-            box-shadow: 0 0 15px var(--glow-red);
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
-        .menu-toggle span { width: 25px; height: 3px; background-color: #000; border-radius: 2px; }
-
-        @media screen and (max-width: 1024px) {
-            .nav-links {
-                display: none; flex-direction: column;
-                position: absolute; top: 100%; left: 0; width: 100%;
-                background: white; padding: 20px 0;
-            }
-            .nav-links.active { display: flex; }
-            .menu-toggle { display: flex; }
-        }
-
-        footer { background: #000; color: #fff; padding: 60px 20px; border-top: 2px solid var(--glow-red); }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
     </style>
 </head>
 <body>
 
-<div id="follower-dot"></div>
-
-<header>
-    <nav class="navbar">
-        <div class="logo">
-            <a href="https://wealthmasteracademy.in/"><img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Logo"></a>
-        </div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="https://wealthmasteracademy.in/">Home</a></li>
-            <li><a href="https://wealthmasteracademy.in/courses/">Courses</a></li>
-            <li><a href="https://wealthmasteracademy.in/About-US/">About Us</a></li>
-            <li><a href="https://wealthmasteracademy.in/contact-us/">Contact Us</a></li>
-            <li><a href="https://wealthmasteracademy.in/contact-us/" class="join-btn">Join Us!</a></li>
-        </ul>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
-
-    <div class="ticker-container">
-        <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget"></div>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="WealthMaster Logo"></div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">SMC Logic</a></li>
+                <li><a href="#">Pune Campus</a></li>
+                <li><a href="#" class="join-btn">Free Demo</a></li>
+            </ul>
+        </nav>
+        <div class="ticker-wrap">
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-            {
-                "symbols": [
-                    { "proName": "BSE:RELIANCE", "description": "RELIANCE" },
-                    { "proName": "BSE:HDFCBANK", "description": "HDFC BANK" },
-                    { "proName": "BSE:SBIN", "description": "SBI" },
-                    { "proName": "BSE:TCS", "description": "TCS" }
-                ],
-                "showSymbolLogo": true,
-                "colorTheme": "light",
-                "isTransparent": false,
-                "displayMode": "regular",
-                "locale": "in"
-            }
+            { "symbols": [{"proName":"BSE:RELIANCE","title":"Reliance"},{"proName":"BSE:HDFCBANK","title":"HDFC Bank"},{"proName":"BSE:TCS","title":"TCS"}], "colorTheme": "light", "displayMode": "adaptive", "locale": "in" }
             </script>
         </div>
-    </div>
-</header>
+    </header>
 
-<section class="hero-section">
-    <canvas id="chartCanvas"></canvas>
-    <div class="hero-content">
-        <h1 class="hero-title">Wealth Master <span>Academy</span></h1>
-        <p style="color: #ccc; font-size: 1.2rem; margin: 20px 0;">India's Premium Stock Market Institute. Learn strategies that big players use.</p>
-        <a href="https://wealthmasteracademy.in/courses/" class="join-btn" style="padding: 15px 40px; text-decoration: none; display: inline-block;">Start Trading</a>
-    </div>
-</section>
-
-<article class="blog-body">
-    <h1 style="font-family: 'Playfair Display'; font-size: 2.5rem; margin-bottom: 20px;">The Discipline of Professional Trading</h1>
-    <p class="intro-quote">"The stock market isn't just about 'buying low and selling high'—it's about risk management and psychology."</p>
-    <p>At WealthMaster Academy, we specialize in <strong>Smart Money Concepts (SMC)</strong> to help retail traders become professionals.</p>
-</article>
-
-<footer>
-    <div class="footer-container">
-        <div class="footer-col">
-            <h3 style="color: var(--glow-red);">WealthMaster Academy</h3>
-            <p style="font-size: 14px; color: #888; margin-top: 15px;">Transforming retail traders into institutional-level professionals.</p>
+    <section class="hero-banner">
+        <div class="candle-bg" id="candleLayer">
+            </div>
+        <div class="banner-content">
+            <h1 class="main-title">WEALTH MASTER <br><span class="highlight">ACADEMY</span></h1>
+            <p class="sub-text">Pune's Most Advanced Stock Market Institute. Master Smart Money Concepts (SMC) & Institutional Trading in New Sangavi.</p>
+            <div class="banner-btns">
+                <a href="#" class="btn-glow">VIEW COURSES</a>
+                <a href="https://wa.me/917020360561" class="btn-glow">WHATSAPP US</a>
+            </div>
         </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <p style="margin-top: 15px; font-size: 14px;">📍 Pune, Maharashtra</p>
-            <p style="color: var(--glow-red); font-weight: bold; font-size: 14px;">WA: +91 7020360561</p>
+    </section>
+
+    <section class="wm-about">
+        <div class="container">
+            <div class="flex-header reveal">
+                <div>
+                    <h2>Master the Market in <span class="highlight">Pune</span></h2>
+                    <p style="color: #888; margin-top: 15px;">Experience 1-on-1 personalized mentorship at our New Sangavi campus.</p>
+                </div>
+                <div class="glass-stat">
+                    <h3 class="counter" data-target="500">0</h3>
+                    <p>Successful Traders</p>
+                </div>
+            </div>
+
+            <div class="audience-grid">
+                <div class="target-card reveal">
+                    <span class="card-icon">💼</span>
+                    <h4>Business Owners</h4>
+                    <p>Invest business profits logically. Hedge risks and grow wealth using Institutional SMC logic.</p>
+                    <span class="tag">Capital Growth</span>
+                </div>
+                <div class="target-card reveal">
+                    <span class="card-icon">👨‍💻</span>
+                    <h4>Job Professionals</h4>
+                    <p>Build a secondary income source with Swing Trading setups that don't require full-time screen watching.</p>
+                    <span class="tag">Second Income</span>
+                </div>
+                <div class="target-card reveal">
+                    <span class="card-icon">🎓</span>
+                    <h4>Students</h4>
+                    <p>Start early, build a career. Bridge the skill gap with practical market education from scratch.</p>
+                    <span class="tag">Career Path</span>
+                </div>
+                <div class="target-card reveal">
+                    <span class="card-icon">🏠</span>
+                    <h4>Housewives & Retired</h4>
+                    <p>Learn risk-free strategies to manage household wealth with confidence and financial freedom.</p>
+                    <span class="tag">Independence</span>
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
 
-<script>
-    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+    <section class="reasons">
+        <div class="container">
+            <div class="reason-box reveal">
+                <h2 class="section-title">Why Join <span class="highlight">WealthMaster Pune?</span></h2>
+                <ul class="reason-list">
+                    <li><span>✓</span> 10+ Years of Market Expertise</li>
+                    <li><span>✓</span> Expert SMC & Institutional Mentors</li>
+                    <li><span>✓</span> Live Trading & Simulations</li>
+                    <li><span>✓</span> NISM/NCFM Exam Preparation</li>
+                    <li><span>✓</span> 4.9 Google Rating by Students</li>
+                    <li><span>✓</span> 1-on-1 Personalized Coaching</li>
+                    <li><span>✓</span> Premium Software Training</li>
+                    <li><span>✓</span> Lifetime Community Access</li>
+                    <li><span>✓</span> New Sangavi Local Support</li>
+                    <li><span>✓</span> Low Batch Size for Quality</li>
+                </ul>
+                <a href="#" class="btn-glow">Book Free Demo Class</a>
+            </div>
+        </div>
+    </section>
 
-    // Chart Animation
-    const canvas = document.getElementById('chartCanvas');
-    const ctx = canvas.getContext('2d');
-    let width, height, points = [];
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>WealthMaster</h4>
+                    <p>India's Premium Stock Market Institute specializing in SMC and Institutional Trading Logic.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Location</h4>
+                    <p>New Sangavi, Pune, Maharashtra.</p>
+                    <p>📞 +91 7020360561</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <li>Instagram</li>
+                    <li>YouTube</li>
+                    <li>LinkedIn</li>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-        points = Array.from({length: 40}, (_, i) => ({
-            x: (width / 40) * i, y: height / 2,
-            targetY: height / 2 + (Math.random() - 0.5) * 300
-        }));
-    }
+    <script>
+        // --- CANDLE GENERATOR ---
+        const layer = document.getElementById('candleLayer');
+        for(let i=0; i<15; i++) {
+            const c = document.createElement('div');
+            c.className = `candle ${Math.random() > 0.5 ? 'green' : 'red'}`;
+            c.style.left = Math.random() * 100 + '%';
+            c.style.top = Math.random() * 100 + '%';
+            c.style.height = (Math.random() * 80 + 40) + 'px';
+            c.style.animationDelay = Math.random() * 5 + 's';
+            layer.appendChild(c);
+        }
 
-    function animateChart() {
-        ctx.clearRect(0, 0, width, height);
-        ctx.beginPath(); ctx.strokeStyle = '#00ff88'; ctx.lineWidth = 3;
-        ctx.shadowBlur = 15; ctx.shadowColor = '#00ff88';
-        points.forEach((p, i) => {
-            p.y += (p.targetY - p.y) * 0.03;
-            if (Math.abs(p.y - p.targetY) < 1) p.targetY = height / 2 + (Math.random() - 0.5) * 400;
-            if (i === 0) ctx.moveTo(p.x, p.y); else ctx.lineTo(p.x, p.y);
+        // --- OBSERVER FOR ANIMATIONS & COUNTER ---
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if(e.isIntersecting) {
+                    e.target.classList.add('active');
+                    if(e.target.classList.contains('counter')) {
+                        const target = +e.target.dataset.target;
+                        let count = 0;
+                        const update = () => {
+                            if(count < target) { count += target/50; e.target.innerText = Math.ceil(count); setTimeout(update, 20); }
+                            else { e.target.innerText = target; }
+                        };
+                        update();
+                        obs.unobserve(e.target);
+                    }
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.reveal, .counter').forEach(el => obs.observe(el));
+
+        // --- PARALLAX EFFECT ---
+        window.addEventListener('scroll', () => {
+            const scroll = window.scrollY;
+            document.getElementById('candleLayer').style.transform = `translateY(-${scroll * 0.3}px)`;
         });
-        ctx.stroke();
-        requestAnimationFrame(animateChart);
-    }
-
-    // Follower Dot
-    const dot = document.getElementById('follower-dot');
-    let mx = 0, my = 0, dx = 0, dy = 0;
-    window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    function animateDot() {
-        dx += (mx - dx) * 0.15; dy += (my - dy) * 0.15;
-        dot.style.transform = `translate(${dx}px, ${dy}px)`;
-        requestAnimationFrame(animateDot);
-    }
-
-    window.addEventListener('resize', resize);
-    resize(); animateChart(); animateDot();
-</script>
-
+    </script>
 </body>
 </html>
