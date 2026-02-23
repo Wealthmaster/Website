@@ -2,254 +2,583 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WealthMaster Academy | Pune's Premium SMC Trading Institute</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wealth Master Academy – SMC Trading Institute Pune</title>
+    <!-- Font Awesome 6 (free) for all sections -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- single unified style block – all sections merged without duplication, horizontal overflow hidden -->
     <style>
-        /* --- GLOBAL & THEME SETUP --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #000; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .highlight { color: #ff3131; }
-        section { padding: 100px 0; }
-        
-        /* --- HEADER --- */
-        header { position: fixed; top: 0; width: 100%; z-index: 1000; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; max-width: 1300px; margin: 0 auto; }
-        .logo img { height: 50px; }
-        .nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
-        .nav-links li a { text-decoration: none; color: #000; font-weight: 700; text-transform: uppercase; font-size: 13px; transition: 0.3s; }
+        /* ----- GLOBAL RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+        }
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+        /* link & button default cursor */
+        a, button, .menu-toggle, .design-card { cursor: pointer; }
+
+        /* ----- FIXED HEADER (from first code) ----- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        body {
+            padding-top: 130px; /* space for fixed header + ticker */
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            width: 100%;
+            max-width: 1300px; 
+            margin: 0 auto; 
+            padding: 10px 20px;
+        }
+        .logo img {
+            height: 60px;
+            display: block;
+            transition: 0.3s;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-links li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
         .nav-links li a:hover { color: #ff3131; }
-        .join-btn { background: #000; color: #fff !important; padding: 10px 20px; border-radius: 5px; }
-
-        /* --- TICKER --- */
-        .ticker-wrap { background: #f4f4f4; border-top: 1px solid #ddd; }
-
-        /* --- HERO BANNER --- */
-        .hero-banner { 
-            position: relative; height: 90vh; display: flex; align-items: center; justify-content: center; 
-            text-align: center; background: #000; overflow: hidden; margin-top: 110px;
+        .join-btn {
+            background: linear-gradient(to bottom, #444, #000);
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            white-space: nowrap;
         }
-        .candle-bg { position: absolute; width: 100%; height: 200%; top: 0; opacity: 0.15; z-index: 1; pointer-events: none; }
-        .candle { position: absolute; width: 12px; background: currentColor; animation: float 6s infinite ease-in-out; }
-        .candle.green { color: #00ff00; } .candle.red { color: #ff3131; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-40px); } }
-
-        .banner-content { z-index: 10; padding: 0 20px; }
-        .main-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 8vw, 80px); line-height: 1; margin-bottom: 20px; }
-        .sub-text { color: #aaa; max-width: 700px; margin: 0 auto 40px; font-size: 18px; }
-        .banner-btns { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
-        .btn-glow { 
-            background: #ff3131; color: #fff; text-decoration: none; padding: 18px 40px; 
-            font-weight: 900; border-radius: 5px; box-shadow: 0 0 20px rgba(255, 49, 49, 0.4); transition: 0.3s; 
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 10px;
         }
-        .btn-glow:hover { transform: translateY(-5px); box-shadow: 0 0 40px #ff3131; }
-
-        /* --- WHY WEALTHMASTER & COUNTER --- */
-        .wm-about { background: #050505; }
-        .flex-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; gap: 40px; }
-        .glass-stat { 
-            background: rgba(255, 49, 49, 0.1); border: 1px solid #ff3131; padding: 30px; 
-            border-radius: 20px; text-align: center; min-width: 250px; 
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+            border-radius: 2px;
+            transition: 0.3s;
         }
-        .counter { font-size: 50px; color: #ff3131; font-weight: 900; }
-        .counter::after { content: '+'; }
-
-        /* --- TARGET AUDIENCE GRID --- */
-        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 45px; margin-bottom: 60px; }
-        .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .target-card { 
-            background: #0a0a0a; border: 1px solid #222; padding: 40px 30px; border-radius: 20px; 
-            transition: 0.4s; position: relative; overflow: hidden; 
+        .ticker-container {
+            width: 100%;
+            border-top: 1px solid #eee;
+            background: #fff;
+            overflow: hidden; 
         }
-        .target-card:hover { border-color: #ff3131; transform: translateY(-10px); background: #111; }
-        .card-icon { font-size: 40px; margin-bottom: 20px; display: block; }
-        .target-card h4 { font-size: 22px; margin-bottom: 15px; }
-        .target-card p { color: #888; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
-        .tag { background: rgba(255, 49, 49, 0.1); color: #ff3131; padding: 5px 12px; font-size: 10px; font-weight: 900; border-radius: 50px; text-transform: uppercase; }
 
-        /* --- REASONS SECTION --- */
-        .reason-box { background: #0a0a0a; border: 1px solid #222; padding: 60px; border-radius: 30px; text-align: center; }
-        .reason-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; list-style: none; text-align: left; margin: 40px 0; }
-        .reason-list li { display: flex; gap: 10px; color: #ccc; }
-        .reason-list li span { color: #ff3131; font-weight: bold; }
+        /* ----- HERO SECTION (second block) – centered gradient ----- */
+        .hero-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 70px 20px 80px;
+            background: radial-gradient(circle, rgba(45,15,15,1) 0%, rgba(0,0,0,1) 70%);
+            color: white;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-family: 'Georgia', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0;
+            line-height: 1;
+        }
+        .hero-section .highlight {
+            color: #ff3b30;
+            display: block;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-top: 5px;
+        }
+        .hero-section p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 20px 0 40px;
+            color: #ccc;
+        }
+        .cta-container {
+            display: flex;
+            gap: 20px;
+        }
+        .btn {
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: transform 0.2s, box-shadow 0.2s;
+            color: white;
+            background-color: #ff3b30;
+            box-shadow: 0 0 15px rgba(255, 59, 48, 0.4);
+            border: none;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(255, 59, 48, 0.6);
+        }
 
-        /* --- FOOTER --- */
-        footer { padding: 80px 20px; border-top: 1px solid #222; background: #000; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-        .footer-col h4 { color: #ff3131; margin-bottom: 20px; }
-        .footer-col p, .footer-col li { color: #888; font-size: 14px; line-height: 2; list-style: none; }
+        /* ----- LEAD GENERATION SECTION (trusted institute + form) ----- */
+        .lead-gen-section {
+            background: radial-gradient(circle at top left, #0a0a0a, #000);
+            padding: 80px 20px;
+            color: #fff;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .lead-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .lead-content { flex: 1; min-width: 320px; }
+        .top-tag { color: #00ff00; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; }
+        .lead-title { font-family: 'Playfair Display', serif; font-size: clamp(35px, 5vw, 55px); margin: 15px 0; line-height: 1.1; }
+        .lead-desc { color: #ccc; font-size: 18px; margin-bottom: 30px; }
+        .lead-check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 35px; }
+        .lead-check-grid .check-item { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 14px; }
+        .lead-check-grid .check-item span { color: #ff3131; font-size: 18px; }
+        .rating-box { margin-bottom: 30px; }
+        .rating-info { display: flex; align-items: center; gap: 15px; background: rgba(255,255,255,0.05); padding: 10px 20px; border-radius: 50px; width: fit-content; }
+        .student-avatars { display: flex; }
+        .avatar { width: 30px; height: 30px; border-radius: 50%; border: 2px solid #000; margin-left: -10px; background: #888; }
+        .avatar:first-child { margin-left: 0; }
+        .course-name { font-size: 24px; color: #ff3131; margin-bottom: 10px; }
+        .price-tag { font-size: 22px; font-weight: 900; }
+        .old-price { text-decoration: line-through; color: #888; font-size: 18px; margin-right: 10px; }
+        .new-price { color: #00ff00; }
 
-        /* --- ANIMATIONS --- */
-        .reveal { opacity: 0; transform: translateY(40px); transition: 1s ease-out; }
-        .active { opacity: 1; transform: translateY(0); }
+        .lead-form-container { flex: 0.8; min-width: 320px; }
+        .form-wrapper {
+            background: #000;
+            padding: 35px;
+            border-radius: 15px;
+            border: 2px solid #ff3131;
+            box-shadow: 0 15px 40px rgba(255, 49, 49, 0.2);
+        }
+        .form-title { text-align: center; color: #ff3131; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; margin-bottom: 5px; font-size: 12px; color: #aaa; text-transform: uppercase; }
+        .input-group input, .input-group select, .input-group textarea {
+            width: 100%; background: #111; border: 1px solid #333; padding: 12px; 
+            border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif;
+        }
+        .input-group input:focus { border-color: #ff3131; outline: none; }
+        .form-submit-btn {
+            width: 100%; background: #ff3131; color: #fff; border: none; padding: 16px; 
+            border-radius: 6px; cursor: pointer; font-weight: 900; font-size: 16px; 
+            text-transform: uppercase; transition: 0.3s; margin-top: 10px;
+        }
+        .form-submit-btn:hover { background: #ff4d4d; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 49, 49, 0.4); }
 
+        /* ----- MASTERY VIDEO SECTION (with embedded youtube) ----- */
+        .wm-mastery-video { background: #000; padding: 100px 20px; color: #fff; }
+        .video-flex { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+        .video-container { flex: 1; min-width: 350px; position: relative; }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #ff3131;
+            background: #111;
+            box-shadow: 0 0 30px rgba(255, 49, 49, 0.2);
+        }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; }
+        .video-badge {
+            position: absolute; top: -20px; right: 20px; background: #ff3131; color: #fff;
+            padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 900;
+            text-transform: uppercase; z-index: 3; box-shadow: 0 5px 15px rgba(255, 49, 49, 0.4);
+        }
+        .content-side { flex: 1.2; min-width: 320px; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 42px; line-height: 1.1; margin-bottom: 25px; }
+        .section-title .highlight { color: #ff3131; }
+        .academy-intro { color: #ccc; font-size: 16px; line-height: 1.7; margin-bottom: 30px; text-align: justify; }
+        .feature-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
+        .feature-checks .check-item { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; }
+        .feature-checks .check-item span { color: #ff3131; font-size: 18px; }
+        .rating-strip { display: flex; align-items: center; gap: 15px; margin-bottom: 40px; }
+        .avatars img { width: 35px; height: 35px; border-radius: 50%; border: 2px solid #ff3131; margin-left: -10px; }
+        .avatars img:first-child { margin-left: 0; }
+        .rating-strip p { font-size: 14px; color: #888; }
+        .cta-btn {
+            display: inline-block; background: #ff3131; color: #fff; text-decoration: none;
+            padding: 18px 45px; border-radius: 5px; font-weight: 900; text-transform: uppercase;
+            transition: 0.3s; box-shadow: 0 0 20px rgba(255, 49, 49, 0.3);
+        }
+        .cta-btn:hover { transform: translateY(-5px); box-shadow: 0 0 40px #ff3131; }
+
+        /* ----- DESIGNED FOR CARDS SECTION (original 8 cards) ----- */
+        .designed-for {
+            background: #000000;
+            padding: 80px 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .section-heading {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .designed-for .highlight { color: #ff3131; }
+        .curve-line {
+            width: 140px; height: 12px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M5 15 Q 50 0 95 15" stroke="%23ff8c00" stroke-width="6" fill="transparent" stroke-linecap="round"/></svg>') no-repeat center;
+            background-size: contain;
+            margin: 0 auto 50px;
+        }
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .design-card {
+            background: #ffffff; padding: 22px 18px; border-radius: 10px;
+            display: flex; align-items: center; gap: 15px;
+            transition: all 0.25s ease; border: 1px solid transparent;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .design-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 49, 49, 0.3);
+            border-color: #ff3131;
+        }
+        .icon-box { font-size: 32px; color: #222; min-width: 50px; display: flex; justify-content: center; }
+        .text-box { font-size: 15px; font-weight: 700; color: #111; text-align: left; line-height: 1.2; }
+        .icon-box i { filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1)); }
+
+        /* ----- FOOTER (with red border and dark style) ----- */
+        .footer {
+            background: #000; color: #fff; padding: 60px 20px; border-top: 2px solid #ff3131;
+        }
+        .footer-container {
+            max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap;
+            justify-content: space-between; gap: 40px;
+        }
+        .footer-col { flex: 1; min-width: 250px; }
+        .footer-col h3 { color: #ff3131; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+        .footer-col p { color: #888; font-size: 14px; line-height: 1.6; margin-top: 20px; }
+        .footer-col h4 { font-size: 18px; margin-bottom: 20px; border-bottom: 2px solid #ff3131; display: inline-block; }
+        .footer-col ul { list-style: none; padding: 0; font-size: 14px; line-height: 2.5; }
+        .footer-col ul li a { color: #ccc; text-decoration: none; }
+        .footer-col ul li a:hover { color: #ff3131; }
+        .footer-bottom {
+            text-align: center; margin-top: 50px; padding-top: 20px;
+            border-top: 1px solid #222; font-size: 12px; color: #555;
+        }
+
+        /* ----- CURSOR FOLLOWER DOT (chasing effect) ----- */
+        #follower-dot {
+            position: fixed; width: 12px; height: 12px; border-radius: 50%; pointer-events: none;
+            z-index: 9999; transform: translate(-50%, -50%);
+            background-color: #ff3131; box-shadow: 0 0 10px #ff3131, 0 0 20px #ff3131;
+            transition: background-color 0.2s, box-shadow 0.2s;
+        }
+        #follower-dot.chasing {
+            background-color: #00ff00; box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+        }
+
+        /* ----- RESPONSIVE FIXES (unify all media queries) ----- */
+        @media screen and (max-width: 1024px) {
+            body { padding-top: 120px; }
+            .nav-links {
+                display: none; flex-direction: column; position: absolute; top: 80px; left: 0;
+                width: 100%; background: white; padding: 20px 0; box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                text-align: center; z-index: 999;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { margin: 12px 0; width: 100%; }
+            .menu-toggle { display: flex; }
+            .logo img { height: 50px; }
+            .design-grid { grid-template-columns: repeat(2, 1fr); max-width: 700px; }
+        }
         @media (max-width: 768px) {
-            .flex-header, .reason-list { flex-direction: column; text-align: center; }
-            .nav-links { display: none; }
-            .main-title { font-size: 45px; }
+            .lead-flex, .video-flex { flex-direction: column; text-align: center; }
+            .lead-check-grid { justify-items: center; }
+            .rating-info { margin: 0 auto; }
+            .cta-container { flex-direction: column; width: 80%; margin: 0 auto; }
+            .hero-section h1 { font-size: 2.5rem; }
+            .hero-section .highlight { font-size: 3rem; }
+            .section-title { font-size: 32px; }
+            .feature-checks { justify-items: center; }
+            .rating-strip { justify-content: center; }
+        }
+        @media (max-width: 600px) {
+            .design-grid { grid-template-columns: 1fr; max-width: 400px; }
+            .design-card { padding: 18px 20px; }
+            .section-heading { font-size: 32px; }
+        }
+        @media (max-width: 450px) {
+            .design-card { gap: 12px; }
+            .icon-box { min-width: 40px; font-size: 28px; }
+            .text-box { font-size: 14px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo"><img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="WealthMaster Logo"></div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">SMC Logic</a></li>
-                <li><a href="#">Pune Campus</a></li>
-                <li><a href="#" class="join-btn">Free Demo</a></li>
-            </ul>
-        </nav>
-        <div class="ticker-wrap">
+<!-- FIXED HEADER with ticker -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#"><img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Wealth Master Logo"></a>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#" class="join-btn">Join Us!</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+    <div class="ticker-container">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-            { "symbols": [{"proName":"BSE:RELIANCE","title":"Reliance"},{"proName":"BSE:HDFCBANK","title":"HDFC Bank"},{"proName":"BSE:TCS","title":"TCS"}], "colorTheme": "light", "displayMode": "adaptive", "locale": "in" }
+            {
+                "symbols": [
+                    { "proName": "BSE:RELIANCE", "description": "RELIANCE" },
+                    { "proName": "BSE:HDFCBANK", "description": "HDFC BANK" },
+                    { "proName": "BSE:TATASTEEL", "description": "TATA STEEL" },
+                    { "proName": "BSE:SBIN", "description": "SBI" },
+                    { "proName": "BSE:TCS", "description": "TCS" },
+                    { "proName": "BSE:INFY", "description": "INFOSYS" },
+                    { "proName": "BSE:KOTAKBANK", "description": "KOTAK BANK" }
+                ],
+                "showSymbolLogo": true,
+                "colorTheme": "light",
+                "isTransparent": false,
+                "displayMode": "compact",
+                "locale": "in"
+            }
             </script>
         </div>
-    </header>
+    </div>
+</header>
 
-    <section class="hero-banner">
-        <div class="candle-bg" id="candleLayer">
-            </div>
-        <div class="banner-content">
-            <h1 class="main-title">WEALTH MASTER <br><span class="highlight">ACADEMY</span></h1>
-            <p class="sub-text">Pune's Most Advanced Stock Market Institute. Master Smart Money Concepts (SMC) & Institutional Trading in New Sangavi.</p>
-            <div class="banner-btns">
-                <a href="#" class="btn-glow">VIEW COURSES</a>
-                <a href="https://wa.me/917020360561" class="btn-glow">WHATSAPP US</a>
-            </div>
-        </div>
-    </section>
+<!-- HERO section -->
+<section class="hero-section">
+    <h1>Wealth Master</h1>
+    <span class="highlight">ACADEMY</span>
+    <p>India's Premium Stock Market Institute. Learn strategies that big players use.</p>
+    <div class="cta-container">
+        <a href="#" class="btn">Start Trading</a>
+        <a href="#" class="btn">Free Demo Class</a>
+    </div>
+</section>
 
-    <section class="wm-about">
-        <div class="container">
-            <div class="flex-header reveal">
-                <div>
-                    <h2>Master the Market in <span class="highlight">Pune</span></h2>
-                    <p style="color: #888; margin-top: 15px;">Experience 1-on-1 personalized mentorship at our New Sangavi campus.</p>
-                </div>
-                <div class="glass-stat">
-                    <h3 class="counter" data-target="500">0</h3>
-                    <p>Successful Traders</p>
+<!-- LEAD GENERATION (Pune's No.1 + enquiry form) -->
+<section class="lead-gen-section">
+    <div class="container lead-flex">
+        <div class="lead-content">
+            <span class="top-tag">Pune's No.1 Trusted Institute</span>
+            <h1 class="lead-title">SMC & Share Market <br><span class="highlight">Classes In Pune</span></h1>
+            <p class="lead-desc">Join Mastery in Trading and Investment with WealthMaster Academy's Online and Classroom Courses in New Sangavi, Pune.</p>
+            <div class="lead-check-grid">
+                <div class="check-item"><span>✔</span> Expert Institutional Mentors</div>
+                <div class="check-item"><span>✔</span> NISM Certified Training</div>
+                <div class="check-item"><span>✔</span> 500+ Success Stories</div>
+                <div class="check-item"><span>✔</span> Most Trusted in New Sangavi</div>
+            </div>
+            <div class="rating-box">
+                <div class="rating-info">
+                    <strong>Rating 4.9 / 5 By</strong>
+                    <div class="student-avatars">
+                        <div class="avatar"></div>
+                        <div class="avatar"></div>
+                        <div class="avatar"></div>
+                    </div>
+                    <span>500+ Students</span>
                 </div>
             </div>
-
-            <div class="audience-grid">
-                <div class="target-card reveal">
-                    <span class="card-icon">💼</span>
-                    <h4>Business Owners</h4>
-                    <p>Invest business profits logically. Hedge risks and grow wealth using Institutional SMC logic.</p>
-                    <span class="tag">Capital Growth</span>
-                </div>
-                <div class="target-card reveal">
-                    <span class="card-icon">👨‍💻</span>
-                    <h4>Job Professionals</h4>
-                    <p>Build a secondary income source with Swing Trading setups that don't require full-time screen watching.</p>
-                    <span class="tag">Second Income</span>
-                </div>
-                <div class="target-card reveal">
-                    <span class="card-icon">🎓</span>
-                    <h4>Students</h4>
-                    <p>Start early, build a career. Bridge the skill gap with practical market education from scratch.</p>
-                    <span class="tag">Career Path</span>
-                </div>
-                <div class="target-card reveal">
-                    <span class="card-icon">🏠</span>
-                    <h4>Housewives & Retired</h4>
-                    <p>Learn risk-free strategies to manage household wealth with confidence and financial freedom.</p>
-                    <span class="tag">Independence</span>
-                </div>
+            <h2 class="course-name">Mastery in SMC & Institutional Trading</h2>
+            <div class="price-tag">
+                Course Fees: <span class="old-price">₹45,000/-</span> <span class="new-price">₹14,999/-</span>
             </div>
         </div>
-    </section>
-
-    <section class="reasons">
-        <div class="container">
-            <div class="reason-box reveal">
-                <h2 class="section-title">Why Join <span class="highlight">WealthMaster Pune?</span></h2>
-                <ul class="reason-list">
-                    <li><span>✓</span> 10+ Years of Market Expertise</li>
-                    <li><span>✓</span> Expert SMC & Institutional Mentors</li>
-                    <li><span>✓</span> Live Trading & Simulations</li>
-                    <li><span>✓</span> NISM/NCFM Exam Preparation</li>
-                    <li><span>✓</span> 4.9 Google Rating by Students</li>
-                    <li><span>✓</span> 1-on-1 Personalized Coaching</li>
-                    <li><span>✓</span> Premium Software Training</li>
-                    <li><span>✓</span> Lifetime Community Access</li>
-                    <li><span>✓</span> New Sangavi Local Support</li>
-                    <li><span>✓</span> Low Batch Size for Quality</li>
-                </ul>
-                <a href="#" class="btn-glow">Book Free Demo Class</a>
+        <div class="lead-form-container">
+            <div class="form-wrapper">
+                <h2 class="form-title">Enquiry Form</h2>
+                <form action="https://formspree.io/f/xykjbkao" method="POST">
+                    <div class="input-group"><label>Full Name</label><input type="text" name="Full_Name" placeholder="Enter your name" required></div>
+                    <div class="input-group"><label>WhatsApp Number</label><input type="tel" name="WhatsApp_Number" placeholder="10-digit number" required></div>
+                    <div class="input-group"><label>City</label><input type="text" name="City" placeholder="Your City" required></div>
+                    <div class="input-group"><label>Select Course</label>
+                        <select name="Selected_Course">
+                            <option value="Stock Market Basics">Stock Market Basics</option>
+                            <option value="SMC Mastery">SMC Mastery (Institutional)</option>
+                            <option value="Options Trading">Options Trading Mastery</option>
+                            <option value="Forex Trading">Forex Trading</option>
+                        </select>
+                    </div>
+                    <div class="input-group"><label>Any Other Inquiry?</label><textarea name="Inquiry_Message" rows="2" placeholder="Tell us what you want to learn"></textarea></div>
+                    <button type="submit" class="form-submit-btn">Submit Application</button>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>WealthMaster</h4>
-                    <p>India's Premium Stock Market Institute specializing in SMC and Institutional Trading Logic.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Location</h4>
-                    <p>New Sangavi, Pune, Maharashtra.</p>
-                    <p>📞 +91 7020360561</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <li>Instagram</li>
-                    <li>YouTube</li>
-                    <li>LinkedIn</li>
-                </div>
+<!-- MASTERY VIDEO + CONTENT -->
+<section class="wm-mastery-video">
+    <div class="container video-flex">
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/1H90MP4mPi8?autoplay=0&rel=0&modestbranding=1" title="Wealth Master Academy" allowfullscreen></iframe>
             </div>
+            <div class="video-badge"><span>⭐</span> Pune's Top Rated Institute</div>
         </div>
-    </footer>
+        <div class="content-side">
+            <h2 class="section-title">Mastery In <span class="highlight">Trading & Investment</span> Courses In Pune</h2>
+            <p class="academy-intro">Wealth Master Academy is a leading <strong>coaching centre in Pune</strong>, dedicated to providing top-notch <strong>trading education</strong> through online and offline classes. We offer expert-led courses, including Demo Lectures, Trading Training, Indian and Forex Trading, and a full-fledged Trading Academy.</p>
+            <div class="feature-checks">
+                <div class="check-item"><span>✔</span> Award Winning Institute</div>
+                <div class="check-item"><span>✔</span> NISM Certified Trainer</div>
+                <div class="check-item"><span>✔</span> 500+ Successful Traders</div>
+                <div class="check-item"><span>✔</span> Most Trusted & Recommended</div>
+            </div>
+            <div class="rating-strip">
+                <div class="avatars"><img src="https://i.pravatar.cc/40?u=1" alt="student"><img src="https://i.pravatar.cc/40?u=2" alt="student"><img src="https://i.pravatar.cc/40?u=3" alt="student"></div>
+                <p><strong>Rating 4.9 / 5</strong> by 500+ Pune Students</p>
+            </div>
+            <a href="https://wa.me/917020360561" class="cta-btn">Book Your Free Demo Class</a>
+        </div>
+    </div>
+</section>
 
-    <script>
-        // --- CANDLE GENERATOR ---
-        const layer = document.getElementById('candleLayer');
-        for(let i=0; i<15; i++) {
-            const c = document.createElement('div');
-            c.className = `candle ${Math.random() > 0.5 ? 'green' : 'red'}`;
-            c.style.left = Math.random() * 100 + '%';
-            c.style.top = Math.random() * 100 + '%';
-            c.style.height = (Math.random() * 80 + 40) + 'px';
-            c.style.animationDelay = Math.random() * 5 + 's';
-            layer.appendChild(c);
+<!-- "DESIGNED FOR" CARDS (8 professions) -->
+<section class="designed-for">
+    <div class="container">
+        <h2 class="section-heading">This Program is <span class="highlight">Designed For</span></h2>
+        <div class="curve-line"></div>
+        <div class="design-grid">
+            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-user-tie"></i></div><div class="text-box">Salaried Professional</div></div>
+            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-briefcase"></i></div><div class="text-box">Businessmen</div></div>
+            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-user-graduate"></i></div><div class="text-box">Students</div></div>
+            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-house-user"></i></div><div class="text-box">Housewives</div></div>
+            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-helmet-safety"></i></div><div class="text-box">Engineers</div></div>
+            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div><div class="text-box">MBA Professional</div></div>
+            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-calculator"></i></div><div class="text-box">Chartered Accountants</div></div>
+            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-couch"></i></div><div class="text-box">Retired Individuals</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>WealthMaster Academy</h3>
+            <p>India's Premium Stock Market Institute. We specialize in Smart Money Concepts (SMC) and Institutional trading logic to help retail traders become professionals.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul><li><a href="#">Home</a></li><li><a href="#">Our Courses</a></li><li><a href="#">About Us</a></li><li><a href="#">Contact Support</a></li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Get In Touch</h4>
+            <p>📍 Pune, Maharashtra</p><p>📧 growftdigitalhelp@gmail.com</p><p style="color:#ff3131;">📞 +91 7020360561</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 WealthMaster Academy. All Rights Reserved. Designed by Growft Digital Marketing.</p>
+        <p>Trading involves risk. Please trade responsibly.</p>
+    </div>
+</footer>
+
+<!-- FOLLOWER DOT -->
+<div id="follower-dot"></div>
+
+<!-- unified script: menu toggle + cursor follower -->
+<script>
+    // mobile menu toggle
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('active');
+        const spans = document.querySelectorAll('.menu-toggle span');
+        if(nav.classList.contains('active')) {
+            spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+            spans[1].style.opacity = "0";
+            spans[2].style.transform = "rotate(-45deg) translate(6px, -7px)";
+        } else {
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
         }
+    }
+    // close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const nav = document.getElementById('navLinks');
+        const toggle = document.querySelector('.menu-toggle');
+        if (nav && toggle && !nav.contains(event.target) && !toggle.contains(event.target)) {
+            nav.classList.remove('active');
+            const spans = document.querySelectorAll('.menu-toggle span');
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
+        }
+    });
 
-        // --- OBSERVER FOR ANIMATIONS & COUNTER ---
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if(e.isIntersecting) {
-                    e.target.classList.add('active');
-                    if(e.target.classList.contains('counter')) {
-                        const target = +e.target.dataset.target;
-                        let count = 0;
-                        const update = () => {
-                            if(count < target) { count += target/50; e.target.innerText = Math.ceil(count); setTimeout(update, 20); }
-                            else { e.target.innerText = target; }
-                        };
-                        update();
-                        obs.unobserve(e.target);
-                    }
-                }
-            });
-        }, { threshold: 0.2 });
-
-        document.querySelectorAll('.reveal, .counter').forEach(el => obs.observe(el));
-
-        // --- PARALLAX EFFECT ---
-        window.addEventListener('scroll', () => {
-            const scroll = window.scrollY;
-            document.getElementById('candleLayer').style.transform = `translateY(-${scroll * 0.3}px)`;
-        });
-    </script>
+    // cursor follower dot
+    const dot = document.getElementById('follower-dot');
+    let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
+    window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+    function animateDot() {
+        dotX += (mouseX - dotX) * 0.1;
+        dotY += (mouseY - dotY) * 0.1;
+        dot.style.left = `${dotX}px`;
+        dot.style.top = `${dotY}px`;
+        const distance = Math.hypot(mouseX - dotX, mouseY - dotY);
+        if (distance > 2) dot.classList.add('chasing');
+        else dot.classList.remove('chasing');
+        requestAnimationFrame(animateDot);
+    }
+    animateDot();
+</script>
 </body>
 </html>
