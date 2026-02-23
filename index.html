@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Wealth Master Academy – Fixed Mobile Menu</title>
-    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         /* ----- RESET & BASE ----- */
@@ -47,16 +46,40 @@
             filter: drop-shadow(0 0 8px #ff3131);
         }
 
-        /* ---------- ANIMATIONS ---------- */
+        /* ---------- PRO SCROLL ANIMATIONS ---------- */
+        .reveal, .reveal-left, .reveal-right {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .reveal.active {
+            visibility: visible;
+            animation: fadeUp 0.8s cubic-bezier(0.5, 0, 0, 1) forwards;
+        }
+        .reveal-left.active {
+            visibility: visible;
+            animation: fadeLeft 0.8s cubic-bezier(0.5, 0, 0, 1) forwards;
+        }
+        .reveal-right.active {
+            visibility: visible;
+            animation: fadeRight 0.8s cubic-bezier(0.5, 0, 0, 1) forwards;
+        }
+
         @keyframes fadeUp {
-            0% { opacity: 0; transform: translateY(20px); }
+            0% { opacity: 0; transform: translateY(50px); }
             100% { opacity: 1; transform: translateY(0); }
         }
-        .animate-on-view {
-            animation: fadeUp 0.8s ease forwards;
+        @keyframes fadeLeft {
+            0% { opacity: 0; transform: translateX(-50px); }
+            100% { opacity: 1; transform: translateX(0); }
         }
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
+        @keyframes fadeRight {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        .delay-1.active { animation-delay: 0.2s; }
+        .delay-2.active { animation-delay: 0.4s; }
 
         /* ---------- FIXED HEADER (with fixed mobile menu) ---------- */
         header {
@@ -108,45 +131,17 @@
 
         /* ----- MOBILE STYLES (FIXED) ----- */
         @media screen and (max-width: 1024px) {
-            .menu-toggle {
-                display: flex !important;  /* Force show on mobile */
-            }
-            
+            .menu-toggle { display: flex !important; }
             .nav-links {
-                display: none !important;  /* Hidden by default on mobile */
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                padding: 25px 0;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-                text-align: center;
-                z-index: 9999;
-                border-top: 1px solid #eee;
+                display: none !important; 
+                flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%;
+                background: white; padding: 25px 0; box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                text-align: center; z-index: 9999; border-top: 1px solid #eee;
             }
-            
-            .nav-links.active {
-                display: flex !important;  /* Show when active */
-            }
-            
-            .nav-links li {
-                margin: 10px 0;
-                width: 100%;
-            }
-            
-            .nav-links li a {
-                display: block;
-                padding: 8px 20px;
-                font-size: 16px;
-            }
-            
-            .join-btn {
-                display: inline-block;
-                max-width: 200px;
-                margin: 10px auto;
-            }
+            .nav-links.active { display: flex !important; }
+            .nav-links li { margin: 10px 0; width: 100%; }
+            .nav-links li a { display: block; padding: 8px 20px; font-size: 16px; }
+            .join-btn { display: inline-block; max-width: 200px; margin: 10px auto; }
         }
 
         /* ----- HERO SECTION ----- */
@@ -260,19 +255,24 @@
         }
         @media (max-width: 1000px) { .design-grid { grid-template-columns: repeat(2,1fr); max-width: 700px; } }
         @media (max-width: 550px) { .design-grid { grid-template-columns: 1fr; max-width: 350px; } }
+        
+        /* Cards get simple CSS hover transition, Observer handles the fadeUp */
         .design-card {
             background: #fff; padding: 22px 18px; border-radius: 10px; display: flex; align-items: center; gap: 15px;
             transition: all 0.25s ease; border: 1px solid transparent; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            opacity: 0; animation: fadeUp 0.6s forwards; cursor: pointer;
+            cursor: pointer;
         }
-        .design-card:nth-child(1) { animation-delay: 0.1s; }
-        .design-card:nth-child(2) { animation-delay: 0.2s; }
-        .design-card:nth-child(3) { animation-delay: 0.3s; }
-        .design-card:nth-child(4) { animation-delay: 0.4s; }
-        .design-card:nth-child(5) { animation-delay: 0.5s; }
-        .design-card:nth-child(6) { animation-delay: 0.6s; }
-        .design-card:nth-child(7) { animation-delay: 0.7s; }
-        .design-card:nth-child(8) { animation-delay: 0.8s; }
+        
+        /* Card Stagger Delays */
+        .design-card:nth-child(1).active { animation-delay: 0.1s; }
+        .design-card:nth-child(2).active { animation-delay: 0.2s; }
+        .design-card:nth-child(3).active { animation-delay: 0.3s; }
+        .design-card:nth-child(4).active { animation-delay: 0.4s; }
+        .design-card:nth-child(5).active { animation-delay: 0.5s; }
+        .design-card:nth-child(6).active { animation-delay: 0.6s; }
+        .design-card:nth-child(7).active { animation-delay: 0.7s; }
+        .design-card:nth-child(8).active { animation-delay: 0.8s; }
+        
         .design-card:hover {
             transform: translateY(-5px); border-color: #ff3131; box-shadow: 0 15px 30px rgba(255,49,49,0.3);
         }
@@ -292,7 +292,7 @@
         .footer-col h4 { font-size: 18px; margin-bottom: 20px; border-bottom: 2px solid #ff3131; display: inline-block; }
         .footer-col ul { list-style: none; }
         .footer-col ul li { margin: 10px 0; }
-        .footer-col ul li a { color: #ccc; text-decoration: none; }
+        .footer-col ul li a { color: #ccc; text-decoration: none; transition: 0.3s; }
         .footer-col ul li a:hover { color: #ff3131; }
         .footer-bottom {
             text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #222;
@@ -310,12 +310,10 @@
 </head>
 <body>
 
-<!-- HEADER with fixed mobile menu -->
 <header>
     <nav class="navbar">
-        <div class="logo"><a href="#"><img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Wealth Master"></a></div>
+        <div class="logo"><a href="https://wealthmasteracademy.in"><img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Wealth Master"></a></div>
         
-        <!-- Mobile menu button (three lines) - NOW VISIBLE -->
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -346,25 +344,22 @@
     </div>
 </header>
 
-<!-- HERO SECTION -->
 <section class="hero-section">
-    <h1>Wealth Master</h1>
-    <span class="highlight">ACADEMY</span>
-    <p>India's Premium Stock Market Institute. Learn strategies that big players use.</p>
-    <div class="cta-container">
+    <h1 class="reveal">Wealth Master</h1>
+    <span class="highlight reveal delay-1">ACADEMY</span>
+    <p class="reveal delay-2">India's Premium Stock Market Institute. Learn strategies that big players use.</p>
+    <div class="cta-container reveal delay-2">
         <a href="#" class="btn">Start Trading</a>
-        <a href="#" class="btn">Free Demo Class</a>
+        <a href="#" class="btn" style="background:transparent; border:1px solid #ff3b30;">Free Demo Class</a>
     </div>
 </section>
 
-<!-- DIVIDER 1 -->
 <div class="section-divider"></div>
-<div class="divider-icon"><i class="fa-solid fa-chart-line"></i></div>
+<div class="divider-icon reveal"><i class="fa-solid fa-chart-line"></i></div>
 
-<!-- LEAD GENERATION SECTION -->
 <section class="lead-gen-section">
     <div class="container lead-flex">
-        <div class="lead-content animate-on-view">
+        <div class="lead-content reveal-left">
             <span class="top-tag">Pune's No.1 Trusted Institute</span>
             <h1 class="lead-title">SMC & Share Market <span class="highlight">Classes In Pune</span></h1>
             <p class="lead-desc">Join Mastery in Trading and Investment with WealthMaster Academy's Online and Classroom Courses in New Sangavi, Pune.</p>
@@ -388,7 +383,8 @@
             <h2 class="course-name">Mastery in SMC & Institutional Trading</h2>
             <div class="price-tag"><span class="old-price">₹45,000/-</span> <span class="new-price">₹14,999/-</span></div>
         </div>
-        <div class="lead-form-container animate-on-view delay-1">
+        
+        <div class="lead-form-container reveal-right">
             <div class="form-wrapper">
                 <h2 class="form-title">Enquiry Form</h2>
                 <form action="https://formspree.io/f/xykjbkao" method="POST">
@@ -411,20 +407,19 @@
     </div>
 </section>
 
-<!-- DIVIDER 2 -->
 <div class="section-divider"></div>
-<div class="divider-icon"><i class="fa-solid fa-video"></i></div>
+<div class="divider-icon reveal"><i class="fa-solid fa-video"></i></div>
 
-<!-- MASTERY VIDEO SECTION -->
 <section class="wm-mastery-video">
     <div class="container video-flex">
-        <div class="video-container animate-on-view">
+        <div class="video-container reveal-left">
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/1H90MP4mPi8?autoplay=0&rel=0&modestbranding=1" allowfullscreen></iframe>
             </div>
             <div class="video-badge"><span>⭐</span> Pune's Top Rated Institute</div>
         </div>
-        <div class="content-side animate-on-view delay-1">
+        
+        <div class="content-side reveal-right">
             <h2 class="section-title">Mastery In <span class="highlight">Trading & Investment</span> Courses In Pune</h2>
             <p class="academy-intro">Wealth Master Academy is a leading <strong>coaching centre in Pune</strong>, dedicated to providing top-notch <strong>trading education</strong> through online and offline classes. We offer expert-led courses, including Demo Lectures, Trading Training, Indian and Forex Trading, and a full-fledged Trading Academy, designed to help individuals gain in-depth market knowledge and practical trading skills. Our mission is to empower aspiring traders with the right strategies and insights to navigate financial markets confidently and succeed in trading.</p>
             <div class="feature-checks">
@@ -442,55 +437,50 @@
     </div>
 </section>
 
-<!-- DIVIDER 3 -->
 <div class="section-divider"></div>
-<div class="divider-icon"><i class="fa-solid fa-users"></i></div>
+<div class="divider-icon reveal"><i class="fa-solid fa-users"></i></div>
 
-<!-- DESIGNED FOR CARDS -->
 <section class="designed-for">
     <div class="container">
-        <h2 class="section-heading">This Program is <span class="highlight">Designed For</span></h2>
-        <div class="curve-line"></div>
+        <h2 class="section-heading reveal">This Program is <span class="highlight">Designed For</span></h2>
+        <div class="curve-line reveal"></div>
         <div class="design-grid">
-            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-user-tie"></i></div><div class="text-box">Salaried Professional</div></div>
-            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-briefcase"></i></div><div class="text-box">Businessmen</div></div>
-            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-user-graduate"></i></div><div class="text-box">Students</div></div>
-            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-house-user"></i></div><div class="text-box">Housewives</div></div>
-            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-helmet-safety"></i></div><div class="text-box">Engineers</div></div>
-            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div><div class="text-box">MBA Professional</div></div>
-            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-calculator"></i></div><div class="text-box">Chartered Accountants</div></div>
-            <div class="design-card"><div class="icon-box"><i class="fa-solid fa-couch"></i></div><div class="text-box">Retired Individuals</div></div>
+            <div class="design-card reveal"><div class="icon-box"><i class="fa-solid fa-user-tie"></i></div><div class="text-box">Salaried Professional</div></div>
+            <div class="design-card reveal"><div class="icon-box"><i class="fa-solid fa-briefcase"></i></div><div class="text-box">Businessmen</div></div>
+            <div class="design-card reveal"><div class="icon-box"><i class="fa-solid fa-user-graduate"></i></div><div class="text-box">Students</div></div>
+            <div class="design-card reveal"><div class="icon-box"><i class="fa-solid fa-house-user"></i></div><div class="text-box">Housewives</div></div>
+            <div class="design-card reveal"><div class="icon-box"><i class="fa-solid fa-helmet-safety"></i></div><div class="text-box">Engineers</div></div>
+            <div class="design-card reveal"><div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div><div class="text-box">MBA Professional</div></div>
+            <div class="design-card reveal"><div class="icon-box"><i class="fa-solid fa-calculator"></i></div><div class="text-box">Chartered Accountants</div></div>
+            <div class="design-card reveal"><div class="icon-box"><i class="fa-solid fa-couch"></i></div><div class="text-box">Retired Individuals</div></div>
         </div>
     </div>
 </section>
 
-<!-- DIVIDER 4 -->
 <div class="section-divider"></div>
-<div class="divider-icon"><i class="fa-regular fa-copyright"></i></div>
+<div class="divider-icon reveal"><i class="fa-regular fa-copyright"></i></div>
 
-<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-container">
-        <div class="footer-col">
+        <div class="footer-col reveal">
             <h3>WealthMaster Academy</h3>
             <p>India's Premium Stock Market Institute. We specialize in Smart Money Concepts (SMC) and Institutional trading logic to help retail traders become professionals.</p>
         </div>
-        <div class="footer-col">
+        <div class="footer-col reveal delay-1">
             <h4>Quick Links</h4>
-            <ul><li><a href="#">Home</a></li><li><a href="#">Our Courses</a></li><li><a href="#">About Us</a></li><li><a href="#">Contact Support</a></li></ul>
+            <ul><li><a href="https://wealthmasteracademy.in">Home</a></li><li><a href="https://wealthmasteracademy.in/courses/">Our Courses</a></li><li><a href="https://wealthmasteracademy.in/about-us/">About Us</a></li><li><a href="https://wealthmasteracademy.in/contact-us/">Contact Support</a></li></ul>
         </div>
-        <div class="footer-col">
+        <div class="footer-col reveal delay-2">
             <h4>Get In Touch</h4>
             <p>📍 Pune, Maharashtra</p><p>📧 growftdigitalhelp@gmail.com</p><p style="color:#ff3131;">📞 +91 7020360561</p>
         </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom reveal">
         <p>© 2026 WealthMaster Academy. All Rights Reserved. Designed by Growft Digital Marketing.</p>
         <p style="margin-top:5px;">Trading involves risk. Please trade responsibly.</p>
     </div>
 </footer>
 
-<!-- FOLLOWER DOT -->
 <div id="follower-dot"></div>
 
 <script>
@@ -555,13 +545,15 @@
     }
     animateDot();
 
-    // Scroll animation observer
-    const animatedElements = document.querySelectorAll('.animate-on-view');
+    // ---------- NEW PRO SCROLL OBSERVER ----------
+    const animatedElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => { 
-            if(entry.isIntersecting) entry.target.style.opacity = 1; 
+            if(entry.isIntersecting) {
+                entry.target.classList.add('active'); 
+            }
         });
-    }, { threshold:0.2 });
+    }, { threshold: 0.15 }); // 15% section screen par aane par animate hoga
     
     animatedElements.forEach(el => observer.observe(el));
 </script>
