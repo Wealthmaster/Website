@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wealth Master Academy – Gallery</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            background: #000;
+            color: #fff;
+            scroll-behavior: smooth;
+            font-family: 'Montserrat', sans-serif;
+        }
+        img { max-width: 100%; height: auto; display: block; }
+        body { padding-top: 125px; }
+        @media (max-width: 600px) { body { padding-top: 110px; } }
+
+        /* ---------- FIXED HEADER (same as main page) ---------- */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 10000;
+            background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            width: 100%; padding: 8px 20px; max-width: 1300px; margin: 0 auto;
+            position: relative;
+        }
+        .logo img { height: 55px; }
+        @media (max-width: 700px) { .logo img { height: 45px; } }
+        
+        .nav-links {
+            display: flex; list-style: none; gap: 20px; align-items: center;
+        }
+        .nav-links li a {
+            text-decoration: none; color: #000; font-weight: bold; font-size: 14px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            color: #ff3131;
+        }
+        .join-btn {
+            background: linear-gradient(to bottom, #444, #000);
+            color: white !important; padding: 10px 25px; border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); white-space: nowrap;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            padding: 8px;
+            z-index: 10001;
+        }
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: #000;
+            border-radius: 3px;
+            transition: 0.3s;
+            display: block;
+        }
+        
+        .ticker-container { width: 100%; background: #fff; overflow: hidden; }
+
+        @media screen and (max-width: 1024px) {
+            .menu-toggle { display: flex !important; }
+            .nav-links { 
+                display: none !important; 
+                flex-direction: column; position: absolute; top: 70px; left: 0;
+                width: 100%; background: white; padding: 25px 0; 
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1); z-index: 9999;
+                border-top: 1px solid #eee;
+            }
+            .nav-links.active { display: flex !important; }
+            .nav-links li { margin: 10px 0; width: 100%; }
+            .nav-links li a { display: block; padding: 8px 20px; font-size: 16px; }
+            .join-btn { display: inline-block; max-width: 200px; margin: 10px auto; }
+        }
+
+        /* ===== GALLERY PAGE STYLES ===== */
+        .gallery-page {
+            background: #000;
+            padding: 80px 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .page-header h2 {
+            font-size: 42px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .page-header h2 .highlight {
+            color: #ff3131;
+        }
+        
+        .page-header p {
+            color: #888;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        
+        .header-divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff3131, #ff8c00, #ff3131, transparent);
+            margin: 20px auto 0;
+        }
+        
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+        }
+        
+        /* Gallery Item */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid #222;
+            cursor: pointer;
+            aspect-ratio: 1 / 1;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay span {
+            color: #ff3131;
+            font-weight: bold;
+            font-size: 12px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .gallery-overlay p {
+            color: #fff;
+            font-size: 14px;
+        }
+        
+        /* Category Filter (optional) */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 2px solid #333;
+            color: #fff;
+            padding: 10px 25px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #ff3131;
+            border-color: #ff3131;
+            color: #fff;
+        }
+        
+        /* Call to Action */
+        .gallery-cta {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px 20px;
+            background: linear-gradient(45deg, rgba(255,49,49,0.1), transparent);
+            border-radius: 20px;
+        }
+        
+        .gallery-cta h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .gallery-cta .cta-btn {
+            background: #ff3131;
+            color: #fff;
+            padding: 18px 45px;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-radius: 4px;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(255,49,49,0.3);
+        }
+        
+        .gallery-cta .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(255,49,49,0.6);
+        }
+        
+        .gallery-cta .cta-btn i {
+            margin-left: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-cta .cta-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ----- FOOTER (same as main page) ----- */
+        .footer {
+            background: #000;
+            padding: 60px 20px 30px;
+            border-top: 2px solid #ff3131;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+        .footer-col { flex: 1 1 250px; }
+        .footer-col h3 { color: #ff3131; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+        .footer-col p { color: #888; font-size: 14px; line-height: 1.6; margin-top: 20px; }
+        .footer-col h4 { font-size: 18px; margin-bottom: 20px; border-bottom: 2px solid #ff3131; display: inline-block; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin: 10px 0; }
+        .footer-col ul li a { color: #ccc; text-decoration: none; transition: 0.3s; }
+        .footer-col ul li a:hover { color: #ff3131; padding-left: 5px; }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 12px;
+            color: #555;
+        }
+
+        /* Follower dot */
+        #follower-dot {
+            position: fixed; width: 12px; height: 12px; border-radius: 50%; pointer-events: none;
+            z-index: 9999; transform: translate(-50%,-50%); background: #ff3131;
+            box-shadow: 0 0 10px #ff3131; transition: all 0.2s;
+        }
+        .chasing { background: #0f0 !important; box-shadow: 0 0 10px #0f0; }
+    </style>
+</head>
+<body>
+
+<!-- HEADER (same as main page) -->
+<header>
+    <nav class="navbar">
+        <div class="logo"><a href="#"><img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Wealth Master"></a></div>
+        
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="https://wealthmasteracademy.in">Home</a></li>
+            <li><a href="https://wealthmasteracademy.in/courses/">Courses</a></li>
+            <li><a href="https://wealthmasteracademy.in/about-us/">About Us</a></li>
+            <li><a href="#" class="active">Gallery</a></li>
+            <li><a href="/contact-us">Contact Us</a></li>
+            <li><a href="https://wealthmasteracademy.in/contact-us/" class="join-btn">Join Us!</a></li>
+        </ul>
+    </nav>
+    
+    <div class="ticker-container">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>{
+                "symbols":[
+                    {"proName":"BSE:RELIANCE","description":"RELIANCE"},
+                    {"proName":"BSE:HDFCBANK","description":"HDFC BANK"},
+                    {"proName":"BSE:TATASTEEL","description":"TATA STEEL"},
+                    {"proName":"BSE:SBIN","description":"SBI"},
+                    {"proName":"BSE:TCS","description":"TCS"},
+                    {"proName":"BSE:INFY","description":"INFOSYS"},
+                    {"proName":"BSE:KOTAKBANK","description":"KOTAK BANK"}
+                ],
+                "showSymbolLogo": true,
+                "colorTheme": "light",
+                "isTransparent": false,
+                "displayMode": "compact",
+                "locale": "in"
+            }</script>
+        </div>
+    </div>
+</header>
+
+<!-- GALLERY PAGE CONTENT -->
+<section class="gallery-page">
+    <div class="container">
+        <!-- Page Header with AOS -->
+        <div class="page-header" data-aos="fade-down">
+            <h2>Our <span class="highlight">Success Stories</span></h2>
+            <p>Visual proof of our community's growth and trading journey.</p>
+            <div class="header-divider"></div>
+        </div>
+
+        <!-- Category Filters (optional) -->
+        <div class="gallery-filters" data-aos="fade-up" data-aos-delay="100">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Online Classes</button>
+            <button class="filter-btn">Offline Mentorship</button>
+            <button class="filter-btn">SMC Analysis</button>
+            <button class="filter-btn">Student Success</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item" data-aos="zoom-in" data-category="online">
+                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/Modern-Business-online-course-Trading-Investment-Instagram-Post-1024x1024.png" alt="ONLINE CLASSES">
+                <div class="gallery-overlay">
+                    <span>ONLINE CLASSES</span>
+                    <p>Live trading sessions with expert mentors</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100" data-category="offline">
+                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/live-class--1024x682.jpeg" alt="Live Batch">
+                <div class="gallery-overlay">
+                    <span>OFFLINE MENTORSHIP</span>
+                    <p>Classroom training at New Sangavi, Pune</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200" data-category="smc">
+                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/smc-trading-entry-and-exit.png" alt="Chart Analysis">
+                <div class="gallery-overlay">
+                    <span>SMC ANALYSIS</span>
+                    <p>Smart Money Concepts entry & exit strategies</p>
+                </div>
+            </div>
+
+            <!-- Additional Gallery Items -->
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300" data-category="online">
+                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/stock-market-basics-course.jpg" alt="Stock Market Basics">
+                <div class="gallery-overlay">
+                    <span>BASICS COURSE</span>
+                    <p>Foundation program for beginners</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400" data-category="offline">
+                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/classroom-training.jpg" alt="Classroom Training">
+                <div class="gallery-overlay">
+                    <span>CLASSROOM SESSIONS</span>
+                    <p>Interactive learning environment</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500" data-category="success">
+                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/student-profit.jpg" alt="Student Profit">
+                <div class="gallery-overlay">
+                    <span>STUDENT SUCCESS</span>
+                    <p>One of our students achieved 200% returns</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600" data-category="smc">
+                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/market-analysis.jpg" alt="Market Analysis">
+                <div class="gallery-overlay">
+                    <span>MARKET ANALYSIS</span>
+                    <p>Live chart analysis during sessions</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700" data-category="offline">
+                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/workshop.jpg" alt="Workshop">
+                <div class="gallery-overlay">
+                    <span>WORKSHOPS</span>
+                    <p>Special weekend workshops</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="800" data-category="success">
+                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/graduation.jpg" alt="Course Completion">
+                <div class="gallery-overlay">
+                    <span>CERTIFICATION</span>
+                    <p>Students after course completion</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="gallery-cta" data-aos="fade-up" data-aos-delay="200">
+            <h3>Want to see your profits here?</h3>
+            <a href="/contact" class="cta-btn">
+                Start Learning Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER (same as main page) -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>WealthMaster Academy</h3>
+            <p>India's Premium Stock Market Institute. We specialize in Smart Money Concepts (SMC) and Institutional trading logic to help retail traders become professionals.</p>
+        </div>
+        
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our Courses</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact Support</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>Get In Touch</h4>
+            <p>📍 Pune, Maharashtra</p>
+            <p>📧 growftdigitalhelp@gmail.com</p>
+            <p style="color:#ff3131;">📞 +91 7020360561</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 WealthMaster Academy. All Rights Reserved. Designed by Growft Digital Marketing.</p>
+        <p style="margin-top:5px;">Trading involves risk. Please trade responsibly.</p>
+    </div>
+</footer>
+
+<!-- FOLLOWER DOT -->
+<div id="follower-dot"></div>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({ 
+        duration: 1000, 
+        once: true,
+        offset: 100
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        const spans = document.querySelectorAll('.menu-toggle span');
+        
+        nav.classList.toggle('active');
+        
+        if (nav.classList.contains('active')) {
+            spans[0].style.transform = "rotate(45deg) translate(6px, 6px)";
+            spans[1].style.opacity = "0";
+            spans[2].style.transform = "rotate(-45deg) translate(6px, -6px)";
+        } else {
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
+        }
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const nav = document.getElementById('navLinks');
+        const toggle = document.querySelector('.menu-toggle');
+        
+        if (nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)) {
+            nav.classList.remove('active');
+            const spans = document.querySelectorAll('.menu-toggle span');
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
+        }
+    });
+
+    // Follower dot animation
+    const dot = document.getElementById('follower-dot');
+    let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
+    
+    window.addEventListener('mousemove', (e) => { 
+        mouseX = e.clientX; 
+        mouseY = e.clientY; 
+    });
+    
+    function animateDot() {
+        dotX += (mouseX - dotX) * 0.1;
+        dotY += (mouseY - dotY) * 0.1;
+        
+        if (dot) { 
+            dot.style.left = dotX + 'px'; 
+            dot.style.top = dotY + 'px'; 
+        }
+        
+        const distance = Math.hypot(mouseX - dotX, mouseY - dotY);
+        if (distance > 2) dot.classList.add('chasing');
+        else dot.classList.remove('chasing');
+        
+        requestAnimationFrame(animateDot);
+    }
+    animateDot();
+
+    // Simple filter functionality (optional)
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Filter items (simplified - just for demo)
+            // You can implement actual filtering based on data-category
+        });
+    });
+</script>
+
+</body>
+</html>
