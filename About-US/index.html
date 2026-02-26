@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Wealth Master Academy</title>
+    <title>Wealth Master Academy – About Us</title>
     <style>
         * {
             margin: 0;
@@ -136,6 +136,220 @@
                 height: 50px;
             }
         }
+        
+        /* Founder Speech Section Styles */
+        .founder-speech-section {
+            background: #000;
+            padding: 80px 20px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        
+        .founder-speech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .founder-speech-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .founder-speech-title span {
+            color: #ff3131;
+        }
+        
+        .founder-speech-content {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .founder-image-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .founder-image-section img {
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid #ff3131;
+            box-shadow: 0 20px 40px rgba(255,49,49,0.3);
+        }
+        
+        .certificate-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .certificate-section img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            border: 2px solid #ff3131;
+            box-shadow: 0 10px 20px rgba(255,49,49,0.2);
+        }
+        
+        .certificate-section p {
+            color: #ff3131;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .founder-speech-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .founder-quote {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff3131;
+            margin-bottom: 20px;
+            font-style: italic;
+            border-left: 4px solid #ff3131;
+            padding-left: 20px;
+        }
+        
+        .founder-story {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        .founder-highlight {
+            background: rgba(255,49,49,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ff3131;
+        }
+        
+        .founder-highlight p {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+        
+        .founder-signature {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #ff3131;
+        }
+        
+        @media (max-width: 768px) {
+            .founder-speech-title {
+                font-size: 32px;
+            }
+            
+            .founder-quote {
+                font-size: 20px;
+            }
+        }
+        
+        /* Sticky WhatsApp & Call Buttons */
+        .sticky-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sticky-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+
+        .sticky-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .sticky-btn.call {
+            background: #ff3131;
+        }
+
+        .sticky-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .sticky-btn .tooltip {
+            position: absolute;
+            right: 70px;
+            background: #fff;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .sticky-btn .tooltip::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-width: 8px 0 8px 8px;
+            border-style: solid;
+            border-color: transparent transparent transparent #fff;
+        }
+
+        .sticky-btn:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 75px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-buttons {
+                bottom: 20px;
+                right: 15px;
+                gap: 12px;
+            }
+            
+            .sticky-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+            
+            .sticky-btn .tooltip {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -151,7 +365,7 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="https://wealthmasteracademy.in/">Home</a></li>
             <li><a href="https://wealthmasteracademy.in/courses">Courses</a></li>
-            <li><a href="https://wealthmasteracademy.in/About-US/">About US</a></li>
+            <li><a href="https://wealthmasteracademy.in/About-US/" class="active">About US</a></li>
             <li><a href="https://wealthmasteracademy.in/gallery/">Gallery</a></li>
             <li><a href="https://wealthmasteracademy.in/contact-us/">Contact Us</a></li>
             <li><a href="https://wealthmasteracademy.in/contact-us/" class="join-btn">Join Us!</a></li>
@@ -189,45 +403,22 @@
     </div>
 </header>
 
-<script>
-    function toggleMenu() {
-        const nav = document.getElementById('navLinks');
-        nav.classList.toggle('active');
-        
-        // Optional: Menu toggle animation
-        const spans = document.querySelectorAll('.menu-toggle span');
-        if(nav.classList.contains('active')) {
-            spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
-            spans[1].style.opacity = "0";
-            spans[2].style.transform = "rotate(-45deg) translate(6px, -7px)";
-        } else {
-            spans[0].style.transform = "none";
-            spans[1].style.opacity = "1";
-            spans[2].style.transform = "none";
-        }
-    }
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const nav = document.getElementById('navLinks');
-        const toggle = document.querySelector('.menu-toggle');
-        if (!nav.contains(event.target) && !toggle.contains(event.target)) {
-            nav.classList.remove('active');
-            const spans = document.querySelectorAll('.menu-toggle span');
-            spans[0].style.transform = "none";
-            spans[1].style.opacity = "1";
-            spans[2].style.transform = "none";
-        }
-    });
-</script>
-
-</body>
-</html>
-
+<!-- Sticky WhatsApp & Call Buttons -->
+<div class="sticky-buttons">
+    <a href="https://wa.me/919529023068" class="sticky-btn whatsapp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="tooltip">WhatsApp Us</span>
+    </a>
+    <a href="tel:+919529023068" class="sticky-btn call">
+        <i class="fa-solid fa-phone"></i>
+        <span class="tooltip">Call Now</span>
+    </a>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <div style="background: #000; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden;">
 
@@ -249,6 +440,70 @@
         </div>
         <div style="flex: 1; text-align: center;">
             <div style="font-size: 150px; color: rgba(255,49,49,0.1); font-weight: 900;">TRUTH</div>
+        </div>
+    </section>
+
+    <!-- Founder Speech Section with NISM Certificate -->
+    <section class="founder-speech-section">
+        <div class="founder-speech-container">
+            <h2 class="founder-speech-title">FOUNDER'S <span>WORDS</span></h2>
+            
+            <div class="founder-speech-content">
+                <div class="founder-image-section">
+                    <img src="https://growft.odoo.com/web/image/1657-d79869e9/vilas%20ware.webp" alt="Founder Vilas Ware">
+                    
+                    <div class="certificate-section">
+                        <img src="https://growft.odoo.com/web/image/1667-89a762ac/Vilas%20Ware%20%28NISM%20Certificate%29%20.webp" alt="NISM Certificate">
+                        <p>NISM Certified Professional</p>
+                    </div>
+                </div>
+                
+                <div class="founder-speech-text">
+                    <div class="founder-quote">
+                        "A Journey from Zero to the Zenith"
+                    </div>
+                    
+                    <p class="founder-story">
+                        I was born on the sacred soil where the legendary Chhatrapati Shivaji Maharaj took birth—Junnar (Shivneri), Pune. Growing up in the shadow of Shivneri Fort, I inherited the spirit of 'Swarajya'—the will to build something of my own and never back down from a challenge. Carrying those values, I moved to the city and completed my graduation at the prestigious Ness Wadia College, Pune.
+                    </p>
+                    
+                    <p class="founder-story">
+                        But my destiny wasn't in a 9-to-5 desk job. My eyes were always fixed on the fluctuating numbers and the rhythm of the candlestick charts.
+                    </p>
+                    
+                    <div class="founder-highlight">
+                        <p>The Turning Point</p>
+                    </div>
+                    
+                    <p class="founder-story">
+                        My trading journey began in 2015. It wasn't an overnight success story. It was a path paved with sleepless nights, market crashes, and the harsh lessons of loss. To master the "language of money," I spent two crucial years (2017 to 2019) working with India's leading brokerage house, Motilal Oswal. That experience was my real-world university. It taught me the secrets of the 'Big Bulls'—how the institutional players move and why retail traders often lose their hard-earned money.
+                    </p>
+                    
+                    <div class="founder-highlight">
+                        <p>The Mission: WealthMaster Academy</p>
+                    </div>
+                    
+                    <p class="founder-story">
+                        After seeing thousands of people lose their savings due to a lack of guidance and high-risk gambling in the markets, a thought struck me: If I have mastered the art of survival and profit, why not empower others?
+                    </p>
+                    
+                    <p class="founder-story">
+                        With this vision, I began teaching the art of trading in 2021. Today, I am incredibly proud that WealthMaster Academy has successfully built an army of over 500+ profitable students who are now trading with discipline and confidence.
+                    </p>
+                    
+                    <div class="founder-highlight">
+                        <p>"The Stock Market is not just a place to make money; it is a test of your character and patience. My mission is not just to make you a 'Trader,' but to lead you toward 'Financial Sovereignty'."</p>
+                    </div>
+                    
+                    <p class="founder-story">
+                        Join me at WealthMaster Academy. Let's decode the market together and turn your financial dreams into a living reality. Because in this market, you only earn when you learn.
+                    </p>
+                    
+                    <div class="founder-signature">
+                        — Vilas Ware
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -294,6 +549,14 @@
         duration: 1
     });
 
+    // Founder Section Animation
+    gsap.from(".founder-speech-content", {
+        scrollTrigger: { trigger: ".founder-speech-section", start: "top 80%" },
+        opacity: 0,
+        y: 50,
+        duration: 1
+    });
+
     // Cards Stagger
     gsap.from(".about-card", {
         scrollTrigger: { trigger: ".about-card", start: "top 90%" },
@@ -329,7 +592,7 @@
             <h4 style="font-size: 18px; margin-bottom: 20px; border-bottom: 2px solid #ff3131; display: inline-block;">Get In Touch</h4>
             <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">📍 Pune, Maharashtra</p>
             <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">📧 growftdigitalhelp@gmail.com</p>
-            <p style="color: #ff3131; font-weight: bold; font-size: 14px;">WhatsApp for Queries: +91 7020360561</p>
+            <p style="color: #ff3131; font-weight: bold; font-size: 14px;">WhatsApp for Queries: +91 9529023068</p>
         </div>
 
     </div>
@@ -376,32 +639,59 @@
 </style>
 
 <script>
-    const dot = document.getElementById('follower-dot');
-    let mouseX = 0, mouseY = 0; // Arrow position
-    let dotX = 0, dotY = 0;     // Dot position
+    // Mobile menu toggle
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('active');
+        
+        // Optional: Menu toggle animation
+        const spans = document.querySelectorAll('.menu-toggle span');
+        if(nav.classList.contains('active')) {
+            spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+            spans[1].style.opacity = "0";
+            spans[2].style.transform = "rotate(-45deg) translate(6px, -7px)";
+        } else {
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
+        }
+    }
 
-    // Track mouse move
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const nav = document.getElementById('navLinks');
+        const toggle = document.querySelector('.menu-toggle');
+        if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+            nav.classList.remove('active');
+            const spans = document.querySelectorAll('.menu-toggle span');
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
+        }
+    });
+
+    // Cursor follower
+    const dot = document.getElementById('follower-dot');
+    let mouseX = 0, mouseY = 0;
+    let dotX = 0, dotY = 0;
+
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
 
     function animate() {
-        // Trailing Math
-        dotX += (mouseX - dotX) * 0.1; // 0.1 is the speed (lower = more lag/trailing)
+        dotX += (mouseX - dotX) * 0.1;
         dotY += (mouseY - dotY) * 0.1;
 
         dot.style.left = `${dotX}px`;
         dot.style.top = `${dotY}px`;
 
-        // Check distance between dot and arrow
         const distance = Math.sqrt(Math.pow(mouseX - dotX, 2) + Math.pow(mouseY - dotY, 2));
 
-        // Agar distance 2px se zyada hai, matlab dot abhi bhag raha hai (Green)
         if (distance > 2) {
             dot.classList.add('chasing');
         } else {
-            // Agar pahunch gaya toh Red
             dot.classList.remove('chasing');
         }
 
@@ -410,3 +700,6 @@
 
     animate();
 </script>
+
+</body>
+</html>
