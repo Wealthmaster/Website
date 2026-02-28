@@ -14,14 +14,21 @@
             box-sizing: border-box;
         }
 
-        html, body {
+        /* FIX 1: Split html and body to prevent scrolling issues */
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
             overflow-x: hidden;
             width: 100%;
-            font-family: 'Montserrat', sans-serif;
             background: #000;
             color: #fff;
-            scroll-behavior: smooth;
+            padding-top: 130px;
         }
+
+        @media (max-width: 600px) { body { padding-top: 110px; } }
 
         /* Header Styles */
         header {
@@ -33,9 +40,6 @@
             background-color: #ffffff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        body { padding-top: 130px; }
-        @media (max-width: 600px) { body { padding-top: 110px; } }
 
         .navbar {
             display: flex;
@@ -120,7 +124,7 @@
             .menu-toggle { display: flex; }
         }
 
-        /* Cursor Dot */
+        /* Cursor Dot - FIX 2: Optimized transition to prevent lag */
         #follower-dot {
             position: fixed;
             width: 12px;
@@ -131,7 +135,7 @@
             transform: translate(-50%, -50%);
             background-color: #ff3131;
             box-shadow: 0 0 10px #ff3131;
-            transition: all 0.2s;
+            transition: background-color 0.2s, box-shadow 0.2s;
         }
         .chasing { background: #0f0 !important; box-shadow: 0 0 10px #0f0; }
 
@@ -561,7 +565,6 @@
 </head>
 <body>
 
-<!-- Header -->
 <header>
     <nav class="navbar">
         <div class="logo">
@@ -611,7 +614,6 @@
     </div>
 </header>
 
-<!-- Page Header -->
 <section class="page-header">
     <div class="container">
         <h1 data-aos="fade-down">Our <span>Courses</span></h1>
@@ -619,7 +621,6 @@
     </div>
 </section>
 
-<!-- Forex Market Course -->
 <section class="course-detail-section">
     <div class="container">
         <div class="course-detail-card" data-aos="fade-up">
@@ -632,7 +633,6 @@
             </div>
             
             <div class="course-content-grid">
-                <!-- Market Sessions -->
                 <div class="content-block">
                     <h3>📊 Market Sessions</h3>
                     <div class="session-grid">
@@ -654,7 +654,6 @@
                     </div>
                 </div>
                 
-                <!-- Technical Analysis -->
                 <div class="content-block">
                     <h3>📈 Technical - Basic to Advance</h3>
                     <ul>
@@ -666,7 +665,6 @@
                     </ul>
                 </div>
                 
-                <!-- Fundamental Analysis -->
                 <div class="content-block">
                     <h3>📰 Fundamental - Basic to Advance</h3>
                     <ul>
@@ -679,7 +677,6 @@
             </div>
         </div>
         
-        <!-- Indian Share Market Course -->
         <div class="course-detail-card" data-aos="fade-up" data-aos-delay="100">
             <div class="course-header">
                 <div class="course-icon">
@@ -690,7 +687,6 @@
             </div>
             
             <div class="course-content-grid">
-                <!-- Trading Strategies -->
                 <div class="content-block">
                     <h3>📊 Trading Strategies</h3>
                     <ul>
@@ -701,7 +697,6 @@
                     </ul>
                 </div>
                 
-                <!-- Investment Strategies -->
                 <div class="content-block">
                     <h3>💰 Investment Strategies</h3>
                     <ul>
@@ -711,7 +706,6 @@
                     </ul>
                 </div>
                 
-                <!-- Technical Analysis -->
                 <div class="content-block">
                     <h3>📈 Technical - Basic To Advance</h3>
                     <ul>
@@ -723,7 +717,6 @@
                     </ul>
                 </div>
                 
-                <!-- Fundamental Analysis -->
                 <div class="content-block">
                     <h3>📰 Fundamental - Basic To Advance</h3>
                     <ul>
@@ -739,7 +732,6 @@
     </div>
 </section>
 
-<!-- Why Choose Us -->
 <section class="why-section">
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Why <span>WealthMaster</span>?</h2>
@@ -781,7 +773,6 @@
     </div>
 </section>
 
-<!-- CTA Section -->
 <section class="cta-section">
     <div class="container">
         <h2 data-aos="zoom-in">Ready to Start Your Trading Journey?</h2>
@@ -790,7 +781,6 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-col" data-aos="fade-up">
@@ -823,7 +813,6 @@
     </div>
 </footer>
 
-<!-- Sticky WhatsApp & Call -->
 <div class="sticky-buttons">
     <a href="https://wa.me/919529023068" class="sticky-btn whatsapp" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
@@ -833,7 +822,6 @@
     </a>
 </div>
 
-<!-- Cursor Dot -->
 <div id="follower-dot"></div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
