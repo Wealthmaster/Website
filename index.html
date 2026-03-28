@@ -3,8 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Wealth Master Academy – Pune's Premium Stock Market Institute</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Wealth Master Academy | Best Stock Market Institute in Pune | SMC Trading Courses</title>
+    <meta name="description" content="India's premium stock market institute in Pune. Learn Smart Money Concepts (SMC), institutional trading strategies. 500+ successful students. Online & classroom courses. Free demo class available.">
+    <meta name="keywords" content="stock market classes Pune, trading academy Pune, share market course, Smart Money Concepts, SMC trading, Wealth Master Academy, stock market institute Pune, trading courses in Pune">
+    <meta name="author" content="Wealth Master Academy">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://wealthmasteracademy.in/">
+    
+    <!-- Open Graph Tags (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:title" content="Wealth Master Academy | Best Stock Market Institute in Pune">
+    <meta property="og:description" content="Learn Smart Money Concepts & institutional trading from experts. 500+ successful students. Free demo class available.">
+    <meta property="og:image" content="https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp">
+    <meta property="og:url" content="https://wealthmasteracademy.in/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wealth Master Academy | Best Stock Market Institute in Pune">
+    <meta name="twitter:description" content="Learn Smart Money Concepts & institutional trading. 500+ successful students. Free demo class available.">
+    <meta name="twitter:image" content="https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp">
+    
+    <!-- Geo Location (Pune) -->
+    <meta name="geo.region" content="IN-MH">
+    <meta name="geo.placename" content="Pune">
+    <meta name="geo.position" content="18.5982;73.7631">
+    <meta name="ICBM" content="18.5982, 73.7631">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
     <style>
         /* ----- RESET & BASE ----- */
         * {
@@ -51,13 +81,8 @@
             animation: pulse 2s infinite;
         }
 
-        .sticky-btn.whatsapp {
-            background: #25D366;
-        }
-
-        .sticky-btn.call {
-            background: #ff3131;
-        }
+        .sticky-btn.whatsapp { background: #25D366; }
+        .sticky-btn.call { background: #ff3131; }
 
         .sticky-btn:hover {
             transform: scale(1.1);
@@ -103,23 +128,10 @@
             100% { transform: scale(1); }
         }
 
-        /* Mobile adjustment */
         @media (max-width: 768px) {
-            .sticky-buttons {
-                bottom: 20px;
-                right: 15px;
-                gap: 12px;
-            }
-            
-            .sticky-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-            }
-            
-            .sticky-btn .tooltip {
-                display: none; /* Hide tooltip on mobile */
-            }
+            .sticky-buttons { bottom: 20px; right: 15px; gap: 12px; }
+            .sticky-btn { width: 50px; height: 50px; font-size: 24px; }
+            .sticky-btn .tooltip { display: none; }
         }
 
         /* ---------- DIVIDER STYLE ---------- */
@@ -179,7 +191,7 @@
         .delay-1.active { animation-delay: 0.2s; }
         .delay-2.active { animation-delay: 0.4s; }
 
-        /* ---------- FIXED HEADER (with fixed mobile menu) ---------- */
+        /* ---------- FIXED HEADER ---------- */
         header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 10000;
             background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -192,7 +204,6 @@
         .logo img { height: 55px; }
         @media (max-width: 700px) { .logo img { height: 45px; } }
         
-        /* Desktop menu */
         .nav-links {
             display: flex; list-style: none; gap: 20px; align-items: center;
         }
@@ -207,9 +218,8 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2); white-space: nowrap;
         }
         
-        /* Mobile menu toggle - ALWAYS VISIBLE on mobile */
         .menu-toggle {
-            display: none;  /* hidden on desktop */
+            display: none;
             flex-direction: column;
             cursor: pointer;
             gap: 6px;
@@ -227,7 +237,6 @@
         
         .ticker-container { width: 100%; background: #fff; overflow: hidden; }
 
-        /* ----- MOBILE STYLES (FIXED) ----- */
         @media screen and (max-width: 1024px) {
             .menu-toggle { display: flex !important; }
             .nav-links {
@@ -273,6 +282,7 @@
         .lead-form-container { flex: 1 1 380px; }
         .top-tag { color: #0f0; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; }
         .lead-title { font-family: 'Playfair Display', serif; font-size: clamp(35px,6vw,55px); margin: 15px 0; line-height: 1.1; }
+        .lead-title .highlight { color: #ff3131; }
         .lead-desc { color: #ccc; font-size: 18px; margin-bottom: 30px; }
         .lead-check-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 15px; margin-bottom: 35px; }
         @media (max-width:500px) { .lead-check-grid { grid-template-columns: 1fr; } }
@@ -354,14 +364,12 @@
         @media (max-width: 1000px) { .design-grid { grid-template-columns: repeat(2,1fr); max-width: 700px; } }
         @media (max-width: 550px) { .design-grid { grid-template-columns: 1fr; max-width: 350px; } }
         
-        /* Cards get simple CSS hover transition, Observer handles the fadeUp */
         .design-card {
             background: #fff; padding: 22px 18px; border-radius: 10px; display: flex; align-items: center; gap: 15px;
             transition: all 0.25s ease; border: 1px solid transparent; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             cursor: pointer;
         }
         
-        /* Card Stagger Delays */
         .design-card:nth-child(1).active { animation-delay: 0.1s; }
         .design-card:nth-child(2).active { animation-delay: 0.2s; }
         .design-card:nth-child(3).active { animation-delay: 0.3s; }
@@ -397,7 +405,6 @@
             font-size: 12px; color: #555;
         }
 
-        /* Follower dot */
         #follower-dot {
             position: fixed; width: 12px; height: 12px; border-radius: 50%; pointer-events: none;
             z-index: 9999; transform: translate(-50%,-50%); background: #ff3131;
@@ -408,9 +415,71 @@
 </head>
 <body>
 
+<!-- Schema Markup for Local Business (Pune) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Wealth Master Academy",
+  "image": "https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp",
+  "description": "India's premium stock market institute in Pune. Learn Smart Money Concepts (SMC) and institutional trading strategies. Online & classroom courses available.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2nd Floor, Kranti Chowk, near Vignahartha Patsanstha, Kirti Nagar, New Sangavi",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "postalCode": "411061",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 18.5982,
+    "longitude": 73.7631
+  },
+  "url": "https://wealthmasteracademy.in/",
+  "telephone": "+919529023068",
+  "priceRange": "₹₹",
+  "openingHours": "Mo-Sa 10:00-19:00",
+  "sameAs": [
+    "https://www.instagram.com/wealthmasteracademy/",
+    "https://wa.me/919529023068"
+  ]
+}
+</script>
+
+<!-- Course Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Mastery in Trading and Investment",
+  "description": "Complete stock market course covering Smart Money Concepts (SMC), technical analysis, options trading, and risk management. Online & classroom batches in Pune.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Wealth Master Academy",
+    "sameAs": "https://wealthmasteracademy.in/"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": ["online", "offline"],
+    "location": {
+      "@type": "Place",
+      "name": "Pune, Maharashtra"
+    },
+    "startDate": "2026-04-12",
+    "duration": "P2M",
+    "offers": {
+      "@type": "Offer",
+      "price": "14999",
+      "priceCurrency": "INR"
+    }
+  }
+}
+</script>
+
 <!-- STICKY WHATSAPP AND CALL BUTTONS -->
 <div class="sticky-buttons">
-    <a href="https://wa.me/919529023068" class="sticky-btn whatsapp" target="_blank">
+    <a href="https://wa.me/919529023068" class="sticky-btn whatsapp" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
         <span class="tooltip">WhatsApp Us</span>
     </a>
@@ -422,7 +491,7 @@
 
 <header>
     <nav class="navbar">
-        <div class="logo"><a href="https://wealthmasteracademy.in"><img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Wealth Master"></a></div>
+        <div class="logo"><a href="https://wealthmasteracademy.in"><img src="https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp" alt="Wealth Master Academy Logo - Best Stock Market Institute in Pune"></a></div>
         
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
@@ -433,7 +502,7 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="https://wealthmasteracademy.in">Home</a></li>
             <li><a href="https://wealthmasteracademy.in/courses/">Courses</a></li>
-            <li><a href="https://wealthmasteracademy.in/About-US/">About-US</a></li>
+            <li><a href="https://wealthmasteracademy.in/About-US/">About Us</a></li>
             <li><a href="https://wealthmasteracademy.in/gallery/">Gallery</a></li>
             <li><a href="https://wealthmasteracademy.in/contact-us/">Contact Us</a></li>
             <li><a href="https://wealthmasteracademy.in/contact-us/" class="join-btn">Join Us!</a></li>
@@ -483,9 +552,9 @@
                 <div class="rating-info">
                     <strong>Rating 4.9 / 5 By</strong>
                     <div class="student-avatars">
-                        <img src="https://growft.odoo.com/web/image/932-6eb956b8/rohan%20profile%20foto.svg" alt="Rohan" class="avatar-img">
-                        <img src="https://growft.odoo.com/web/image/933-eb7e6191/rohit.svg" alt="Rohit" class="avatar-img">
-                        <img src="https://growft.odoo.com/web/image/1647-5594f84a/student.webp" alt="Student" class="avatar-img">
+                        <img src="https://growft.odoo.com/web/image/932-6eb956b8/rohan%20profile%20foto.svg" alt="Student Rohan" class="avatar-img">
+                        <img src="https://growft.odoo.com/web/image/933-eb7e6191/rohit.svg" alt="Student Rohit" class="avatar-img">
+                        <img src="https://growft.odoo.com/web/image/1647-5594f84a/student.webp" alt="Wealth Master Academy Student" class="avatar-img">
                     </div>
                     <span>500+ Students</span>
                 </div>
@@ -524,7 +593,7 @@
     <div class="container video-flex">
         <div class="video-container reveal-left">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/1H90MP4mPi8?autoplay=0&rel=0&modestbranding=1" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/1H90MP4mPi8?autoplay=0&rel=0&modestbranding=1" allowfullscreen title="Wealth Master Academy - Stock Market Training Video"></iframe>
             </div>
             <div class="video-badge"><span>⭐</span> Pune's Top Rated Institute</div>
         </div>
@@ -539,7 +608,7 @@
                 <div class="check-item"><span>✔</span> Most Trusted & Recommended</div>
             </div>
             <div class="rating-strip">
-                <div class="avatars"><img src="https://i.pravatar.cc/40?u=1" alt="stu"><img src="https://i.pravatar.cc/40?u=2" alt="stu"><img src="https://i.pravatar.cc/40?u=3" alt="stu"></div>
+                <div class="avatars"><img src="https://i.pravatar.cc/40?u=1" alt="Student"><img src="https://i.pravatar.cc/40?u=2" alt="Student"><img src="https://i.pravatar.cc/40?u=3" alt="Student"></div>
                 <p><strong>Rating 4.9 / 5</strong> by 500+ Pune Students</p>
             </div>
             <a href="https://wa.me/919529023068" class="cta-btn">Book Your Free Demo Class</a>
@@ -582,7 +651,10 @@
         </div>
         <div class="footer-col reveal delay-2">
             <h4>Get In Touch</h4>
-            <p>📍 2nd Floor, Kranti Chowk, near by Vignahartha Patsanstha, Kirti Nagar, New Sangavi, Pune, Pimpri-Chinchwad, Maharashtra 411061 </p><p>📧 wealthmaster912@gmail.com </p><p style="color:#ff3131;">📞 +91 9529023068</p>
+            <p>📍 2nd Floor, Kranti Chowk, near by Vignahartha Patsanstha, Kirti Nagar, New Sangavi, Pune, Pimpri-Chinchwad, Maharashtra 411061</p>
+            <p>📧 wealthmaster912@gmail.com</p>
+            <p style="color:#ff3131;">📞 +91 9529023068</p>
+            <p style="margin-top:10px;">👨‍💼 Admin: Deepak Wagh <span style="color:#ff3131;">+91 73875 34862</span></p>
         </div>
     </div>
     <div class="footer-bottom reveal">
@@ -594,14 +666,10 @@
 <div id="follower-dot"></div>
 
 <script>
-    // Mobile menu toggle function
     function toggleMenu() {
         const nav = document.getElementById('navLinks');
         const spans = document.querySelectorAll('.menu-toggle span');
-        
         nav.classList.toggle('active');
-        
-        // Animate hamburger to X
         if (nav.classList.contains('active')) {
             spans[0].style.transform = "rotate(45deg) translate(6px, 6px)";
             spans[1].style.opacity = "0";
@@ -613,15 +681,11 @@
         }
     }
 
-    // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         const nav = document.getElementById('navLinks');
         const toggle = document.querySelector('.menu-toggle');
-        
         if (nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)) {
             nav.classList.remove('active');
-            
-            // Reset hamburger icon
             const spans = document.querySelectorAll('.menu-toggle span');
             spans[0].style.transform = "none";
             spans[1].style.opacity = "1";
@@ -629,42 +693,24 @@
         }
     });
 
-    // Follower dot animation
     const dot = document.getElementById('follower-dot');
     let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
-    
-    window.addEventListener('mousemove', (e) => { 
-        mouseX = e.clientX; 
-        mouseY = e.clientY; 
-    });
-    
+    window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
     function animateDot() {
         dotX += (mouseX - dotX) * 0.1;
         dotY += (mouseY - dotY) * 0.1;
-        
-        if (dot) { 
-            dot.style.left = dotX + 'px'; 
-            dot.style.top = dotY + 'px'; 
-        }
-        
+        if (dot) { dot.style.left = dotX + 'px'; dot.style.top = dotY + 'px'; }
         const distance = Math.hypot(mouseX - dotX, mouseY - dotY);
         if (distance > 2) dot.classList.add('chasing');
         else dot.classList.remove('chasing');
-        
         requestAnimationFrame(animateDot);
     }
     animateDot();
 
-    // ---------- NEW PRO SCROLL OBSERVER ----------
     const animatedElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { 
-            if(entry.isIntersecting) {
-                entry.target.classList.add('active'); 
-            }
-        });
-    }, { threshold: 0.15 }); // 15% section screen par aane par animate hoga
-    
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
+    }, { threshold: 0.15 });
     animatedElements.forEach(el => observer.observe(el));
 </script>
 
