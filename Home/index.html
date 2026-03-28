@@ -1,171 +1,9 @@
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&amp;display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Hero Section */
-        .hero-banner {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            color: #ffffff;
-            background-color: #000; /* Fallback color */
-        }
-
-        /* Background Video */
-        #bg-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            object-fit: cover;
-        }
-
-        /* Stylish Overlay - Trading Theme */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Red glow effect from right, Dark from left */
-            background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(255, 49, 49, 0.2) 100%);
-            z-index: 1;
-        }
-
-        /* Content Area */
-        .content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 1000px;
-            padding: 20px;
-            animation: fadeInScale 1.5s ease-out;
-        }
-
-        .content h1 {
-            font-size: 5rem;
-            font-weight: 900;
-            line-height: 1;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
-        }
-
-        .content h1 span {
-            color: #ff3131; /* Wealth Master Red */
-            display: block;
-        }
-
-        .content p {
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            color: #f0f0f0;
-            font-weight: 400;
-            letter-spacing: 1px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Buttons Styling */
-        .btn-box {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 18px 45px;
-            border-radius: 4px; /* Slightly sharp for professional look */
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            transition: all 0.4s ease;
-            letter-spacing: 1px;
-        }
-
-        .btn-primary {
-            background: #ff3131;
-            color: white;
-            border: 2px solid #ff3131;
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(255, 49, 49, 0.4);
-        }
-
-        .btn-outline {
-            border: 2px solid white;
-            color: white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: #000;
-            transform: translateY(-5px);
-        }
-
-        /* Animations */
-        @keyframes fadeInScale {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .content h1 { font-size: 2.8rem; letter-spacing: 0; }
-            .content p { font-size: 1.1rem; }
-            .btn-box { flex-direction: column; align-items: center; }
-            .btn { width: 100%; max-width: 280px; text-align: center; }
-        }
-    </style>
-
-
-
-    <section class="hero-banner">
-        <video autoplay="" muted="" loop="" playsinline="" id="bg-video">
-            <source src="https://pixabay.com/videos/download/x-308080_medium.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-        <div class="overlay"></div>
-
-        <div class="content">
-            <h1>Wealth Master <span>Academy</span></h1>
-            <p>India's Premium Stock Market Institute. Learn strategies that big players use.</p>
-            
-            <div class="btn-box">
-                <a href="https://wealthmasteracademy.in/courses" class="btn btn-primary">Start Trading</a>
-                <a href="https://wealthmasteracademy.in/contact-us/" class="btn btn-outline">Free Demo Class</a>
-            </div>
-        </div>
-    </section>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Wealth Master Academy</title>
+    <title>Wealth Master Academy – About Us</title>
     <style>
         * {
             margin: 0;
@@ -298,6 +136,323 @@
                 height: 50px;
             }
         }
+        
+        /* Founder Speech Section Styles */
+        .founder-speech-section {
+            background: #000;
+            padding: 80px 20px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        
+        .founder-speech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .founder-speech-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .founder-speech-title span {
+            color: #ff3131;
+        }
+        
+        .founder-speech-content {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .founder-image-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .founder-image-section img {
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid #ff3131;
+            box-shadow: 0 20px 40px rgba(255,49,49,0.3);
+        }
+        
+        .certificate-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .certificate-section img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            border: 2px solid #ff3131;
+            box-shadow: 0 10px 20px rgba(255,49,49,0.2);
+        }
+        
+        .certificate-section p {
+            color: #ff3131;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        /* Admin Section Styles */
+        .admin-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255,49,49,0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255,49,49,0.3);
+        }
+        
+        .admin-title {
+            color: #ff3131;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .admin-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .admin-image {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        .admin-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid #ff3131;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(255,49,49,0.3);
+        }
+        
+        .admin-details {
+            flex: 2;
+            min-width: 250px;
+        }
+        
+        .admin-details h3 {
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .admin-details .position {
+            color: #ff3131;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .admin-details .phone {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .admin-details .phone i {
+            color: #ff3131;
+            margin-right: 10px;
+        }
+        
+        .admin-details .phone a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .admin-details .phone a:hover {
+            color: #ff3131;
+        }
+        
+        .admin-contact-btn {
+            background: #ff3131;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        
+        .admin-contact-btn:hover {
+            background: #ff5555;
+            transform: scale(1.05);
+        }
+        
+        .founder-speech-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .founder-quote {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff3131;
+            margin-bottom: 20px;
+            font-style: italic;
+            border-left: 4px solid #ff3131;
+            padding-left: 20px;
+        }
+        
+        .founder-story {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        .founder-highlight {
+            background: rgba(255,49,49,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ff3131;
+        }
+        
+        .founder-highlight p {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+        
+        .founder-signature {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #ff3131;
+        }
+        
+        @media (max-width: 768px) {
+            .founder-speech-title {
+                font-size: 32px;
+            }
+            
+            .founder-quote {
+                font-size: 20px;
+            }
+            
+            .admin-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .admin-details {
+                text-align: center;
+            }
+        }
+        
+        /* Sticky WhatsApp & Call Buttons */
+        .sticky-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sticky-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+
+        .sticky-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .sticky-btn.call {
+            background: #ff3131;
+        }
+
+        .sticky-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .sticky-btn .tooltip {
+            position: absolute;
+            right: 70px;
+            background: #fff;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .sticky-btn .tooltip::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-width: 8px 0 8px 8px;
+            border-style: solid;
+            border-color: transparent transparent transparent #fff;
+        }
+
+        .sticky-btn:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 75px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-buttons {
+                bottom: 20px;
+                right: 15px;
+                gap: 12px;
+            }
+            
+            .sticky-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+            
+            .sticky-btn .tooltip {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -306,14 +461,14 @@
     <nav class="navbar">
         <div class="logo">
             <a href="https://wealthmasteracademy.in/">
-                <img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Logo">
+                <img src="https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp" alt="Wealth Master Academy Logo">
             </a>
         </div>
 
         <ul class="nav-links" id="navLinks">
             <li><a href="https://wealthmasteracademy.in/">Home</a></li>
             <li><a href="https://wealthmasteracademy.in/courses">Courses</a></li>
-            <li><a href="https://wealthmasteracademy.in/About-US/">About-Us</a></li>
+            <li><a href="https://wealthmasteracademy.in/About-US/" class="active">About US</a></li>
             <li><a href="https://wealthmasteracademy.in/gallery/">Gallery</a></li>
             <li><a href="https://wealthmasteracademy.in/contact-us/">Contact Us</a></li>
             <li><a href="https://wealthmasteracademy.in/contact-us/" class="join-btn">Join Us!</a></li>
@@ -351,41 +506,208 @@
     </div>
 </header>
 
-<script>
-    function toggleMenu() {
-        const nav = document.getElementById('navLinks');
-        nav.classList.toggle('active');
-        
-        // Optional: Menu toggle animation
-        const spans = document.querySelectorAll('.menu-toggle span');
-        if(nav.classList.contains('active')) {
-            spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
-            spans[1].style.opacity = "0";
-            spans[2].style.transform = "rotate(-45deg) translate(6px, -7px)";
-        } else {
-            spans[0].style.transform = "none";
-            spans[1].style.opacity = "1";
-            spans[2].style.transform = "none";
-        }
-    }
+<!-- Sticky WhatsApp & Call Buttons -->
+<div class="sticky-buttons">
+    <a href="https://wa.me/919529023068" class="sticky-btn whatsapp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="tooltip">WhatsApp Us</span>
+    </a>
+    <a href="tel:+919529023068" class="sticky-btn call">
+        <i class="fa-solid fa-phone"></i>
+        <span class="tooltip">Call Now</span>
+    </a>
+</div>
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const nav = document.getElementById('navLinks');
-        const toggle = document.querySelector('.menu-toggle');
-        if (!nav.contains(event.target) && !toggle.contains(event.target)) {
-            nav.classList.remove('active');
-            const spans = document.querySelectorAll('.menu-toggle span');
-            spans[0].style.transform = "none";
-            spans[1].style.opacity = "1";
-            spans[2].style.transform = "none";
-        }
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div style="background: #000; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden;">
+
+    <section style="height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, #1a0000 0%, #000 70%);">
+        <div id="about-hero">
+            <h1 style="font-size: 60px; font-weight: 900; text-transform: uppercase; letter-spacing: 5px; margin: 0;">
+                WE ARE <span style="color: #ff3131;">WEALTH MASTER</span>
+            </h1>
+            <p style="font-size: 18px; color: #888; margin-top: 20px; letter-spacing: 2px;">India's Premium Stock Market Institute.</p>
+        </div>
+    </section>
+
+    <section id="vision" style="padding: 100px 20px; max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 50px;">
+        <div style="flex: 1;">
+            <h2 style="font-size: 40px; font-weight: 800; border-left: 5px solid #ff3131; padding-left: 20px;">OUR MISSION</h2>
+            <p style="font-size: 18px; color: #ccc; line-height: 1.8; margin-top: 25px;">
+                At WealthMaster Academy, we don't just teach trading; we build institutional mindsets. Our goal is to empower retail traders with the same <strong>Smart Money Concepts (SMC)</strong> and institutional logic used by the big players to dominate the markets.
+            </p>
+        </div>
+        <div style="flex: 1; text-align: center;">
+            <div style="font-size: 150px; color: rgba(255,49,49,0.1); font-weight: 900;">TRUTH</div>
+        </div>
+    </section>
+
+    <!-- Founder Speech Section with NISM Certificate and Admin -->
+    <section class="founder-speech-section">
+        <div class="founder-speech-container">
+            <h2 class="founder-speech-title">FOUNDER'S <span>WORDS</span></h2>
+            
+            <div class="founder-speech-content">
+                <div class="founder-image-section">
+                    <img src="https://growft.odoo.com/web/image/1670-e5dc4eb3/vilas%20php.webp" alt="Founder Vilas Ware">
+                    
+                    <div class="certificate-section">
+                        <img src="https://growft.odoo.com/web/image/1667-89a762ac/Vilas%20Ware%20%28NISM%20Certificate%29%20.webp" alt="NISM Certificate">
+                        <p>NISM Certified Professional</p>
+                    </div>
+                    
+                    <!-- Admin Section Added Here -->
+                    <div class="admin-section">
+                        <div class="admin-title">ADMINISTRATOR</div>
+                        <div class="admin-content">
+                            <div class="admin-image">
+                                <img src="https://ui-avatars.com/api/?name=Deepak+Wagh&size=200&background=ff3131&color=fff&bold=true" alt="Deepak Wagh">
+                            </div>
+                            <div class="admin-details">
+                                <h3>Deepak Wagh</h3>
+                                <div class="position">Administrator & Student Support</div>
+                                <div class="phone">
+                                    <i class="fa-solid fa-phone"></i> 
+                                    <a href="tel:+917387534862">+91 73875 34862</a>
+                                </div>
+                                <a href="tel:+917387534862" class="admin-contact-btn">
+                                    <i class="fa-solid fa-phone"></i> Contact Admin
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="founder-speech-text">
+                    <div class="founder-quote">
+                        "A Journey from Zero to the Zenith"
+                    </div>
+                    
+                    <p class="founder-story">
+                        I was born on the sacred soil where the legendary Chhatrapati Shivaji Maharaj took birth—Junnar (Shivneri), Pune. Growing up in the shadow of Shivneri Fort, I inherited the spirit of 'Swarajya'—the will to build something of my own and never back down from a challenge. Carrying those values, I moved to the city and completed my graduation at the prestigious Ness Wadia College, Pune.
+                    </p>
+                    
+                    <p class="founder-story">
+                        But my destiny wasn't in a 9-to-5 desk job. My eyes were always fixed on the fluctuating numbers and the rhythm of the candlestick charts.
+                    </p>
+                    
+                    <div class="founder-highlight">
+                        <p>The Turning Point</p>
+                    </div>
+                    
+                    <p class="founder-story">
+                        My trading journey began in 2015. It wasn't an overnight success story. It was a path paved with sleepless nights, market crashes, and the harsh lessons of loss. To master the "language of money," I spent two crucial years (2017 to 2019) working with India's leading brokerage house, Motilal Oswal. That experience was my real-world university. It taught me the secrets of the 'Big Bulls'—how the institutional players move and why retail traders often lose their hard-earned money.
+                    </p>
+                    
+                    <div class="founder-highlight">
+                        <p>The Mission: WealthMaster Academy</p>
+                    </div>
+                    
+                    <p class="founder-story">
+                        After seeing thousands of people lose their savings due to a lack of guidance and high-risk gambling in the markets, a thought struck me: If I have mastered the art of survival and profit, why not empower others?
+                    </p>
+                    
+                    <p class="founder-story">
+                        With this vision, I began teaching the art of trading in 2021. Today, I am incredibly proud that WealthMaster Academy has successfully built an army of over 500+ profitable students who are now trading with discipline and confidence.
+                    </p>
+                    
+                    <div class="founder-highlight">
+                        <p>"The Stock Market is not just a place to make money; it is a test of your character and patience. My mission is not just to make you a 'Trader,' but to lead you toward 'Financial Sovereignty'."</p>
+                    </div>
+                    
+                    <p class="founder-story">
+                        Join me at WealthMaster Academy. Let's decode the market together and turn your financial dreams into a living reality. Because in this market, you only earn when you learn.
+                    </p>
+                    
+                    <div class="founder-signature">
+                        — Vilas Ware
+                    </div>
+                    
+                    <!-- Admin contact info also added at bottom for easy access -->
+                    <div style="margin-top: 40px; padding: 20px; background: rgba(255,49,49,0.05); border-radius: 10px; text-align: center;">
+                        <p style="color: #ccc; font-size: 16px;">For any queries or admissions, contact our Administrator:</p>
+                        <p style="color: #ff3131; font-size: 20px; font-weight: 600; margin-top: 10px;">Deepak Wagh</p>
+                        <p style="color: #fff; font-size: 18px;"><i class="fa-solid fa-phone"></i> +91 73875 34862</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #080808; padding: 100px 20px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 35px; margin-bottom: 60px;">WHY CHOOSE <span style="color: #ff3131;">US?</span></h2>
+            
+            <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
+                <div class="about-card" style="background: #111; padding: 40px; width: 300px; border-radius: 4px; border-bottom: 3px solid #ff3131;">
+                    <h3 style="color: #ff3131;">01. No Indicators</h3>
+                    <p style="color: #888; font-size: 14px;">We teach pure Price Action and Market Structure. Forget lagging indicators.</p>
+                </div>
+                <div class="about-card" style="background: #111; padding: 40px; width: 300px; border-radius: 4px; border-bottom: 3px solid #ff3131;">
+                    <h3 style="color: #ff3131;">02. Live Support</h3>
+                    <p style="color: #888; font-size: 14px;">Direct access to mentors for doubt clearing and live market analysis.</p>
+                </div>
+                <div class="about-card" style="background: #111; padding: 40px; width: 300px; border-radius: 4px; border-bottom: 3px solid #ff3131;">
+                    <h3 style="color: #ff3131;">03. Real Results</h3>
+                    <p style="color: #888; font-size: 14px;">Focused on consistent profitability and professional risk management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 100px 20px; text-align: center;">
+        <h2 style="font-size: 30px; margin-bottom: 40px;">Stop being the liquidity. Start trading it.</h2>
+        <a href="/contact" style="background: #ff3131; color: #fff; padding: 20px 50px; text-decoration: none; font-weight: 900; text-transform: uppercase; border-radius: 4px; display: inline-block;">Join the Academy</a>
+    </section>
+
+</div>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Animation
+    gsap.from("#about-hero", { opacity: 0, y: 50, duration: 1.5, ease: "power4.out" });
+
+    // Vision Animation
+    gsap.from("#vision", {
+        scrollTrigger: { trigger: "#vision", start: "top 80%" },
+        opacity: 0,
+        x: -100,
+        duration: 1
+    });
+
+    // Founder Section Animation
+    gsap.from(".founder-speech-content", {
+        scrollTrigger: { trigger: ".founder-speech-section", start: "top 80%" },
+        opacity: 0,
+        y: 50,
+        duration: 1
+    });
+
+    // Admin Section Animation
+    gsap.from(".admin-section", {
+        scrollTrigger: { trigger: ".admin-section", start: "top 90%" },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.3
+    });
+
+    // Cards Stagger
+    gsap.from(".about-card", {
+        scrollTrigger: { trigger: ".about-card", start: "top 90%" },
+        opacity: 0,
+        y: 50,
+        stagger: 0.3,
+        duration: 0.8
     });
 </script>
 
-</body>
-</html>
-<figure class="wp-block-image size-full is-resized has-custom-border about-image1"><img src="https://wealthmasteracademy.in/wp-content/themes/startup-consultant/assets/images/about-img1.png" alt="" class="wp-image-57" style="border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;object-fit:cover;width:549px;height:auto"/></figure>
+
 <footer style="background: #000; color: #fff; padding: 60px 20px; font-family: 'Montserrat', sans-serif; border-top: 2px solid #ff3131;">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
         
@@ -401,16 +723,17 @@
             <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2.5;">
                 <li><a href="/" style="color: #ccc; text-decoration: none;">Home</a></li>
                 <li><a href="/courses" style="color: #ccc; text-decoration: none;">Our Courses</a></li>
-                <li><a href="/about" style="color: #ccc; text-decoration: none;">About Us</a></li>
-                <li><a href="/contact" style="color: #ccc; text-decoration: none;">Contact Support</a></li>
+                <li><a href="/About-US" style="color: #ccc; text-decoration: none;">About Us</a></li>
+                <li><a href="/contact-us" style="color: #ccc; text-decoration: none;">Contact Support</a></li>
             </ul>
         </div>
 
         <div style="flex: 1; min-width: 250px;">
             <h4 style="font-size: 18px; margin-bottom: 20px; border-bottom: 2px solid #ff3131; display: inline-block;">Get In Touch</h4>
-            <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">📍 Pune, Maharashtra</p>
-            <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">📧 growftdigitalhelp@gmail.com</p>
-            <p style="color: #ff3131; font-weight: bold; font-size: 14px;">WhatsApp for Queries: +91 7020360561</p>
+            <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;"> 2nd Floor, Kranti Chowk, near by Vignahartha Patsanstha, Kirti Nagar, New Sangavi, Pune, Pimpri-Chinchwad, Maharashtra 411061</p>
+            <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">📧 wealthmaster912@gmail.com</p>
+            <p style="color: #ff3131; font-weight: bold; font-size: 14px;">WhatsApp for Queries: +91 9529023068</p>
+            <p style="color: #fff; font-size: 14px; margin-top: 10px;">Admin: Deepak Wagh <span style="color: #ff3131;">+91 73875 34862</span></p>
         </div>
 
     </div>
@@ -457,32 +780,59 @@
 </style>
 
 <script>
-    const dot = document.getElementById('follower-dot');
-    let mouseX = 0, mouseY = 0; // Arrow position
-    let dotX = 0, dotY = 0;     // Dot position
+    // Mobile menu toggle
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('active');
+        
+        // Optional: Menu toggle animation
+        const spans = document.querySelectorAll('.menu-toggle span');
+        if(nav.classList.contains('active')) {
+            spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+            spans[1].style.opacity = "0";
+            spans[2].style.transform = "rotate(-45deg) translate(6px, -7px)";
+        } else {
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
+        }
+    }
 
-    // Track mouse move
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const nav = document.getElementById('navLinks');
+        const toggle = document.querySelector('.menu-toggle');
+        if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+            nav.classList.remove('active');
+            const spans = document.querySelectorAll('.menu-toggle span');
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
+        }
+    });
+
+    // Cursor follower
+    const dot = document.getElementById('follower-dot');
+    let mouseX = 0, mouseY = 0;
+    let dotX = 0, dotY = 0;
+
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
 
     function animate() {
-        // Trailing Math
-        dotX += (mouseX - dotX) * 0.1; // 0.1 is the speed (lower = more lag/trailing)
+        dotX += (mouseX - dotX) * 0.1;
         dotY += (mouseY - dotY) * 0.1;
 
         dot.style.left = `${dotX}px`;
         dot.style.top = `${dotY}px`;
 
-        // Check distance between dot and arrow
         const distance = Math.sqrt(Math.pow(mouseX - dotX, 2) + Math.pow(mouseY - dotY, 2));
 
-        // Agar distance 2px se zyada hai, matlab dot abhi bhag raha hai (Green)
         if (distance > 2) {
             dot.classList.add('chasing');
         } else {
-            // Agar pahunch gaya toh Red
             dot.classList.remove('chasing');
         }
 
@@ -491,3 +841,6 @@
 
     animate();
 </script>
+
+</body>
+</html>
