@@ -3,7 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Wealth Master Academy – Gallery</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Gallery | Wealth Master Academy | Stock Market Institute Pune | Success Stories</title>
+    <meta name="description" content="View success stories, classroom photos, and trading sessions at Wealth Master Academy, Pune's premier stock market institute. See our students' journey and achievements.">
+    <meta name="keywords" content="stock market institute gallery, trading academy photos, Wealth Master Academy Pune, SMC training photos, stock market classes Pune gallery, student success stories">
+    <meta name="author" content="Wealth Master Academy">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://wealthmasteracademy.in/gallery/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Gallery | Wealth Master Academy | Stock Market Institute Pune">
+    <meta property="og:description" content="See our students' success journey, classroom sessions, and live trading analysis at Pune's premium stock market institute.">
+    <meta property="og:image" content="https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp">
+    <meta property="og:url" content="https://wealthmasteracademy.in/gallery/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gallery | Wealth Master Academy">
+    <meta name="twitter:description" content="View success stories and classroom sessions at Pune's best stock market institute.">
+    <meta name="twitter:image" content="https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp">
+    
+    <!-- Geo Location -->
+    <meta name="geo.region" content="IN-MH">
+    <meta name="geo.placename" content="Pune">
+    <meta name="geo.position" content="18.5982;73.7631">
+    
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Google Fonts -->
@@ -56,13 +84,8 @@
             animation: pulse 2s infinite;
         }
 
-        .sticky-btn.whatsapp {
-            background: #25D366;
-        }
-
-        .sticky-btn.call {
-            background: #ff3131;
-        }
+        .sticky-btn.whatsapp { background: #25D366; }
+        .sticky-btn.call { background: #ff3131; }
 
         .sticky-btn:hover {
             transform: scale(1.1);
@@ -108,23 +131,10 @@
             100% { transform: scale(1); }
         }
 
-        /* Mobile adjustment */
         @media (max-width: 768px) {
-            .sticky-buttons {
-                bottom: 20px;
-                right: 15px;
-                gap: 12px;
-            }
-            
-            .sticky-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-            }
-            
-            .sticky-btn .tooltip {
-                display: none; /* Hide tooltip on mobile */
-            }
+            .sticky-buttons { bottom: 20px; right: 15px; gap: 12px; }
+            .sticky-btn { width: 50px; height: 50px; font-size: 24px; }
+            .sticky-btn .tooltip { display: none; }
         }
 
         /* ---------- FIXED HEADER ---------- */
@@ -149,9 +159,7 @@
             text-transform: uppercase; transition: 0.3s;
         }
         .nav-links li a:hover,
-        .nav-links li a.active {
-            color: #ff3131;
-        }
+        .nav-links li a.active { color: #ff3131; }
         .join-btn {
             background: linear-gradient(to bottom, #444, #000);
             color: white !important; padding: 10px 25px; border-radius: 50px;
@@ -204,7 +212,6 @@
             margin: 0 auto;
         }
         
-        /* Page Header */
         .page-header {
             text-align: center;
             margin-bottom: 60px;
@@ -235,7 +242,6 @@
             margin: 20px auto 0;
         }
         
-        /* Gallery Grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -250,7 +256,6 @@
             }
         }
         
-        /* Gallery Item */
         .gallery-item {
             position: relative;
             overflow: hidden;
@@ -299,7 +304,6 @@
             font-size: 14px;
         }
         
-        /* Category Filter (optional) */
         .gallery-filters {
             display: flex;
             justify-content: center;
@@ -328,7 +332,6 @@
             color: #fff;
         }
         
-        /* Call to Action */
         .gallery-cta {
             text-align: center;
             margin-top: 80px;
@@ -370,7 +373,6 @@
             transform: translateX(5px);
         }
 
-        /* ----- FOOTER (same as main page) ----- */
         .footer {
             background: #000;
             padding: 60px 20px 30px;
@@ -402,7 +404,6 @@
             color: #555;
         }
 
-        /* Follower dot */
         #follower-dot {
             position: fixed; width: 12px; height: 12px; border-radius: 50%; pointer-events: none;
             z-index: 9999; transform: translate(-50%,-50%); background: #ff3131;
@@ -413,9 +414,25 @@
 </head>
 <body>
 
+<!-- ImageObject Schema for Gallery -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Wealth Master Academy Gallery",
+  "description": "Success stories, classroom sessions, and trading analysis photos from Wealth Master Academy, Pune's premier stock market institute.",
+  "url": "https://wealthmasteracademy.in/gallery/",
+  "provider": {
+    "@type": "Organization",
+    "name": "Wealth Master Academy",
+    "url": "https://wealthmasteracademy.in/"
+  }
+}
+</script>
+
 <!-- STICKY WHATSAPP AND CALL BUTTONS -->
 <div class="sticky-buttons">
-    <a href="https://wa.me/919529023068" class="sticky-btn whatsapp" target="_blank">
+    <a href="https://wa.me/919529023068" class="sticky-btn whatsapp" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
         <span class="tooltip">WhatsApp Us</span>
     </a>
@@ -425,10 +442,10 @@
     </a>
 </div>
 
-<!-- HEADER -->
+<!-- HEADER with Updated Logo -->
 <header>
     <nav class="navbar">
-        <div class="logo"><a href="#"><img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Wealth Master"></a></div>
+        <div class="logo"><a href="https://wealthmasteracademy.in"><img src="https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp" alt="Wealth Master Academy Logo"></a></div>
         
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span><span></span><span></span>
@@ -437,9 +454,9 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="https://wealthmasteracademy.in">Home</a></li>
             <li><a href="https://wealthmasteracademy.in/courses/">Courses</a></li>
-            <li><a href="https://wealthmasteracademy.in/About-US/">About-US</a></li>
+            <li><a href="https://wealthmasteracademy.in/About-US/">About Us</a></li>
             <li><a href="#" class="active">Gallery</a></li>
-            <li><a href="/contact-us">Contact Us</a></li>
+            <li><a href="https://wealthmasteracademy.in/contact-us/">Contact Us</a></li>
             <li><a href="https://wealthmasteracademy.in/contact-us/" class="join-btn">Join Us!</a></li>
         </ul>
     </nav>
@@ -470,7 +487,7 @@
 <!-- GALLERY PAGE CONTENT -->
 <section class="gallery-page">
     <div class="container">
-        <!-- Page Header with AOS -->
+        <!-- Page Header -->
         <div class="page-header" data-aos="fade-down">
             <h2>Our <span class="highlight">Success Stories</span></h2>
             <p>Visual proof of our community's growth and trading journey.</p>
@@ -479,18 +496,18 @@
 
         <!-- Category Filters -->
         <div class="gallery-filters" data-aos="fade-up" data-aos-delay="100">
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">Online Classes</button>
-            <button class="filter-btn">Offline Mentorship</button>
-            <button class="filter-btn">SMC Analysis</button>
-            <button class="filter-btn">Student Success</button>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="online">Online Classes</button>
+            <button class="filter-btn" data-filter="offline">Offline Mentorship</button>
+            <button class="filter-btn" data-filter="smc">SMC Analysis</button>
+            <button class="filter-btn" data-filter="success">Student Success</button>
         </div>
 
         <!-- Gallery Grid -->
         <div class="gallery-grid">
             <!-- Gallery Item 1 -->
             <div class="gallery-item" data-aos="zoom-in" data-category="online">
-                <img src="https://growft.odoo.com/web/image/1656-af6e0ea9/online%20class.webp" alt="ONLINE CLASSES">
+                <img src="https://growft.odoo.com/web/image/1656-af6e0ea9/online%20class.webp" alt="Online Trading Classes at Wealth Master Academy Pune">
                 <div class="gallery-overlay">
                     <span>ONLINE CLASSES</span>
                     <p>Live trading sessions with expert mentors</p>
@@ -499,7 +516,7 @@
 
             <!-- Gallery Item 2 -->
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100" data-category="offline">
-                <img src="https://growft.odoo.com/web/image/1659-58a3c24d/live%20class%20trading.webp" alt="Live Batch">
+                <img src="https://growft.odoo.com/web/image/1659-58a3c24d/live%20class%20trading.webp" alt="Offline Classroom Training at Wealth Master Academy Pune">
                 <div class="gallery-overlay">
                     <span>OFFLINE MENTORSHIP</span>
                     <p>Classroom training at New Sangavi, Pune</p>
@@ -508,56 +525,61 @@
 
             <!-- Gallery Item 3 -->
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200" data-category="smc">
-                <img src="https://growft.odoo.com/web/image/1678-29d4a013/smc.webp" alt="Chart Analysis">
+                <img src="https://growft.odoo.com/web/image/1678-29d4a013/smc.webp" alt="Smart Money Concepts (SMC) Chart Analysis at Wealth Master Academy">
                 <div class="gallery-overlay">
                     <span>SMC ANALYSIS</span>
                     <p>Smart Money Concepts entry & exit strategies</p>
                 </div>
             </div>
 
-            <!-- Additional Gallery Items -->
+            <!-- Gallery Item 4 -->
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300" data-category="online">
-                <img src="https://growft.odoo.com/web/image/1677-e53369a0/stock%20market%20basic.webp">
+                <img src="https://growft.odoo.com/web/image/1677-e53369a0/stock%20market%20basic.webp" alt="Stock Market Basics Course at Wealth Master Academy Pune">
                 <div class="gallery-overlay">
                     <span>BASICS COURSE</span>
                     <p>Foundation program for beginners</p>
                 </div>
             </div>
 
+            <!-- Gallery Item 5 -->
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400" data-category="offline">
-                <img src="https://growft.odoo.com/web/image/1661-8c9444d4/class%20room%20training.webp" alt="Classroom Training">
+                <img src="https://growft.odoo.com/web/image/1661-8c9444d4/class%20room%20training.webp" alt="Classroom Training Session at Wealth Master Academy">
                 <div class="gallery-overlay">
                     <span>CLASSROOM SESSIONS</span>
                     <p>Interactive learning environment</p>
                 </div>
             </div>
 
+            <!-- Gallery Item 6 -->
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500" data-category="success">
-                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/student-profit.jpg" alt="Student Profit">
+                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/student-profit.jpg" alt="Student Profit Success Story at Wealth Master Academy">
                 <div class="gallery-overlay">
                     <span>STUDENT SUCCESS</span>
                     <p>One of our students achieved 200% returns</p>
                 </div>
             </div>
 
+            <!-- Gallery Item 7 -->
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600" data-category="smc">
-                <img src="https://growft.odoo.com/web/image/1676-78150f42/market%20analysis.webp" alt="Market Analysis">
+                <img src="https://growft.odoo.com/web/image/1676-78150f42/market%20analysis.webp" alt="Live Market Analysis Session at Wealth Master Academy">
                 <div class="gallery-overlay">
                     <span>MARKET ANALYSIS</span>
                     <p>Live chart analysis during sessions</p>
                 </div>
             </div>
 
+            <!-- Gallery Item 8 -->
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700" data-category="offline">
-                <img src="https://growft.odoo.com/web/image/1680-8d044bf6/WhatsApp%20Image%202026-02-28%20at%2012.49.23%20PM.webp" alt="Workshop">
+                <img src="https://growft.odoo.com/web/image/1680-8d044bf6/WhatsApp%20Image%202026-02-28%20at%2012.49.23%20PM.webp" alt="Trading Workshop at Wealth Master Academy Pune">
                 <div class="gallery-overlay">
                     <span>WORKSHOPS</span>
                     <p>Special weekend workshops</p>
                 </div>
             </div>
 
+            <!-- Gallery Item 9 -->
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="800" data-category="success">
-                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/graduation.jpg" alt="Course Completion">
+                <img src="https://wealthmasteracademy.in/wp-content/uploads/2026/02/graduation.jpg" alt="Course Completion Certificate Distribution at Wealth Master Academy">
                 <div class="gallery-overlay">
                     <span>CERTIFICATION</span>
                     <p>Students after course completion</p>
@@ -568,14 +590,14 @@
         <!-- Call to Action -->
         <div class="gallery-cta" data-aos="fade-up" data-aos-delay="200">
             <h3>Want to see your profits here?</h3>
-            <a href="/contact" class="cta-btn">
+            <a href="https://wa.me/919529023068" class="cta-btn">
                 Start Learning Now <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER with Updated Contact Info -->
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-col">
@@ -586,11 +608,11 @@
         <div class="footer-col">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Our Courses</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact Support</a></li>
+                <li><a href="https://wealthmasteracademy.in">Home</a></li>
+                <li><a href="https://wealthmasteracademy.in/courses/">Our Courses</a></li>
+                <li><a href="https://wealthmasteracademy.in/About-US/">About Us</a></li>
+                <li><a href="https://wealthmasteracademy.in/gallery/">Gallery</a></li>
+                <li><a href="https://wealthmasteracademy.in/contact-us/">Contact Support</a></li>
             </ul>
         </div>
         
@@ -598,7 +620,8 @@
             <h4>Get In Touch</h4>
             <p>📍 2nd Floor, Kranti Chowk, near by Vignahartha Patsanstha, Kirti Nagar, New Sangavi, Pune, Pimpri-Chinchwad, Maharashtra 411061</p>
             <p>📧 wealthmaster912@gmail.com</p>
-            <p style="color:#ff3131;">📞 +919529023068 </p>
+            <p style="color:#ff3131;">📞 +91 9529023068</p>
+            <p style="margin-top: 10px;">👨‍💼 Admin: Deepak Wagh | +91 73875 34862</p>
         </div>
     </div>
     
@@ -608,26 +631,17 @@
     </div>
 </footer>
 
-<!-- FOLLOWER DOT -->
 <div id="follower-dot"></div>
 
 <!-- AOS Script -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // Initialize AOS
-    AOS.init({ 
-        duration: 1000, 
-        once: true,
-        offset: 100
-    });
+    AOS.init({ duration: 1000, once: true, offset: 100 });
 
-    // Mobile menu toggle
     function toggleMenu() {
         const nav = document.getElementById('navLinks');
         const spans = document.querySelectorAll('.menu-toggle span');
-        
         nav.classList.toggle('active');
-        
         if (nav.classList.contains('active')) {
             spans[0].style.transform = "rotate(45deg) translate(6px, 6px)";
             spans[1].style.opacity = "0";
@@ -639,11 +653,9 @@
         }
     }
 
-    // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         const nav = document.getElementById('navLinks');
         const toggle = document.querySelector('.menu-toggle');
-        
         if (nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)) {
             nav.classList.remove('active');
             const spans = document.querySelectorAll('.menu-toggle span');
@@ -653,44 +665,39 @@
         }
     });
 
-    // Follower dot animation
     const dot = document.getElementById('follower-dot');
     let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
-    
-    window.addEventListener('mousemove', (e) => { 
-        mouseX = e.clientX; 
-        mouseY = e.clientY; 
-    });
-    
+    window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
     function animateDot() {
         dotX += (mouseX - dotX) * 0.1;
         dotY += (mouseY - dotY) * 0.1;
-        
-        if (dot) { 
-            dot.style.left = dotX + 'px'; 
-            dot.style.top = dotY + 'px'; 
-        }
-        
+        if (dot) { dot.style.left = dotX + 'px'; dot.style.top = dotY + 'px'; }
         const distance = Math.hypot(mouseX - dotX, mouseY - dotY);
         if (distance > 2) dot.classList.add('chasing');
         else dot.classList.remove('chasing');
-        
         requestAnimationFrame(animateDot);
     }
     animateDot();
 
-    // Simple filter functionality (optional)
+    // Gallery Filter Functionality
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
     
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all buttons
+            // Update active class
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             
-            // Filter items (simplified - just for demo)
-            // You can implement actual filtering based on data-category
+            const filterValue = btn.getAttribute('data-filter');
+            
+            galleryItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         });
     });
 </script>
