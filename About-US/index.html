@@ -12,7 +12,6 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* Sabse important fix: Horizontal scroll rokne ke liye */
         html, body {
             overflow-x: hidden;
             width: 100%;
@@ -29,7 +28,7 @@
         }
 
         body {
-            padding-top: 130px; /* Navbar + Ticker height */
+            padding-top: 130px;
         }
 
         .navbar {
@@ -93,20 +92,18 @@
             transition: 0.3s;
         }
 
-        /* Ticker Container Fix */
         .ticker-container {
             width: 100%;
             border-top: 1px solid #eee;
             background: #fff;
-            overflow: hidden; /* TradingView overflow fix */
+            overflow: hidden;
         }
 
-        /* --- Responsive Styles --- */
         @media screen and (max-width: 1024px) {
             body { padding-top: 120px; }
 
             .nav-links {
-                display: none; /* Mobile pe hide */
+                display: none;
                 flex-direction: column;
                 position: absolute;
                 top: 80px; 
@@ -137,7 +134,6 @@
             }
         }
         
-        /* Founder Speech Section Styles */
         .founder-speech-section {
             background: #000;
             padding: 80px 20px;
@@ -200,7 +196,6 @@
             font-weight: 600;
         }
         
-        /* Admin Section Styles */
         .admin-section {
             margin-top: 40px;
             padding: 30px;
@@ -357,7 +352,6 @@
             }
         }
         
-        /* Sticky WhatsApp & Call Buttons */
         .sticky-buttons {
             position: fixed;
             bottom: 30px;
@@ -461,7 +455,7 @@
     <nav class="navbar">
         <div class="logo">
             <a href="https://wealthmasteracademy.in/">
-                <img src="https://growft.odoo.com/web/image/1560-e68b0138/wl.webp" alt="Logo">
+                <img src="https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp" alt="Wealth Master Academy Logo">
             </a>
         </div>
 
@@ -506,7 +500,6 @@
     </div>
 </header>
 
-<!-- Sticky WhatsApp & Call Buttons -->
 <div class="sticky-buttons">
     <a href="https://wa.me/919529023068" class="sticky-btn whatsapp" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
@@ -546,7 +539,6 @@
         </div>
     </section>
 
-    <!-- Founder Speech Section with NISM Certificate and Admin -->
     <section class="founder-speech-section">
         <div class="founder-speech-container">
             <h2 class="founder-speech-title">FOUNDER'S <span>WORDS</span></h2>
@@ -560,13 +552,12 @@
                         <p>NISM Certified Professional</p>
                     </div>
                     
-                    <!-- Admin Section Added Here -->
+                    <!-- Admin Section with Deepak Wagh's Photo -->
                     <div class="admin-section">
                         <div class="admin-title">ADMINISTRATOR</div>
                         <div class="admin-content">
                             <div class="admin-image">
-                                <!-- Placeholder image for admin - replace with actual image when available -->
-                                <img src="https://ui-avatars.com/api/?name=Deepak+Wagh&size=200&background=ff3131&color=fff&bold=true" alt="Deepak Wagh">
+                                <img src="https://growft.odoo.com/web/image/1879-cc22dfb5/WhatsApp%20Image%202026-03-23%20at%207.34.23%20PM.jpeg" alt="Deepak Wagh - Administrator, Wealth Master Academy Pune">
                             </div>
                             <div class="admin-details">
                                 <h3>Deepak Wagh</h3>
@@ -628,11 +619,10 @@
                         — Vilas Ware
                     </div>
                     
-                    <!-- Admin contact info also added at bottom for easy access -->
                     <div style="margin-top: 40px; padding: 20px; background: rgba(255,49,49,0.05); border-radius: 10px; text-align: center;">
                         <p style="color: #ccc; font-size: 16px;">For any queries or admissions, contact our Administrator:</p>
                         <p style="color: #ff3131; font-size: 20px; font-weight: 600; margin-top: 10px;">Deepak Wagh</p>
-                        <p style="color: #fff; font-size: 18px;"><i class="fa-solid fa-phone"></i> +91 73875 34862</p>
+                        <p style="color: #fff; font-size: 18px;"><i class="fa-solid fa-phone"></i> <a href="tel:+917387534862" style="color:#fff; text-decoration:none;">+91 73875 34862</a></p>
                     </div>
                 </div>
             </div>
@@ -667,48 +657,6 @@
 
 </div>
 
-<script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Hero Animation
-    gsap.from("#about-hero", { opacity: 0, y: 50, duration: 1.5, ease: "power4.out" });
-
-    // Vision Animation
-    gsap.from("#vision", {
-        scrollTrigger: { trigger: "#vision", start: "top 80%" },
-        opacity: 0,
-        x: -100,
-        duration: 1
-    });
-
-    // Founder Section Animation
-    gsap.from(".founder-speech-content", {
-        scrollTrigger: { trigger: ".founder-speech-section", start: "top 80%" },
-        opacity: 0,
-        y: 50,
-        duration: 1
-    });
-
-    // Admin Section Animation
-    gsap.from(".admin-section", {
-        scrollTrigger: { trigger: ".admin-section", start: "top 90%" },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        delay: 0.3
-    });
-
-    // Cards Stagger
-    gsap.from(".about-card", {
-        scrollTrigger: { trigger: ".about-card", start: "top 90%" },
-        opacity: 0,
-        y: 50,
-        stagger: 0.3,
-        duration: 0.8
-    });
-</script>
-
-
 <footer style="background: #000; color: #fff; padding: 60px 20px; font-family: 'Montserrat', sans-serif; border-top: 2px solid #ff3131;">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
         
@@ -731,7 +679,7 @@
 
         <div style="flex: 1; min-width: 250px;">
             <h4 style="font-size: 18px; margin-bottom: 20px; border-bottom: 2px solid #ff3131; display: inline-block;">Get In Touch</h4>
-            <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;"> 2nd Floor, Kranti Chowk, near by Vignahartha Patsanstha, Kirti Nagar, New Sangavi, Pune, Pimpri-Chinchwad, Maharashtra 411061</p>
+            <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">📍 2nd Floor, Kranti Chowk, near by Vignahartha Patsanstha, Kirti Nagar, New Sangavi, Pune, Pimpri-Chinchwad, Maharashtra 411061</p>
             <p style="color: #ccc; font-size: 14px; margin-bottom: 10px;">📧 wealthmaster912@gmail.com</p>
             <p style="color: #ff3131; font-weight: bold; font-size: 14px;">WhatsApp for Queries: +91 9529023068</p>
             <p style="color: #fff; font-size: 14px; margin-top: 10px;">Admin: Deepak Wagh <span style="color: #ff3131;">+91 73875 34862</span></p>
@@ -748,12 +696,10 @@
 <div id="follower-dot"></div>
 
 <style>
-    /* Ensure body shows the default cursor */
     body {
         cursor: default !important;
     }
 
-    /* Links par bhi arrow dikhe */
     a, button {
         cursor: pointer !important;
     }
@@ -766,14 +712,11 @@
         pointer-events: none;
         z-index: 9999;
         transform: translate(-50%, -50%);
-        
-        /* Initial Red (When it catches the arrow) */
         background-color: #ff3131;
         box-shadow: 0 0 10px #ff3131, 0 0 20px #ff3131;
         transition: background-color 0.2s, box-shadow 0.2s;
     }
 
-    /* Green state when chasing */
     #follower-dot.chasing {
         background-color: #00ff00;
         box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
@@ -781,12 +724,10 @@
 </style>
 
 <script>
-    // Mobile menu toggle
     function toggleMenu() {
         const nav = document.getElementById('navLinks');
         nav.classList.toggle('active');
         
-        // Optional: Menu toggle animation
         const spans = document.querySelectorAll('.menu-toggle span');
         if(nav.classList.contains('active')) {
             spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
@@ -799,7 +740,6 @@
         }
     }
 
-    // Close menu when clicking outside
     document.addEventListener('click', function(event) {
         const nav = document.getElementById('navLinks');
         const toggle = document.querySelector('.menu-toggle');
@@ -812,7 +752,6 @@
         }
     });
 
-    // Cursor follower
     const dot = document.getElementById('follower-dot');
     let mouseX = 0, mouseY = 0;
     let dotX = 0, dotY = 0;
