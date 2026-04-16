@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO & Meta Ads Compliance Meta Tags -->
+    <title>Privacy Policy | Wealth Master Academy – Stock Market Institute Pune</title>
+    <meta name="description" content="Privacy Policy of Wealth Master Academy. Learn how we collect, use, and protect your personal data. Compliant with Meta Ads (Facebook/Instagram) requirements.">
+    <meta name="keywords" content="privacy policy, data protection, Wealth Master Academy, Meta ads compliance, stock market institute Pune">
+    <meta name="author" content="Wealth Master Academy">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://wealthmasteracademy.in/privacy-policy/">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Privacy Policy | Wealth Master Academy">
+    <meta property="og:description" content="Read our privacy policy to understand how we handle your data. Compliant with Meta advertising standards.">
+    <meta property="og:image" content="https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp">
+    <meta property="og:url" content="https://wealthmasteracademy.in/privacy-policy/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy Policy | Wealth Master Academy">
+    <meta name="twitter:description" content="Learn how we collect, use, and protect your personal information.">
+    <meta name="twitter:image" content="https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp">
+    
+    <!-- Geo -->
+    <meta name="geo.region" content="IN-MH">
+    <meta name="geo.placename" content="Pune">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            background: #000;
+            color: #fff;
+            scroll-behavior: smooth;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body { padding-top: 125px; }
+        @media (max-width: 600px) { body { padding-top: 110px; } }
+
+        /* Sticky WhatsApp & Call */
+        .sticky-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .sticky-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .sticky-btn.whatsapp { background: #25D366; }
+        .sticky-btn.call { background: #ff3131; }
+        .sticky-btn:hover { transform: scale(1.1); }
+        .sticky-btn .tooltip {
+            position: absolute;
+            right: 70px;
+            background: #fff;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        .sticky-btn:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 75px;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @media (max-width: 768px) {
+            .sticky-buttons { bottom: 20px; right: 15px; gap: 12px; }
+            .sticky-btn { width: 50px; height: 50px; font-size: 24px; }
+            .sticky-btn .tooltip { display: none; }
+        }
+
+        /* Header */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 10000;
+            background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            width: 100%; padding: 8px 20px; max-width: 1300px; margin: 0 auto;
+        }
+        .logo img { height: 55px; }
+        @media (max-width: 700px) { .logo img { height: 45px; } }
+        .nav-links {
+            display: flex; list-style: none; gap: 20px; align-items: center;
+        }
+        .nav-links li a {
+            text-decoration: none; color: #000; font-weight: bold; font-size: 14px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .nav-links li a:hover { color: #ff3131; }
+        .join-btn {
+            background: linear-gradient(to bottom, #444, #000);
+            color: white !important; padding: 10px 25px; border-radius: 50px;
+            white-space: nowrap;
+        }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            padding: 8px;
+        }
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: #000;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+        .ticker-container { width: 100%; background: #fff; overflow: hidden; }
+        @media screen and (max-width: 1024px) {
+            .menu-toggle { display: flex !important; }
+            .nav-links {
+                display: none !important;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 25px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                z-index: 9999;
+                border-top: 1px solid #eee;
+            }
+            .nav-links.active { display: flex !important; }
+            .nav-links li { margin: 10px 0; width: 100%; }
+            .nav-links li a { display: block; padding: 8px 20px; font-size: 16px; }
+            .join-btn { display: inline-block; max-width: 200px; margin: 10px auto; }
+        }
+
+        /* Privacy Policy Content */
+        .privacy-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .privacy-header h1 {
+            font-size: 42px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        .privacy-header h1 span {
+            color: #ff3131;
+        }
+        .privacy-header p {
+            color: #888;
+            font-size: 16px;
+        }
+        .privacy-header .last-updated {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ff8c00;
+        }
+        .privacy-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        .privacy-card h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #ff3131;
+            border-left: 4px solid #ff3131;
+            padding-left: 15px;
+        }
+        .privacy-card h3 {
+            font-size: 20px;
+            margin: 25px 0 15px;
+            color: #ff8c00;
+        }
+        .privacy-card p {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .privacy-card ul, .privacy-card ol {
+            margin: 15px 0 15px 30px;
+            color: #ccc;
+            line-height: 1.7;
+        }
+        .privacy-card li {
+            margin: 8px 0;
+        }
+        .privacy-card a {
+            color: #ff3131;
+            text-decoration: none;
+        }
+        .privacy-card a:hover {
+            text-decoration: underline;
+        }
+        .highlight-box {
+            background: rgba(255,49,49,0.1);
+            border-left: 4px solid #ff3131;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        .footer {
+            background: #000;
+            padding: 60px 20px 30px;
+            border-top: 2px solid #ff3131;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+        .footer-col { flex: 1 1 250px; }
+        .footer-col h3 { color: #ff3131; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+        .footer-col p { color: #888; font-size: 14px; line-height: 1.6; margin-top: 20px; }
+        .footer-col h4 { font-size: 18px; margin-bottom: 20px; border-bottom: 2px solid #ff3131; display: inline-block; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin: 10px 0; }
+        .footer-col ul li a { color: #ccc; text-decoration: none; transition: 0.3s; }
+        .footer-col ul li a:hover { color: #ff3131; padding-left: 5px; }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 12px;
+            color: #555;
+        }
+        #follower-dot {
+            position: fixed; width: 12px; height: 12px; border-radius: 50%; pointer-events: none;
+            z-index: 9999; transform: translate(-50%,-50%); background: #ff3131;
+            box-shadow: 0 0 10px #ff3131;
+        }
+        .chasing { background: #0f0 !important; box-shadow: 0 0 10px #0f0; }
+    </style>
+</head>
+<body>
+
+<!-- Schema for Organization (required for Meta ads trust) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Wealth Master Academy",
+  "url": "https://wealthmasteracademy.in/",
+  "logo": "https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp",
+  "description": "India's premium stock market institute specializing in Smart Money Concepts (SMC) and institutional trading.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2nd Floor, Kranti Chowk, Kirti Nagar, New Sangavi",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "postalCode": "411061",
+    "addressCountry": "IN"
+  },
+  "telephone": "+919529023068",
+  "email": "wealthmaster912@gmail.com"
+}
+</script>
+
+<div class="sticky-buttons">
+    <a href="https://wa.me/919529023068" class="sticky-btn whatsapp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="tooltip">WhatsApp Us</span>
+    </a>
+    <a href="tel:+919529023068" class="sticky-btn call">
+        <i class="fa-solid fa-phone"></i>
+        <span class="tooltip">Call Now</span>
+    </a>
+</div>
+
+<header>
+    <nav class="navbar">
+        <div class="logo"><a href="https://wealthmasteracademy.in"><img src="https://growft.odoo.com/web/image/1877-cbee8f0b/wealthmaster%20logo.webp" alt="Wealth Master Academy"></a></div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="https://wealthmasteracademy.in">Home</a></li>
+            <li><a href="https://wealthmasteracademy.in/courses/">Courses</a></li>
+            <li><a href="https://wealthmasteracademy.in/About-US/">About Us</a></li>
+            <li><a href="https://wealthmasteracademy.in/gallery/">Gallery</a></li>
+            <li><a href="https://wealthmasteracademy.in/contact-us/">Contact Us</a></li>
+            <li><a href="https://wealthmasteracademy.in/contact-us/" class="join-btn">Join Us!</a></li>
+        </ul>
+    </nav>
+    <div class="ticker-container">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>{
+                "symbols":[
+                    {"proName":"BSE:RELIANCE","description":"RELIANCE"},
+                    {"proName":"BSE:HDFCBANK","description":"HDFC BANK"},
+                    {"proName":"BSE:TATASTEEL","description":"TATA STEEL"},
+                    {"proName":"BSE:SBIN","description":"SBI"},
+                    {"proName":"BSE:TCS","description":"TCS"},
+                    {"proName":"BSE:INFY","description":"INFOSYS"},
+                    {"proName":"BSE:KOTAKBANK","description":"KOTAK BANK"}
+                ],
+                "showSymbolLogo": true,
+                "colorTheme": "light",
+                "isTransparent": false,
+                "displayMode": "compact",
+                "locale": "in"
+            }</script>
+        </div>
+    </div>
+</header>
+
+<main class="privacy-container">
+    <div class="privacy-header">
+        <h1>Privacy <span>Policy</span></h1>
+        <p>Your trust matters to us. Read how we protect your information.</p>
+        <div class="last-updated">Last Updated: April 16, 2026</div>
+    </div>
+
+    <div class="privacy-card">
+        <h2>1. Introduction</h2>
+        <p>Wealth Master Academy ("we", "our", "us") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, disclose, and safeguard your information when you visit our website, fill out forms, enroll in courses, or interact with our Meta (Facebook/Instagram) ads. It complies with applicable Indian data protection laws and Meta's advertising policies.</p>
+        <div class="highlight-box">
+            <strong>📢 For Meta Ads (Facebook/Instagram):</strong> We use conversion tracking pixels and custom audiences. Any data collected via Meta ads is used solely for advertising performance analysis and retargeting, in full compliance with Meta's terms.
+        </div>
+    </div>
+
+    <div class="privacy-card">
+        <h2>2. Information We Collect</h2>
+        <p>We may collect the following types of information:</p>
+        <ul>
+            <li><strong>Personal Identification Information:</strong> Name, email address, phone number, city, course interest (provided via enquiry forms).</li>
+            <li><strong>Technical Data:</strong> IP address, browser type, device information, pages visited, time spent – collected via cookies and similar technologies.</li>
+            <li><strong>Advertising Data:</strong> Meta Pixel data (e.g., clicks on ads, conversions) to measure campaign effectiveness and build custom audiences.</li>
+            <li><strong>Payment Information:</strong> If you enroll in paid courses, we collect billing details through secure third-party gateways. We do not store full payment card data.</li>
+        </ul>
+    </div>
+
+    <div class="privacy-card">
+        <h2>3. How We Use Your Information</h2>
+        <p>We use your data for the following purposes:</p>
+        <ul>
+            <li>To respond to your enquiries and provide course information.</li>
+            <li>To process enrollments and deliver course content (online/offline).</li>
+            <li>To improve our website, courses, and user experience.</li>
+            <li>To run Meta (Facebook/Instagram) advertising campaigns, including retargeting and lookalike audiences.</li>
+            <li>To send important updates, promotional offers (with your consent), and policy changes.</li>
+            <li>To comply with legal obligations and prevent fraud.</li>
+        </ul>
+    </div>
+
+    <div class="privacy-card">
+        <h2>4. Cookies & Tracking Technologies</h2>
+        <p>We use cookies, web beacons, and Meta Pixel to enhance your browsing experience and analyze ad performance. You can control cookies through your browser settings. Essential cookies cannot be disabled as they are necessary for website functionality.</p>
+        <p>By using our website, you consent to our use of cookies as described in this policy. For Meta ads, the Meta Pixel collects data about your interactions with our ads and website – this helps us show relevant offers and measure conversions.</p>
+    </div>
+
+    <div class="privacy-card">
+        <h2>5. Data Sharing & Disclosure</h2>
+        <p>We do not sell your personal data. We may share your information only in the following circumstances:</p>
+        <ul>
+            <li><strong>Service Providers:</strong> Trusted third parties (e.g., payment gateways, email platforms, Meta) that help us operate our business – they are contractually bound to protect your data.</li>
+            <li><strong>Legal Compliance:</strong> If required by law, court order, or government regulation.</li>
+            <li><strong>Business Transfers:</strong> In case of merger, acquisition, or asset sale, your data may be transferred.</li>
+        </ul>
+        <p>We ensure all partners comply with applicable data protection standards.</p>
+    </div>
+
+    <div class="privacy-card">
+        <h2>6. Data Security</h2>
+        <p>We implement industry-standard security measures (SSL encryption, access controls, regular audits) to protect your personal data from unauthorized access, alteration, or destruction. However, no internet transmission is 100% secure – you share data at your own risk.</p>
+    </div>
+
+    <div class="privacy-card">
+        <h2>7. Your Rights (For Indian Users)</h2>
+        <p>Under Indian law (including upcoming Digital Personal Data Protection Act), you have the right to:</p>
+        <ul>
+            <li>Access and obtain a copy of your personal data.</li>
+            <li>Rectify inaccurate or incomplete data.</li>
+            <li>Withdraw consent for marketing communications.</li>
+            <li>Request deletion of your data, subject to legal retention requirements.</li>
+            <li>Lodge a complaint with the relevant data protection authority.</li>
+        </ul>
+        <p>To exercise these rights, contact us at <a href="mailto:wealthmaster912@gmail.com">wealthmaster912@gmail.com</a>.</p>
+    </div>
+
+    <div class="privacy-card">
+        <h2>8. Children's Privacy</h2>
+        <p>Our services are not directed to individuals under 18. We do not knowingly collect data from minors. If we become aware of such data, we will delete it promptly.</p>
+    </div>
+
+    <div class="privacy-card">
+        <h2>9. Third-Party Links</h2>
+        <p>Our website may contain links to external sites (e.g., payment partners, social media). We are not responsible for their privacy practices – please review their policies independently.</p>
+    </div>
+
+    <div class="privacy-card">
+        <h2>10. Changes to This Privacy Policy</h2>
+        <p>We may update this policy from time to time. The "Last Updated" date at the top indicates when changes were made. Continued use of our website after updates constitutes acceptance of the revised policy.</p>
+    </div>
+
+    <div class="privacy-card">
+        <h2>11. Contact Us</h2>
+        <p>If you have any questions about this privacy policy or wish to exercise your data rights, please contact us:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:wealthmaster912@gmail.com">wealthmaster912@gmail.com</a></li>
+            <li><strong>Phone/WhatsApp:</strong> +91 9529023068</li>
+            <li><strong>Address:</strong> 2nd Floor, Kranti Chowk, near Vignahartha Patsanstha, Kirti Nagar, New Sangavi, Pune, Maharashtra 411061</li>
+            <li><strong>Admin Contact:</strong> Deepak Wagh – +91 73875 34862</li>
+        </ul>
+        <div class="highlight-box">
+            <strong>✅ Meta Ads Compliance Note:</strong> This privacy policy clearly explains our use of Meta Pixel, data collection for advertising, and user opt-out options. It meets Meta's requirements for running ads with lead forms, conversions, and custom audiences.
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>WealthMaster Academy</h3>
+            <p>India's Premium Stock Market Institute. We specialize in Smart Money Concepts (SMC) and Institutional trading logic.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="https://wealthmasteracademy.in">Home</a></li>
+                <li><a href="https://wealthmasteracademy.in/courses/">Courses</a></li>
+                <li><a href="https://wealthmasteracademy.in/About-US/">About Us</a></li>
+                <li><a href="https://wealthmasteracademy.in/gallery/">Gallery</a></li>
+                <li><a href="https://wealthmasteracademy.in/contact-us/">Contact Us</a></li>
+                <li><a href="https://wealthmasteracademy.in/privacy-policy/">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Get In Touch</h4>
+            <p>📍 2nd Floor, Kranti Chowk, Kirti Nagar, New Sangavi, Pune, 411061</p>
+            <p>📧 wealthmaster912@gmail.com</p>
+            <p style="color:#ff3131;">📞 +91 9529023068</p>
+            <p>👨‍💼 Admin: Deepak Wagh | +91 73875 34862</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 WealthMaster Academy. All Rights Reserved. Designed by Growft Digital Marketing.</p>
+        <p>Trading involves risk. Please trade responsibly.</p>
+    </div>
+</footer>
+
+<div id="follower-dot"></div>
+
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        const spans = document.querySelectorAll('.menu-toggle span');
+        nav.classList.toggle('active');
+        if (nav.classList.contains('active')) {
+            spans[0].style.transform = "rotate(45deg) translate(6px,6px)";
+            spans[1].style.opacity = "0";
+            spans[2].style.transform = "rotate(-45deg) translate(6px,-6px)";
+        } else {
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
+        }
+    }
+    document.addEventListener('click', function(e) {
+        const nav = document.getElementById('navLinks');
+        const toggle = document.querySelector('.menu-toggle');
+        if (nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)) {
+            nav.classList.remove('active');
+            const spans = document.querySelectorAll('.menu-toggle span');
+            spans[0].style.transform = "none";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "none";
+        }
+    });
+    const dot = document.getElementById('follower-dot');
+    let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
+    window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+    function animateDot() {
+        dotX += (mouseX - dotX) * 0.1;
+        dotY += (mouseY - dotY) * 0.1;
+        if (dot) { dot.style.left = dotX + 'px'; dot.style.top = dotY + 'px'; }
+        const dist = Math.hypot(mouseX - dotX, mouseY - dotY);
+        if (dist > 2) dot.classList.add('chasing');
+        else dot.classList.remove('chasing');
+        requestAnimationFrame(animateDot);
+    }
+    animateDot();
+</script>
+</body>
+</html>
